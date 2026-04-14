@@ -76,7 +76,7 @@
   --fs-h2: clamp(32px, 5vw, 64px);
   --fs-h3: clamp(22px, 3vw, 32px);
   --fs-desc: 18px;
-  
+
   /* Light Mode */
   --bg-main: #F5F5F7;
   --bg-card: #FFFFFF;
@@ -133,17 +133,6 @@ ul { list-style: none; }
   position: absolute; width: 1px; height: 1px; padding: 0;
   margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;
 }
-
-/* ─────────────────────────────────────
-   LOADER
-───────────────────────────────────── */
-.loader { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: #0A0A0A; color: #fff; z-index: 9999; display: flex; align-items: center; justify-content: center; transition: transform 1s cubic-bezier(0.76, 0, 0.24, 1); }
-.loader.hide { transform: translateY(-100%); }
-.loader-content { text-align: center; overflow: hidden; position: relative; width: 100%; height: 100px; }
-.loader-phrase { font-family: 'Inter', sans-serif; font-size: 24px; font-weight: 500; letter-spacing: -0.02em; color: #86868B; opacity: 0; transform: translateY(20px) translate(-50%, -50%); transition: all 0.6s var(--exp); position: absolute; top: 50%; left: 50%; width: 100%; }
-.loader-phrase.active { opacity: 1; transform: translateY(0) translate(-50%, -50%); }
-.loader-logo { font-family: 'Space Grotesk', sans-serif; font-size: 48px; font-weight: 700; color: #fff; letter-spacing: -0.04em; opacity: 0; transform: translateY(20px) translate(-50%, -50%); position: absolute; top: 50%; left: 50%; transition: all 0.6s var(--exp); }
-.loader-logo.active { opacity: 1; transform: translateY(0) translate(-50%, -50%); }
 
 /* ─────────────────────────────────────
    IMAGEM DEGRADÊ E PLACEHOLDERS
@@ -414,14 +403,21 @@ nav {
 }
 
 @media (max-width: 768px) {
-  nav { padding: 0 24px; }
+  /* Nav adjustments for tight screens */
+  nav { padding: 0 20px; }
+  .n-logo { font-size: 20px; } 
+  .n-right { gap: 16px; }
 
   /* FLUIDEZ MOBILE: Padding reduzido para imersão total */
-  .sec { padding: 56px 20px; }
+  .sec { padding: 64px 20px; } 
   .sec-header { margin-bottom: 32px; }
-  .hero { padding: 120px 20px 40px; min-height: auto; }
+  
+  /* CORREÇÃO DO PENTE FINO NO HERO */
+  .hero { padding: 140px 20px 80px; min-height: 80vh; justify-content: center; }
   .hero-massive { font-size: clamp(36px, 11vw, 56px); margin-bottom: 24px; }
-  .hero-p { font-size: 16px; margin-bottom: 32px;}
+  .hero-p { font-size: 16px; margin-bottom: 40px;} 
+  .hero-bottom-actions { width: 100%; display: flex; justify-content: center; }
+  .btn-outline { padding: 16px 32px; font-size: 15px; width: 100%; max-width: 280px; justify-content: center; } 
 
   .showcase-sec { padding: 0 20px; margin-bottom: 40px; }
   .showcase-wrapper { aspect-ratio: 16 / 10; border-radius: 20px; }
@@ -493,6 +489,11 @@ nav {
   .split-desktop { column-count: 1; } 
   .cap-col-label { font-size: 11px; margin-bottom: 16px; padding-bottom: 8px;}
   .cap-list li { font-size: 13px; margin-bottom: 12px; letter-spacing: 0;}
+  
+  /* Ajustes finais Formulário de Contato Mobile */
+  .contact-form { gap: 12px; }
+  .form-input { padding: 16px 20px; font-size: 15px; }
+  .form-submit { padding: 16px; font-size: 15px; }
 }
 </style>
 </head>
@@ -578,7 +579,7 @@ nav {
         <div class="bento-icon" aria-hidden="true" style="background: rgba(255,255,255,0.1); color: #fff;">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
         </div>
-        <h3 class="bento-title"><span class="pt">Operação<br>AI-Native</span><span class="en">AI-Native<br>Operation</span></h3>
+        <h3 class="bento-title" style="font-size: 32px;"><span class="pt">Operação<br>AI-Native</span><span class="en">AI-Native<br>Operation</span></h3>
         <p class="desc-text" style="margin-top: auto;"><span class="pt">Usamos agentes de IA para o trabalho pesado e mentes criativas para a visão estratégica. O resultado é uma infraestrutura digital robusta entregue em tempo recorde.</span><span class="en">We use AI agents for the heavy lifting and creative minds for the strategic vision. The result is a robust digital infrastructure delivered in record time.</span></p>
       </article>
 
