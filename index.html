@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-lang="pt" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SkillCore | Consultoria Digital AI-Native</title>
+<meta name="description" content="A primeira consultoria AI-Native focada em acelerar negócios. Unimos o julgamento de estrategistas seniores à escala infinita da IA.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://skillcore.pro/">
+
+<link rel="alternate" hreflang="pt-BR" href="https://skillcore.pro/">
+<link rel="alternate" hreflang="en" href="https://skillcore.pro/?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://skillcore.pro/">
+
+<meta name="geo.region" content="BR-PR">
+<meta name="geo.placename" content="Curitiba">
+<meta name="geo.position" content="-25.4284;-49.2733">
+<meta name="ICBM" content="-25.4284, -49.2733">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://skillcore.pro/">
+<meta property="og:title" content="SkillCore | Consultoria Digital AI-Native">
+<meta property="og:description" content="A SkillCore é a consultoria AI-Native que une o julgamento de designers seniores à escala infinita da inteligência artificial.">
+<meta property="og:image" content="https://skillcore.pro/assets/images/og-image.jpg">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://skillcore.pro/">
+<meta name="twitter:title" content="SkillCore | Consultoria Digital AI-Native">
+<meta name="twitter:description" content="A SkillCore é a consultoria AI-Native que une o julgamento de designers seniores à escala infinita da inteligência artificial.">
+<meta name="twitter:image" content="https://skillcore.pro/assets/images/twitter-image.jpg">
+
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "SkillCore",
+  "image": "https://skillcore.pro/assets/images/og-image.jpg",
+  "@id": "https://skillcore.pro/",
+  "url": "https://skillcore.pro/",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Curitiba",
+    "addressRegion": "PR",
+    "addressCountry": "BR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -25.4284,
+    "longitude": -49.2733
+  },
+  "sameAs": [
+    "https://www.linkedin.com/company/skillcore/",
+    "https://www.instagram.com/skillcore/"
+  ],
+  "description": "A primeira consultoria AI-Native focada em acelerar negócios. Unimos o julgamento de estrategistas seniores à escala infinita da IA.",
+  "priceRange": "$$$"
+}
+</script>
+
+<style>
+/* ─────────────────────────────────────
+   TOKENS E VARIÁVEIS DO TEMA
+───────────────────────────────────── */
+:root {
+  --or: #FF5A1F;
+  --exp: cubic-bezier(0.16, 1, 0.3, 1);
+  --fs-h2: clamp(32px, 5vw, 64px);
+  --fs-h3: clamp(22px, 3vw, 32px);
+  --fs-desc: 18px;
+
+  /* Light Mode */
+  --bg-main: #F5F5F7;
+  --bg-card: #FFFFFF;
+  --bg-nav: rgba(245, 245, 247, 0.7);
+  --text-main: #1D1D1F;
+  --text-muted: #86868B;
+  --line: rgba(0,0,0,0.06);
+  --invert-bg: #0A0A0A;
+  --invert-text: #FFFFFF;
+}
+
+[data-theme="dark"] {
+  /* Dark Mode */
+  --bg-main: #0A0A0A;
+  --bg-card: #161618;
+  --bg-nav: rgba(10, 10, 10, 0.7);
+  --text-main: #F5F5F7;
+  --text-muted: #A1A1A6;
+  --line: rgba(255,255,255,0.1);
+  --invert-bg: #FFFFFF;
+  --invert-text: #0A0A0A;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+  font-size: var(--fs-desc);
+  line-height: 1.6;
+  letter-spacing: -0.015em;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+h1, h2, h3, h4, h5, h6, .h-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; height: auto; }
+ul { list-style: none; }
+
+/* ─────────────────────────────────────
+   ACESSIBILIDADE
+───────────────────────────────────── */
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0;
+  margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;
+}
+
+/* ─────────────────────────────────────
+   IMAGEM DEGRADÊ E PLACEHOLDERS
+───────────────────────────────────── */
+.gradient-img { width: 100%; height: 100%; object-fit: cover; background: linear-gradient(180deg, #5b7074 0%, #d8e0d0 100%); }
+img.gradient-img { height: 100%; max-width: none; }
+
+/* ─────────────────────────────────────
+   NAVEGAÇÃO
+───────────────────────────────────── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200; height: 64px; display: flex; align-items: center; justify-content: space-between; padding: 0 48px;
+  background: var(--bg-nav); backdrop-filter: blur(24px) saturate(180%); -webkit-backdrop-filter: blur(24px) saturate(180%); border-bottom: 1px solid var(--line); transition: background 0.4s ease, border-color 0.4s ease;
+}
+.n-logo { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: -0.04em; display: flex; align-items: center; gap: 8px; }
+.n-logo-dot { width: 6px; height: 6px; background: var(--or); border-radius: 50%; }
+.n-links { display: flex; gap: 32px; font-size: 14px; color: var(--text-muted); font-weight: 500;}
+.n-links a:hover { color: var(--text-main); }
+.n-right { display: flex; align-items: center; gap: 24px; }
+.controls-wrap { display: flex; align-items: center; gap: 16px; }
+.lsw { display: flex; gap: 8px; font-size: 13px; font-weight: 500; color: var(--text-muted); }
+.lb { background: none; border: none; color: inherit; cursor: pointer; font-family: inherit; font-size: inherit; transition: color 0.2s; padding: 0;}
+.lb.on, .lb:hover { color: var(--text-main); font-weight: 600; }
+.theme-toggle { background: none; border: none; cursor: pointer; color: var(--text-muted); display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; transition: color 0.2s; }
+.theme-toggle:hover { color: var(--text-main); }
+[data-theme="light"] .icon-moon { display: none; }
+[data-theme="dark"] .icon-sun { display: none; }
+
+/* ─────────────────────────────────────
+   HERO
+───────────────────────────────────── */
+.hero { 
+  min-height: 85vh; 
+  padding: 120px 48px 60px; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+}
+
+.hero-bg-shapes {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 800px; height: 800px; z-index: 0; pointer-events: none; display: flex; align-items: center; justify-content: center;
+}
+.ring {
+  position: absolute; border-radius: 50%; border: 60px solid rgba(255,255,255,0.7);
+  filter: blur(32px); transition: border-color 0.4s ease;
+}
+[data-theme="dark"] .ring { border: 60px solid rgba(255,255,255,0.03); filter: blur(28px); }
+.ring-1 { width: 300px; height: 300px; }
+.ring-2 { width: 600px; height: 600px; opacity: 0.5; border-width: 40px;}
+
+.hero-content { position: relative; z-index: 10; display: flex; flex-direction: column; align-items: center; width: 100%;}
+
+.hero-massive {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(48px, 10vw, 150px);
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  margin-bottom: 32px;
+  text-transform: uppercase;
+  color: var(--text-main);
+}
+
+.hero-p { max-width: 680px; margin-bottom: 48px; font-size: 20px;}
+
+.btn-outline { 
+  background: transparent; 
+  color: var(--text-main); 
+  padding: 18px 36px; 
+  border-radius: 100px; 
+  font-weight: 500; 
+  font-size: 16px; 
+  border: 1px solid var(--text-main);
+  transition: transform 0.4s var(--exp), background 0.4s ease, color 0.4s ease; 
+  display: inline-flex; 
+  align-items: center; 
+  gap: 12px;
+}
+.btn-outline:hover { 
+  transform: scale(1.02); 
+  background: var(--text-main); 
+  color: var(--bg-main); 
+}
+
+/* SHOWCASE IMAGE */
+.showcase-sec { padding: 0 48px; max-width: 1400px; margin: 0 auto 120px; position: relative; z-index: 10;}
+.showcase-wrapper { width: 100%; aspect-ratio: 21 / 9; border-radius: 40px; overflow: hidden; box-shadow: 0 40px 100px rgba(0,0,0,0.08); border: 1px solid var(--line); background: var(--bg-card);}
+
+/* ─────────────────────────────────────
+   SECTION SHARED
+───────────────────────────────────── */
+.sec { padding: 120px 48px; max-width: 1280px; margin: 0 auto; position: relative; z-index: 2;}
+.sec-header { margin-bottom: 64px; }
+.sec-label { font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 24px; }
+.sec-h2 { font-size: var(--fs-h2); max-width: 800px; margin: 0;}
+
+/* ─────────────────────────────────────
+   PROCESS BENTO
+───────────────────────────────────── */
+.process-bento { display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; }
+.pb-item { background: var(--bg-card); border-radius: 32px; padding: 48px; border: 1px solid var(--line); display: flex; flex-direction: column; position: relative; overflow: hidden; transition: transform 0.5s var(--exp), box-shadow 0.5s var(--exp);}
+.pb-item:hover { transform: translateY(-4px) scale(1.01); box-shadow: 0 24px 60px rgba(0,0,0,0.04); }
+
+.pb-1 { grid-column: 1 / 6; grid-row: 1; }
+.pb-2 { grid-column: 1 / 6; grid-row: 2; background: var(--invert-bg); color: var(--invert-text); border-color: transparent; }
+.pb-3 { grid-column: 6 / 13; grid-row: 1 / 3; background: var(--bg-card); display: flex; flex-direction: column; justify-content: space-between; }
+
+.pb-num { font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 700; opacity: 0.4; margin-bottom: 24px; letter-spacing: 0.04em;}
+.pb-2 .pb-num { opacity: 0.5; color: var(--invert-text); }
+
+.pb-title { font-size: 28px; margin-bottom: 16px; color: var(--text-main); }
+.pb-2 .pb-title { color: var(--invert-text); }
+
+.pb-title-huge { font-size: clamp(32px, 4vw, 64px); line-height: 1.05; margin: 0 0 24px 0; color: var(--text-main); max-width: 90%; }
+.pb-desc-wrap { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; margin-top: auto;}
+.pb-3 .desc-text { max-width: 400px; margin: 0; }
+
+.pb-arrow { width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; background: var(--bg-main); border-radius: 50%; flex-shrink: 0; color: var(--text-main); transition: transform 0.4s var(--exp), background 0.4s ease;}
+.pb-item:hover .pb-arrow { transform: scale(1.1) rotate(15deg); background: var(--invert-bg); color: var(--invert-text); }
+
+/* ─────────────────────────────────────
+   BENTO GRID (SERVICES & ABOUT)
+───────────────────────────────────── */
+.bento-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px;}
+.bento-item {
+  background: var(--bg-card); border-radius: 32px; padding: 48px; overflow: hidden; position: relative;
+  border: 1px solid var(--line); box-shadow: 0 10px 40px rgba(0,0,0,0.02);
+  transition: transform 0.5s var(--exp), box-shadow 0.5s var(--exp), background 0.4s ease, border-color 0.4s ease; display: flex; flex-direction: column;
+}
+.bento-item:hover { transform: translateY(-4px) scale(1.01); box-shadow: 0 24px 60px rgba(0,0,0,0.06); }
+
+.span-8 { grid-column: span 8; }
+.span-4 { grid-column: span 4; }
+.span-6 { grid-column: span 6; }
+
+.bento-icon { width: 48px; height: 48px; border-radius: 12px; background: rgba(29, 29, 31, 0.05); color: var(--text-main); display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 24px; }
+[data-theme="dark"] .bento-icon { background: rgba(255, 255, 255, 0.1); }
+.bento-title { font-size: var(--fs-h3); margin-bottom: 12px; color: var(--text-main); line-height: 1.1;}
+
+/* Utilitário para a imagem não empurrar o texto no mobile */
+.has-img-side { padding-right: 48%; }
+
+.bento-img-wrap { margin-top: auto; border-radius: 16px; overflow: hidden; margin-bottom: -20px; margin-left: -20px; margin-right: -20px; height: 260px;}
+.bento-img-side { position: absolute; top: 0; right: 0; bottom: 0; width: 45%; }
+
+.bento-dark { background: var(--invert-bg); color: var(--invert-text); justify-content: center; border-color: transparent;}
+.bento-dark .bento-title { color: var(--invert-text); } 
+.bento-dark .desc-text { color: var(--invert-text); opacity: 0.7; }
+
+.card-link { margin-top: 32px; display: inline-flex; align-items: center; gap: 8px; font-weight: 600; color: var(--or); font-size: 15px; transition: opacity 0.3s; }
+.card-link:hover { opacity: 0.8; }
+
+/* ─────────────────────────────────────
+   CASES
+───────────────────────────────────── */
+.cases-sec { padding: 120px 0; overflow: hidden; }
+.cases-header-wrap { max-width: 1280px; margin: 0 auto 48px; padding: 0 48px; display: flex; justify-content: space-between; align-items: flex-end;}
+.cases-nav-btns { display: flex; gap: 8px; }
+.c-btn { width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--line); background: var(--bg-card); color: var(--text-main); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s; }
+.c-btn:hover { background: var(--invert-bg); color: var(--invert-text); border-color: var(--invert-bg); }
+
+.cases-viewport { display: flex; gap: 40px; padding: 20px 50vw 80px 48px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; }
+.cases-viewport::-webkit-scrollbar { display: none; }
+
+.case-card { scroll-snap-align: center; flex-shrink: 0; width: min(1080px, 85vw); background: var(--bg-card); border-radius: 40px; box-shadow: 0 24px 80px rgba(0,0,0,0.04); border: 1px solid var(--line); display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; transition: transform 0.6s var(--exp), background 0.4s ease; }
+.cs-vis { position: relative; overflow: hidden; min-height: 500px; }
+.cs-body { padding: 80px 64px; display: flex; flex-direction: column; justify-content: center; }
+
+.cs-client-name { font-size: 13px; font-weight: 600; color: var(--text-main); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; opacity: 0.6;}
+.cs-sector { font-size: 14px; font-weight: 500; color: var(--or); margin-bottom: 24px; }
+.cs-title { font-size: var(--fs-h3); margin-bottom: 20px; color: var(--text-main); }
+.cs-desc { margin-bottom: 48px; }
+
+.cs-metrics { display: flex; flex-wrap: nowrap; gap: 24px; align-items: flex-start; width: 100%; }
+.cs-metrics > div { flex: 1; min-width: 0; }
+.csm-v { font-family: 'Space Grotesk', sans-serif; font-size: clamp(24px, 3vw, 32px); font-weight: 700; color: var(--text-main); letter-spacing: -0.04em; margin-bottom: 4px; line-height: 1; white-space: nowrap; }
+.csm-l { font-size: 13px; color: var(--text-muted); font-weight: 500; line-height: 1.3; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* ─────────────────────────────────────
+   CAPABILITIES E CLIENTES (COLUNAS DINÂMICAS)
+───────────────────────────────────── */
+.cap-sec { border-top: 1px solid var(--line); padding-top: 120px; margin-top: 40px;}
+.cap-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+.cap-block { display: flex; flex-direction: column; }
+.cap-col-label { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 32px; border-bottom: 1px solid var(--line); padding-bottom: 16px;}
+.split-desktop { column-count: 2; column-gap: 32px; }
+.split-desktop li { font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600; color: var(--text-main); margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.02em; break-inside: avoid;}
+
+/* ─────────────────────────────────────
+   CTA FORM
+───────────────────────────────────── */
+.cta-sec { background: #0A0A0A; padding: 160px 48px; color: #fff;}
+.cta-header { text-align: center; margin-bottom: 64px; }
+.cta-h2 { font-size: clamp(32px, 5vw, 64px); margin-bottom: 24px; color: #fff; }
+.cta-p { font-size: 20px; color: #86868B; max-width: 600px; margin: 0 auto; }
+.contact-form { max-width: 560px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
+.form-input { width: 100%; padding: 20px 24px; border-radius: 16px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; font-family: 'Inter', sans-serif; font-size: 16px; outline: none; transition: all 0.3s; }
+.form-input::placeholder { color: rgba(255,255,255,0.4); }
+.form-input:focus { border-color: #FFFFFF; background: rgba(255,255,255,0.08); }
+.form-textarea { resize: vertical; min-height: 140px; }
+.form-submit { background: #fff; color: #0A0A0A; font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 600; cursor: pointer; border: none; padding: 20px; border-radius: 100px; margin-top: 8px; transition: transform 0.3s var(--exp), box-shadow 0.3s; }
+.form-submit:hover { transform: scale(1.02); box-shadow: 0 10px 30px rgba(255,255,255,0.15); }
+
+/* ─────────────────────────────────────
+   RODAPÉ ROBUSTO
+───────────────────────────────────── */
+.footer-wrap { background: #0A0A0A; padding: 80px 48px 40px; color: #86868B; border-top: 1px solid rgba(255,255,255,0.1); }
+.footer-main { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; padding-bottom: 64px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 32px; max-width: 1280px; margin-left: auto; margin-right: auto;}
+.footer-brand .n-logo { color: #fff; margin-bottom: 20px; }
+.footer-desc { font-size: 16px; line-height: 1.6; margin-bottom: 32px; max-width: 340px; color: #86868B;}
+.footer-socials { display: flex; gap: 12px; }
+.footer-socials a { width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2); color: #fff; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; }
+.footer-socials a:hover { background: #fff; color: #0A0A0A; transform: translateY(-2px);}
+.footer-col-title { font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 24px; text-transform: uppercase; letter-spacing: 0.06em; }
+.footer-col ul { display: flex; flex-direction: column; gap: 16px; }
+.footer-col a { color: #86868B; transition: color 0.3s; font-size: 15px; font-weight: 500;}
+.footer-col a:hover { color: #fff; }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; font-size: 14px; max-width: 1280px; margin: 0 auto;}
+.footer-bottom-links { display: flex; gap: 32px; }
+.footer-bottom-links a:hover { color: #fff; }
+
+/* ─────────────────────────────────────
+   AGENTE IA
+───────────────────────────────────── */
+.ai-fab { position: fixed; bottom: 32px; right: 32px; width: 64px; height: 64px; background: var(--invert-bg); color: var(--invert-text); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); cursor: pointer; z-index: 900; transition: transform 0.3s var(--exp), box-shadow 0.3s; }
+.ai-fab:hover { transform: scale(1.05); }
+.ai-window { position: fixed; bottom: 110px; right: 32px; width: 340px; height: 460px; background: var(--bg-card); border-radius: 24px; box-shadow: 0 20px 60px rgba(0,0,0,0.15); display: flex; flex-direction: column; z-index: 900; overflow: hidden; border: 1px solid var(--line); opacity: 0; transform: translateY(20px) scale(0.95); pointer-events: none; transition: all 0.4s var(--exp); }
+.ai-window.open { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+.ai-header { padding: 16px 20px; background: var(--bg-off); border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; }
+.ai-title { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 16px; color: var(--text-main); display: flex; align-items: center; gap: 8px;}
+.ai-title::before { content: ''; display: inline-block; width: 8px; height: 8px; background: #34C759; border-radius: 50%; }
+.ai-close { background: none; border: none; font-size: 20px; color: var(--text-muted); cursor: pointer; }
+.ai-body { flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 16px; }
+.msg { padding: 12px 16px; border-radius: 16px; font-size: 14px; max-width: 85%; line-height: 1.4; }
+.msg.bot { background: var(--bg-off); color: var(--text-main); align-self: flex-start; border-bottom-left-radius: 4px; }
+.msg.user { background: var(--invert-bg); color: var(--invert-text); align-self: flex-end; border-bottom-right-radius: 4px; }
+.msg.typing { font-style: italic; color: var(--text-muted); background: transparent; padding: 4px 16px; }
+.ai-input-area { padding: 16px; border-top: 1px solid var(--line); display: flex; gap: 8px; }
+.ai-input { flex: 1; border: 1px solid var(--line); border-radius: 100px; padding: 10px 16px; font-family: 'Inter', sans-serif; font-size: 14px; outline: none; background: var(--bg-off); color: var(--text-main); }
+.ai-send { background: var(--invert-bg); color: var(--invert-text); border: none; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+
+/* ─────────────────────────────────────
+   REVEAL & I18N
+───────────────────────────────────── */
+.rv { opacity: 0; transform: translateY(32px); transition: opacity 1.2s var(--exp), transform 1.2s var(--exp); }
+.rv.in { opacity: 1; transform: translateY(0); }
+.d1 { transition-delay: 0.1s; }
+.d2 { transition-delay: 0.2s; }
+[data-lang="pt"] .en { display: none; }
+[data-lang="en"] .pt { display: none; }
+
+/* ─────────────────────────────────────
+   RESPONSIVE
+───────────────────────────────────── */
+@media (max-width: 1024px) {
+  .has-img-side { padding-right: 48px; }
+  .bento-img-side { position: relative; width: 100%; height: 240px; margin-top: 32px; }
+  .pb-1, .pb-2, .pb-3 { grid-column: 1 / -1; grid-row: auto; }
+  .case-card { grid-template-columns: 1fr; width: 85vw; }
+  .cap-grid { gap: 40px; }
+  .footer-main { grid-template-columns: 1fr 1fr; gap: 48px; }
+}
+
+@media (max-width: 768px) {
+  nav { padding: 0 24px; }
+
+  /* FLUIDEZ MOBILE: Padding reduzido para imersão total */
+  .sec { padding: 56px 20px; }
+  .sec-header { margin-bottom: 32px; }
+  .hero { padding: 120px 20px 40px; min-height: auto; }
+  .hero-massive { font-size: clamp(36px, 11vw, 56px); margin-bottom: 24px; }
+  .hero-p { font-size: 16px; margin-bottom: 32px;}
+
+  .showcase-sec { padding: 0 20px; margin-bottom: 40px; }
+  .showcase-wrapper { aspect-ratio: 16 / 10; border-radius: 20px; }
+
+  .cases-header-wrap { flex-direction: column; align-items: flex-start; gap: 16px; padding: 0 20px;}
+  .cases-viewport { padding: 20px 20px 40px 20px; gap: 16px; }
+  .cs-metrics { flex-wrap: nowrap; gap: 12px; margin-top: 32px; }
+  .cs-body { padding: 40px 24px; }
+  .cs-vis { min-height: 250px; }
+
+  .ai-window { width: calc(100vw - 40px); right: 20px; bottom: 100px;}
+  .hero-bg-shapes { width: 300px; height: 300px; }
+  .ring-1 { width: 100px; height: 100px; }
+  .ring-2 { width: 200px; height: 200px; }
+
+  .footer-main { grid-template-columns: 1fr; gap: 40px; padding-bottom: 40px;}
+  .footer-bottom { flex-direction: column; gap: 24px; align-items: flex-start; }
+
+  /* ─────────────────────────────────────
+     MÁGICA DO BENTO MOBILE (DENSIDADE APPLE EXTREMA)
+  ───────────────────────────────────── */
+  .bento-grid, .process-bento { 
+    grid-template-columns: repeat(2, 1fr) !important; 
+    gap: 8px !important; 
+  }
+
+  /* BENTO: PROCESSO */
+  .process-bento .pb-item { padding: 20px; border-radius: 20px; }
+  .pb-1 { grid-column: 1 / 2; grid-row: 1; } /* Quadrado esquerdo */
+  .pb-2 { grid-column: 2 / 3; grid-row: 1; } /* Quadrado direito */
+  .pb-3 { grid-column: 1 / 3; grid-row: 2; } /* Retângulo inferior */
+  .pb-num { margin-bottom: 12px; font-size: 13px; }
+  .pb-title { font-size: 16px; margin-bottom: 8px; line-height: 1.2; }
+  .process-bento .desc-text { font-size: 12px; line-height: 1.35; margin: 0; }
+  .pb-title-huge { font-size: 24px; margin: 12px 0; }
+  .pb-arrow { display: none; } 
+
+  /* BENTO: QUEM SOMOS (Mantido Wide para o Manifesto) */
+  .sec:nth-of-type(3) .bento-grid { display: flex; flex-direction: column; }
+  .sec:nth-of-type(3) .bento-item { padding: 24px; border-radius: 20px;}
+  .sec:nth-of-type(3) .bento-title { font-size: 24px; margin-bottom: 12px;}
+  .sec:nth-of-type(3) .desc-text { font-size: 15px; line-height: 1.5;}
+
+  /* BENTO: DISCIPLINAS (Estilo Processos) */
+  .sec:nth-of-type(5) .bento-item { 
+    padding: 20px !important; 
+    border-radius: 20px !important;
+    min-height: auto; 
+    justify-content: flex-start;
+  }
+
+  /* Limpeza do Padding Lateral que amassava o texto */
+  .has-img-side { padding-right: 20px !important; }
+
+  .sec:nth-of-type(5) .bento-item:nth-child(1) { grid-column: 1 / 3 !important; } /* Wide Top */
+  .sec:nth-of-type(5) .bento-item:nth-child(2) { grid-column: 1 / 2 !important; } /* Square Left */
+  .sec:nth-of-type(5) .bento-item:nth-child(3) { grid-column: 2 / 3 !important; } /* Square Right */
+  .sec:nth-of-type(5) .bento-item:nth-child(4) { grid-column: 1 / 3 !important; } /* Wide Bottom */
+
+  .sec:nth-of-type(5) .bento-icon { width: 32px; height: 32px; font-size: 16px; margin-bottom: 12px; border-radius: 8px; }
+  .sec:nth-of-type(5) .bento-title { font-size: 16px !important; margin-bottom: 8px; line-height: 1.2; }
+  .sec:nth-of-type(5) .desc-text { 
+    font-size: 12px !important; 
+    line-height: 1.35 !important; 
+    margin: 0 !important;
+    display: block !important; 
+    -webkit-line-clamp: unset !important;
+  }
+
+  /* Remove imagens e links no mobile para fluidez total */
+  #services .bento-img-side, 
+  #services .bento-img-wrap,
+  #services .card-link { display: none !important; } 
+
+  /* Ajuste especial para o bloco de Resultados (ROI) caber com elegância */
+  .bento-item.span-6:nth-child(4) > div:last-child { flex-direction: row; align-items: center; gap: 12px; margin-top: 16px; }
+  .bento-item.span-6:nth-child(4) > div:last-child > div:first-child { font-size: 32px; line-height: 1;}
+  .bento-item.span-6:nth-child(4) > div:last-child > div:last-child { font-size: 12px; line-height: 1.2;}
+
+  /* ─────────────────────────────────────
+     CAPABILITIES (COLUNAS DINÂMICAS MOBILE)
+  ───────────────────────────────────── */
+  .cap-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .split-desktop { column-count: 1; } /* Empilha a lista em uma única coluna no celular */
+  .cap-col-label { font-size: 11px; margin-bottom: 16px; padding-bottom: 8px;}
+  .cap-list li { font-size: 13px; margin-bottom: 12px; letter-spacing: 0;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="n-logo" aria-label="SkillCore Início">
+    <div class="n-logo-dot" aria-hidden="true"></div>
+    SkillCore
+  </a>
+  <ul class="n-links">
+    <li><a href="#process"><span class="pt">Método</span><span class="en">Method</span></a></li>
+    <li><a href="#services"><span class="pt">Serviços</span><span class="en">Services</span></a></li>
+    <li><a href="#work"><span class="pt">Projetos</span><span class="en">Work</span></a></li>
+  </ul>
+  <div class="n-right">
+    <div class="controls-wrap">
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Alternar tema escuro e claro">
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </button>
+      <div class="lsw">
+        <button class="lb on" onclick="setLang('pt')" aria-label="Mudar idioma para Português">PT</button>
+        <span aria-hidden="true">/</span>
+        <button class="lb" onclick="setLang('en')" aria-label="Change language to English">EN</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+  <header class="hero">
+    <div class="hero-bg-shapes" aria-hidden="true">
+      <div class="ring ring-2"></div>
+      <div class="ring ring-1"></div>
+    </div>
+
+    <div class="hero-content">
+      <h1 class="hero-massive rv d1">
+        <span class="pt">Senta aqui.<br>Vamos desenhar<br>O seu amanhã.</span>
+        <span class="en">Pull up a chair.<br>Let's design<br>Your tomorrow.</span>
+      </h1>
+      <p class="hero-p desc-text rv d2">
+        <span class="pt">Desenhamos experiências conectadas combinando o julgamento crítico de especialistas à escala de execução da inteligência artificial. Somos a agência AI-Native parceira na evolução digital da sua marca.</span>
+        <span class="en">We design connected experiences by combining the critical judgment of experts with the execution scale of artificial intelligence. We are the AI-Native agency partnering in your brand's digital evolution.</span>
+      </p>
+      <div class="hero-bottom-actions rv d2">
+        <a href="#work" class="btn-outline">
+          <span class="pt">Explorar projetos</span><span class="en">Explore projects</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section class="showcase-sec rv d2">
+    <div class="showcase-wrapper">
+      <img src="assets/images/hero-team.png" alt="Equipe SkillCore colaborando em projeto" class="gradient-img">
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-header rv">
+      <h2 class="sec-label sr-only"><span class="pt">Quem somos</span><span class="en">Who we are</span></h2>
+      <div class="sec-label" aria-hidden="true"><span class="pt">Quem somos</span><span class="en">Who we are</span></div>
+      <p class="sec-h2 h-title">
+        <span class="pt">Menos atrito.<br>Mais resultado.</span>
+        <span class="en">Less friction.<br>More output.</span>
+      </p>
+    </div>
+
+    <div class="bento-grid" role="list">
+
+      <article class="bento-item span-8 rv" role="listitem">
+        <div class="bento-icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+        </div>
+        <h3 class="bento-title"><span class="pt">Experiências Conectadas</span><span class="en">Connected Experiences</span></h3>
+        <p class="desc-text" style="max-width: 90%;"><span class="pt">Somos arquitetos de experiências conectadas. Acreditamos que a verdadeira inovação acontece quando estratégia, design e inteligência artificial falam a mesma língua. Na SkillCore, reimaginamos jornadas e construímos produtos digitais que impulsionam o seu negócio e redefinem o seu mercado.</span><span class="en">We are architects of connected experiences. We believe true innovation happens when strategy, design, and artificial intelligence speak the same language. At SkillCore, we reimagine journeys and build digital products that propel your business and redefine your market.</span></p>
+      </article>
+
+      <article class="bento-item bento-dark span-4 rv d1" role="listitem">
+        <div class="bento-icon" aria-hidden="true" style="background: rgba(255,255,255,0.1); color: #fff;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+        </div>
+        <h3 class="bento-title" style="font-size: 32px;"><span class="pt">Operação<br>AI-Native</span><span class="en">AI-Native<br>Operation</span></h3>
+        <p class="desc-text" style="margin-top: auto;"><span class="pt">Usamos agentes de IA para o trabalho pesado e mentes criativas para a visão estratégica. O resultado é uma infraestrutura digital robusta entregue em tempo recorde.</span><span class="en">We use AI agents for the heavy lifting and creative minds for the strategic vision. The result is a robust digital infrastructure delivered in record time.</span></p>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="sec" id="process">
+    <div class="sec-header rv">
+      <h2 class="sec-label sr-only"><span class="pt">Nosso Método</span><span class="en">Our Method</span></h2>
+      <div class="sec-label" aria-hidden="true"><span class="pt">Como trabalhamos</span><span class="en">How we work</span></div>
+      <p class="sec-h2 h-title">
+        <span class="pt">Pensado no detalhe.<br>Construído para a escala.</span>
+        <span class="en">Thought out in detail.<br>Built for scale.</span>
+      </p>
+    </div>
+
+    <div class="process-bento" role="list">
+
+      <article class="pb-item pb-1 rv" role="listitem">
+        <div class="pb-num" aria-hidden="true">01</div>
+        <h3 class="pb-title"><span class="pt">Estratégia e Visão</span><span class="en">Strategy and Vision</span></h3>
+        <p class="desc-text"><span class="pt">Antes de qualquer linha de código, entendemos o seu negócio. Mapeamos oportunidades e desenhamos a jornada ideal para o seu usuário.</span><span class="en">Before any line of code, we understand your business. We map opportunities and design the ideal journey for your user.</span></p>
+      </article>
+
+      <article class="pb-item pb-2 rv d1" role="listitem">
+        <div class="pb-num" aria-hidden="true">02</div>
+        <h3 class="pb-title"><span class="pt">Engenharia Nativa</span><span class="en">Native Engineering</span></h3>
+        <p class="desc-text" style="opacity: 0.7;"><span class="pt">Arquitetura de ponta e desenvolvimento focado. Construímos a base tecnológica do seu produto com prioridade absoluta em performance e segurança.</span><span class="en">Cutting edge architecture and focused development. We build the technological foundation of your product prioritizing performance and security.</span></p>
+      </article>
+
+      <article class="pb-item pb-3 rv d2" role="listitem">
+        <div>
+          <div class="pb-num" aria-hidden="true">03</div>
+          <h3 class="pb-title-huge h-title"><span class="pt">Escala<br>Inteligente</span><span class="en">Smart<br>Scale</span></h3>
+        </div>
+        <div class="pb-desc-wrap">
+          <p class="desc-text"><span class="pt">O lançamento é o primeiro passo. Implementamos automações e IA para que a sua operação cresça de forma contínua e sem gargalos.</span><span class="en">Launching is the first step. We implement automation and AI so your operation grows continuously without bottlenecks.</span></p>
+          <div class="pb-arrow" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="sec" id="services">
+    <div class="sec-header rv">
+      <h2 class="sec-label sr-only"><span class="pt">Disciplinas</span><span class="en">Disciplines</span></h2>
+      <div class="sec-label" aria-hidden="true"><span class="pt">Disciplinas</span><span class="en">Disciplines</span></div>
+      <p class="sec-h2 h-title">
+        <span class="pt">Tudo o que você precisa.<br>E nada do que não precisa.</span>
+        <span class="en">Everything you need.<br>Nothing you don't.</span>
+      </p>
+    </div>
+
+    <div class="bento-grid" role="list">
+
+      <article class="bento-item span-8 rv has-img-side" role="listitem">
+        <div class="bento-icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+        </div>
+        <h3 class="bento-title"><span class="pt">Engenharia de Produto</span><span class="en">Product Engineering</span></h3>
+        <p class="desc-text"><span class="pt">Desenhamos e construímos plataformas, aplicativos e ecossistemas digitais focados na jornada do usuário. Arquitetura robusta, design intencional e tecnologia de ponta.</span><span class="en">We design and build platforms, applications, and digital ecosystems focused on the user journey. Robust architecture, intentional design, and cutting-edge technology.</span></p>
+        <div class="bento-img-side">
+          <img src="assets/images/card-research.png" alt="Pesquisa e descoberta estratégica" class="gradient-img">
+        </div>
+      </article>
+
+      <article class="bento-item bento-dark span-4 rv d1" role="listitem">
+        <div class="bento-icon" aria-hidden="true" style="margin-bottom: auto; background: rgba(255,255,255,0.1); color: #fff;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+        </div>
+        <h3 class="bento-title"><span class="pt">IA & Automação</span><span class="en">AI & Automation</span></h3>
+        <p class="desc-text"><span class="pt">Agentes inteligentes e fluxos automatizados integrados ao seu negócio. Escalamos a sua operação eliminando o trabalho braçal.</span><span class="en">Intelligent agents and automated workflows integrated into your business. We scale your operation by eliminating manual work.</span></p>
+      </article>
+
+      <article class="bento-item span-6 rv d1" role="listitem">
+        <div class="bento-icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+        </div>
+        <h3 class="bento-title"><span class="pt">Comunicação Digital</span><span class="en">Digital Communication</span></h3>
+        <p class="desc-text"><span class="pt">Campanhas, motion design e posicionamento estratégico. Traduzimos a complexidade do seu produto em mensagens que conectam e convertem.</span><span class="en">Campaigns, motion design, and strategic positioning. We translate the complexity of your product into messages that connect and convert.</span></p>
+
+        <a href="#process" class="card-link">
+          <span class="pt">Ver portfólio</span><span class="en">View portfolio</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+
+        <div class="bento-img-wrap" style="margin-top: 40px;">
+          <img src="assets/images/card-execution.png" alt="Execução e entrega de projetos" class="gradient-img">
+        </div>
+      </article>
+
+      <article class="bento-item span-6 rv" role="listitem">
+        <div class="bento-icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+        </div>
+        <h3 class="bento-title"><span class="pt">Growth & Resultados</span><span class="en">Growth & Results</span></h3>
+        <p class="desc-text"><span class="pt">O lançamento é apenas o começo. Monitoramos dados de uso, otimizamos conversões e evoluímos o seu produto para garantir tração contínua.</span><span class="en">Launching is just the beginning. We monitor usage data, optimize conversions, and evolve your product to ensure continuous traction.</span></p>
+        <div style="margin-top: auto; display: flex; gap: 16px;">
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: 64px; font-weight: 700; line-height: 1; color: var(--text-main); letter-spacing:-0.04em;" aria-hidden="true">ROI</div>
+          <div style="font-size: 14px; color: var(--text-muted); font-weight: 500; align-self: center;">
+            <span class="pt">Métricas de<br>Crescimento</span>
+            <span class="en">Growth<br>Metrics</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="cases-sec" id="work">
+    <div class="cases-header-wrap rv">
+      <div>
+        <h2 class="sec-label sr-only"><span class="pt">Projetos em Destaque</span><span class="en">Featured Work</span></h2>
+        <div class="sec-label" aria-hidden="true"><span class="pt">Projetos</span><span class="en">Work</span></div>
+        <p class="sec-h2 h-title">
+          <span class="pt">O trabalho fala<br>por si mesmo.</span>
+          <span class="en">The work speaks<br>for itself.</span>
+        </p>
+      </div>
+
+      <div class="cases-nav-btns" aria-hidden="true">
+        <button class="c-btn" onclick="scrollCases(-1)" aria-label="Projeto Anterior">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        </button>
+        <button class="c-btn" onclick="scrollCases(1)" aria-label="Próximo Projeto">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="cases-viewport rv d1" id="casesSlider" role="list">
+
+      <article class="case-card" role="listitem">
+        <div class="cs-vis"><img src="assets/images/work-1.png" alt="Novo Site NovoDia" class="gradient-img"></div>
+        <div class="cs-body">
+          <div class="cs-client-name">Novo Nordisk</div>
+          <h3 class="cs-title">Novo Site NovoDia</h3>
+          <p class="cs-desc desc-text"><span class="pt">Reimaginamos o principal canal de suporte ao paciente. Uma experiência fluida e empática que unifica toda a jornada de saúde.</span><span class="en">We reimagined the main patient support channel. A fluid and empathetic experience that unifies the entire health journey.</span></p>
+          <div class="cs-metrics">
+            <div><div class="csm-v">UX</div><div class="csm-l"><span class="pt">Pesquisa Global</span><span class="en">Global Research</span></div></div>
+            <div><div class="csm-v">UI</div><div class="csm-l"><span class="pt">Design System</span><span class="en">Design System</span></div></div>
+            <div><div class="csm-v">100%</div><div class="csm-l"><span class="pt">Acessibilidade</span><span class="en">Accessibility</span></div></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="case-card" role="listitem">
+        <div class="cs-vis"><img src="assets/images/work-2.png" alt="Plataforma Corporativa Play2Learn" class="gradient-img"></div>
+        <div class="cs-body">
+          <div class="cs-client-name">Play2Learn</div>
+          <h3 class="cs-title"><span class="pt">Plataforma Corporativa</span><span class="en">Corporate Platform</span></h3>
+          <p class="cs-desc desc-text"><span class="pt">Transformamos o aprendizado corporativo. Uma plataforma própria que une design editorial, tecnologia nativa e dinâmicas de jogo.</span><span class="en">We transformed corporate learning. A proprietary platform combining editorial design, native tech, and game dynamics.</span></p>
+          <div class="cs-metrics">
+            <div><div class="csm-v">SaaS</div><div class="csm-l"><span class="pt">Produto Próprio</span><span class="en">Proprietary Product</span></div></div>
+            <div><div class="csm-v">IA</div><div class="csm-l"><span class="pt">Agentes Integrados</span><span class="en">Integrated Agents</span></div></div>
+            <div><div class="csm-v">AWS</div><div class="csm-l"><span class="pt">Arquitetura</span><span class="en">Architecture</span></div></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="case-card" role="listitem">
+        <div class="cs-vis"><img src="assets/images/work-1.png" alt="Simulador NovoDia" class="gradient-img"></div>
+        <div class="cs-body">
+          <div class="cs-client-name">Novo Nordisk</div>
+          <h3 class="cs-title"><span class="pt">Simulador NovoDia</span><span class="en">NovoDia Simulator</span></h3>
+          <p class="cs-desc desc-text"><span class="pt">Traduzimos dados clínicos complexos em visualizações claras. Um simulador interativo que reforça o valor do tratamento médico.</span><span class="en">We translated complex clinical data into clear visualizations. An interactive simulator that reinforces the value of medical treatment.</span></p>
+          <div class="cs-metrics">
+            <div><div class="csm-v">1.06k</div><div class="csm-l"><span class="pt">Visitas</span><span class="en">Visits</span></div></div>
+            <div><div class="csm-v">5.2%</div><div class="csm-l"><span class="pt">CTR Médio</span><span class="en">Avg. CTR</span></div></div>
+            <div><div class="csm-v">Real</div><div class="csm-l"><span class="pt">Dados ao Vivo</span><span class="en">Live Data</span></div></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="case-card" role="listitem">
+        <div class="cs-vis"><img src="assets/images/work-2.png" alt="Rebranding NovoDia" class="gradient-img"></div>
+        <div class="cs-body">
+          <div class="cs-client-name">Novo Nordisk</div>
+          <h3 class="cs-title"><span class="pt">Rebranding NovoDia</span><span class="en">NovoDia Rebranding</span></h3>
+          <p class="cs-desc desc-text"><span class="pt">Um novo ecossistema visual para o programa de pacientes. Clareza, escalabilidade e conexão humana em todos os pontos de contato.</span><span class="en">A new visual ecosystem for the patient program. Clarity, scalability, and human connection across all touchpoints.</span></p>
+          <div class="cs-metrics">
+            <div><div class="csm-v">Brand</div><div class="csm-l"><span class="pt">Estratégia</span><span class="en">Strategy</span></div></div>
+            <div><div class="csm-v">360º</div><div class="csm-l"><span class="pt">Rollout Global</span><span class="en">Global Rollout</span></div></div>
+            <div><div class="csm-v">100%</div><div class="csm-l"><span class="pt">Consistência</span><span class="en">Consistency</span></div></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="case-card" role="listitem">
+        <div class="cs-vis"><img src="assets/images/work-1.png" alt="EditalPro Gestão Inteligente" class="gradient-img"></div>
+        <div class="cs-body">
+          <div class="cs-client-name">EditalPro</div>
+          <h3 class="cs-title"><span class="pt">Gestão Inteligente</span><span class="en">Smart Management</span></h3>
+          <p class="cs-desc desc-text"><span class="pt">Inteligência artificial aplicada à gestão. Automação profunda que lê, analisa e simplifica processos massivos.</span><span class="en">Applied artificial intelligence for management. Deep automation that reads, analyzes, and simplifies massive processes.</span></p>
+          <div class="cs-metrics">
+            <div><div class="csm-v">SaaS</div><div class="csm-l"><span class="pt">Plataforma</span><span class="en">Platform</span></div></div>
+            <div><div class="csm-v">Cloud</div><div class="csm-l"><span class="pt">Deploy Seguro</span><span class="en">Secure Deploy</span></div></div>
+            <div><div class="csm-v">LLM</div><div class="csm-l"><span class="pt">Leitura Nativa</span><span class="en">Native Reading</span></div></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="case-card" role="listitem">
+        <div class="cs-vis"><img src="assets/images/work-2.png" alt="Sócio Rei Santos FC" class="gradient-img"></div>
+        <div class="cs-body">
+          <div class="cs-client-name">Santos FC</div>
+          <h3 class="cs-title"><span class="pt">Sócio Rei</span><span class="en">Sócio Rei</span></h3>
+          <p class="cs-desc desc-text"><span class="pt">Muito além do campo. Uma plataforma gamificada que recompensa o engajamento real e fortalece a lealdade do torcedor.</span><span class="en">Far beyond the pitch. A gamified platform that rewards real engagement and strengthens fan loyalty.</span></p>
+          <div class="cs-metrics">
+            <div><div class="csm-v">App</div><div class="csm-l"><span class="pt">Desenvolvimento</span><span class="en">Development</span></div></div>
+            <div><div class="csm-v">Game</div><div class="csm-l"><span class="pt">Motor Lógico</span><span class="en">Logic Engine</span></div></div>
+            <div><div class="csm-v">API</div><div class="csm-l"><span class="pt">Integração</span><span class="en">Integration</span></div></div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="sec cap-sec rv" id="capabilities">
+    <h2 class="sr-only"><span class="pt">Nossos Serviços e Clientes</span><span class="en">Our Services and Clients</span></h2>
+    <div class="cap-grid">
+
+      <div class="cap-block">
+        <div class="cap-col-label"><span class="pt">Serviços</span><span class="en">Services</span></div>
+        <ul class="cap-list split-desktop">
+          <li>Estratégia de Produto</li>
+          <li>UX/UI Design</li>
+          <li>Web & Apps</li>
+          <li>Gamificação</li>
+          <li>IA & Automação</li>
+          <li>Design Systems</li>
+          <li>Motion Design</li>
+          <li>Campanhas Digitais</li>
+        </ul>
+      </div>
+
+      <div class="cap-block">
+        <div class="cap-col-label"><span class="pt">Clientes Parceiros</span><span class="en">Partner Clients</span></div>
+        <ul class="cap-list split-desktop">
+          <li>Novo Nordisk</li>
+          <li>Santos FC</li>
+          <li>RedBull Bragantino</li>
+          <li>Grupo Pão de Açúcar</li>
+          <li>Dexco</li>
+          <li>EPharma</li>
+          <li>Nsports</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="cta-sec" id="contact">
+    <div class="rv cta-header">
+      <h2 class="cta-h2 h-title">
+        <span class="pt">A sua melhor ideia<br>merece existir.</span>
+        <span class="en">Your best idea<br>deserves to exist.</span>
+      </h2>
+      <p class="cta-p">
+        <span class="pt">Vamos conversar sobre como a nossa infraestrutura AI-Native pode acelerar o seu negócio.</span>
+        <span class="en">Let's talk about how our AI-Native infrastructure can accelerate your business.</span>
+      </p>
+    </div>
+
+    <form class="contact-form rv d1" onsubmit="event.preventDefault(); alert('Mensagem enviada! (Mockup)');">
+      <label class="sr-only" for="name-pt">Nome</label>
+      <input type="text" id="name-pt" class="form-input pt" placeholder="Seu nome" required>
+      <label class="sr-only" for="name-en">Name</label>
+      <input type="text" id="name-en" class="form-input en" placeholder="Your name">
+
+      <label class="sr-only" for="email-pt">E-mail</label>
+      <input type="email" id="email-pt" class="form-input pt" placeholder="Seu e-mail profissional" required>
+      <label class="sr-only" for="email-en">Email</label>
+      <input type="email" id="email-en" class="form-input en" placeholder="Your work email">
+
+      <label class="sr-only" for="msg-pt">Mensagem</label>
+      <textarea id="msg-pt" class="form-input form-textarea pt" placeholder="Como podemos ajudar?" required></textarea>
+      <label class="sr-only" for="msg-en">Message</label>
+      <textarea id="msg-en" class="form-input form-textarea en" placeholder="How can we help?"></textarea>
+
+      <button type="submit" class="form-submit">
+        <span class="pt">Iniciar projeto</span>
+        <span class="en">Start project</span>
+      </button>
+    </form>
+  </section>
+
+</main>
+
+<div class="footer-wrap">
+  <footer class="footer-main">
+
+    <div class="footer-col footer-brand">
+      <div class="n-logo">SkillCore</div>
+      <p class="footer-desc">
+        <span class="pt">A primeira consultoria AI-Native focada em acelerar negócios. Unimos o julgamento de estrategistas seniores à escala infinita da IA.</span>
+        <span class="en">The first AI-Native consultancy focused on accelerating businesses. We pair senior strategist judgment with AI's infinite scale.</span>
+      </p>
+      <div class="footer-socials">
+        <a href="https://www.linkedin.com/company/skillcore/" target="_blank" aria-label="LinkedIn" rel="noopener noreferrer">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+        </a>
+        <a href="https://www.instagram.com/skillcore/" target="_blank" aria-label="Instagram" rel="noopener noreferrer">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <div class="footer-col-title"><span class="pt">Navegação</span><span class="en">Navigation</span></div>
+      <ul>
+        <li><a href="#process"><span class="pt">Método</span><span class="en">Method</span></a></li>
+        <li><a href="#services"><span class="pt">Serviços</span><span class="en">Services</span></a></li>
+        <li><a href="#work"><span class="pt">Projetos</span><span class="en">Work</span></a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <div class="footer-col-title"><span class="pt">Contato</span><span class="en">Contact</span></div>
+      <ul>
+        <li><a href="mailto:gg@skillcore.pro">gg@skillcore.pro</a></li>
+        <li><a href="#contact"><span class="pt">Iniciar Projeto</span><span class="en">Start Project</span></a></li>
+      </ul>
+    </div>
+
+  </footer>
+
+  <div class="footer-bottom">
+    <span>© 2026 SkillCore Digital. All rights reserved.</span>
+    <div class="footer-bottom-links">
+      <a href="#"><span class="pt">Privacidade</span><span class="en">Privacy Policy</span></a>
+      <a href="#"><span class="pt">Termos</span><span class="en">Terms of Service</span></a>
+    </div>
+  </div>
+</div>
+
+<div class="ai-fab" onclick="toggleChat()" aria-label="Falar com Assistente de Inteligência Artificial" role="button" tabindex="0">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+</div>
+
+<div class="ai-window" id="aiWindow" role="dialog" aria-label="Janela de Chat da SkillCore">
+  <div class="ai-header">
+    <div class="ai-title">SkillCore Assistant</div>
+    <button class="ai-close" onclick="toggleChat()" aria-label="Fechar Chat">✕</button>
+  </div>
+  <div class="ai-body" id="aiBody" aria-live="polite">
+    <div class="msg bot pt">Olá! Sou o agente virtual da SkillCore. Como posso te ajudar a escalar seu negócio hoje?</div>
+    <div class="msg bot en">Hello! I'm the SkillCore virtual agent. How can I help you scale your business today?</div>
+  </div>
+  <form class="ai-input-area" onsubmit="handleAiChat(event)">
+    <label class="sr-only" for="aiInput">Digite sua mensagem para a inteligência artificial</label>
+    <input type="text" class="ai-input" id="aiInput" placeholder="Escreva uma mensagem..." autocomplete="off">
+    <button type="submit" class="ai-send" aria-label="Enviar Mensagem">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+    </button>
+  </form>
+</div>
+
+<script>
+function toggleTheme() {
+  const html = document.documentElement;
+  const currentTheme = html.getAttribute('data-theme');
+  const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+  html.setAttribute('data-theme', newTheme);
+}
+
+function setLang(l) {
+  document.documentElement.setAttribute('data-lang', l);
+  document.documentElement.setAttribute('lang', l === 'pt' ? 'pt-BR' : 'en-US');
+  document.querySelectorAll('.lb').forEach(b => b.classList.remove('on'));
+  document.querySelector(`.lb[onclick="setLang('${l}')"]`).classList.add('on');
+}
+
+// Logic for Cases Slider
+function scrollCases(direction) {
+  const slider = document.getElementById('casesSlider');
+  const card = slider.querySelector('.case-card');
+  if(!card) return;
+  const cardWidth = card.offsetWidth + 16; 
+  slider.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
+}
+
+// Intersection Observer for scroll animations
+const obs = new IntersectionObserver(es => {
+  es.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.rv, .bento-item, .pb-item, .case-card').forEach(el => obs.observe(el));
+
+// AI Chat Interaction
+const aiWindow = document.getElementById('aiWindow');
+const aiBody = document.getElementById('aiBody');
+const aiInput = document.getElementById('aiInput');
+
+function toggleChat() {
+  aiWindow.classList.toggle('open');
+  if(aiWindow.classList.contains('open')) {
+    setTimeout(() => aiInput.focus(), 300);
+  }
+}
+
+function handleAiChat(e) {
+  e.preventDefault();
+  const text = aiInput.value.trim();
+  if(!text) return;
+
+  const userMsg = document.createElement('div');
+  userMsg.className = 'msg user';
+  userMsg.textContent = text;
+  aiBody.appendChild(userMsg);
+  aiInput.value = '';
+  scrollToBottom();
+
+  const typingMsg = document.createElement('div');
+  typingMsg.className = 'msg typing';
+  typingMsg.textContent = 'Digitando...';
+  aiBody.appendChild(typingMsg);
+  scrollToBottom();
+
+  setTimeout(() => {
+    typingMsg.remove();
+    const botMsg = document.createElement('div');
+    botMsg.className = 'msg bot';
+    botMsg.textContent = "Excelente! Entendi sua necessidade. Nossa equipe especialista em engenharia de produto pode marcar um papo rápido para mapear isso. Gostaria de receber um e-mail com horários?";
+    aiBody.appendChild(botMsg);
+    scrollToBottom();
+  }, 1500);
+}
+
+function scrollToBottom() {
+  aiBody.scrollTop = aiBody.scrollHeight;
+}
+</script>
+
+</body>
+</html>
