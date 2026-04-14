@@ -76,7 +76,7 @@
   --fs-h2: clamp(32px, 5vw, 64px);
   --fs-h3: clamp(22px, 3vw, 32px);
   --fs-desc: 18px;
-  
+
   /* Light Mode */
   --bg-main: #F5F5F7;
   --bg-card: #FFFFFF;
@@ -317,7 +317,7 @@ nav {
 .csm-l { font-size: 13px; color: var(--text-muted); font-weight: 500; line-height: 1.3; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
 /* ─────────────────────────────────────
-   CAPABILITIES E CLIENTES (COLUNAS DINÂMICAS)
+   CAPABILITIES E CLIENTES
 ───────────────────────────────────── */
 .cap-sec { border-top: 1px solid var(--line); padding-top: 120px; margin-top: 40px;}
 .cap-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
@@ -402,7 +402,7 @@ nav {
 }
 
 @media (max-width: 768px) {
-  /* NAVEGAÇÃO: LIMPA, DESAFOGADA, PERFEITA PARA DEDOS */
+  /* NAVEGAÇÃO */
   nav { padding: 0 16px; height: 60px; }
   .n-links { display: none; }
   .n-logo { font-size: 18px; gap: 6px; letter-spacing: -0.02em; }
@@ -413,23 +413,20 @@ nav {
   .theme-toggle { width: 20px; height: 20px; padding: 0; display: flex; align-items: center; justify-content: center;}
   .theme-toggle svg { width: 16px; height: 16px; }
 
-  /* FLUIDEZ MOBILE GERAL */
-  .sec { padding: 56px 20px; }
-  .sec-header { margin-bottom: 32px; }
+  /* FLUIDEZ MOBILE GERAL (Redução drástica dos "buracos") */
+  .sec { padding: 64px 20px; }
+  .sec-header { margin-bottom: 40px; }
+  .cases-sec { padding: 64px 0; }
+  .cap-sec { padding-top: 64px; margin-top: 24px; }
+  .cta-sec { padding: 80px 20px; }
   
-  /* HERO PENTE FINO: SEM ENCAVALAR */
-  .hero { padding: 140px 20px 80px; min-height: 75vh; justify-content: center; }
-  .hero-massive { font-size: clamp(32px, 10vw, 48px); margin-bottom: 20px; line-height: 1.05; }
-  .hero-p { font-size: 15px; margin-bottom: 48px; padding: 0 8px; }
+  /* HERO PENTE FINO */
+  .hero { padding: 120px 20px 56px; min-height: 75vh; justify-content: center; }
+  .hero-massive { font-size: clamp(32px, 10vw, 48px); margin-bottom: 16px; line-height: 1.05; }
+  .hero-p { font-size: 16px; margin-bottom: 48px !important; padding: 0 8px; }
   
   .hero-bottom-actions { width: 100%; display: flex; justify-content: center; }
-  .btn-outline { 
-    display: inline-flex; 
-    width: auto; 
-    height: auto; 
-    padding: 14px 32px; 
-    font-size: 15px; 
-  }
+  .btn-outline { display: inline-flex; width: auto; height: auto; padding: 14px 32px; font-size: 15px; }
 
   .showcase-sec { padding: 0 20px; margin-bottom: 40px; }
   .showcase-wrapper { aspect-ratio: 16 / 10; border-radius: 20px; }
@@ -437,22 +434,19 @@ nav {
   .cases-header-wrap { flex-direction: column; align-items: flex-start; gap: 16px; padding: 0 20px;}
   .cases-viewport { padding: 20px 20px 40px 20px; gap: 16px; }
   .cs-metrics { flex-wrap: nowrap; gap: 12px; margin-top: 32px; }
-  .cs-body { padding: 40px 24px; }
+  .cs-body { padding: 32px 24px; }
   .cs-vis { min-height: 250px; }
   
   .ai-window { width: calc(100vw - 40px); right: 20px; bottom: 100px;}
   .hero-bg-shapes { width: 300px; height: 300px; }
   .ring-1 { width: 100px; height: 100px; }
   .ring-2 { width: 200px; height: 200px; }
-  
-  .footer-main { grid-template-columns: 1fr; gap: 40px; padding-bottom: 40px;}
-  .footer-bottom { flex-direction: column; gap: 24px; align-items: flex-start; }
 
   /* BENTOS MOBILE (UNIFORMIDADE TOTAL) */
   .bento-grid, .process-bento { 
     display: grid !important;
     grid-template-columns: 1fr !important; 
-    gap: 16px !important; 
+    gap: 12px !important; 
   }
 
   .bento-item, .pb-item { 
@@ -466,7 +460,14 @@ nav {
   }
 
   .bento-title, .pb-title, .pb-title-huge { font-size: 20px !important; margin: 0 0 12px 0 !important; line-height: 1.2 !important; }
-  .desc-text { font-size: 14px !important; line-height: 1.5 !important; margin: 0 !important; display: block !important; -webkit-line-clamp: unset !important; }
+  
+  .bento-item .desc-text, .pb-item .desc-text { 
+    font-size: 14px !important; 
+    line-height: 1.5 !important; 
+    margin: 0 !important; 
+    display: block !important; 
+    -webkit-line-clamp: unset !important; 
+  }
 
   .pb-num { margin-bottom: 12px; font-size: 13px; }
   .bento-icon { width: 36px; height: 36px; font-size: 18px; margin-bottom: 16px; border-radius: 8px; }
@@ -478,16 +479,26 @@ nav {
   .bento-item:last-child > div:last-child > div:first-child { font-size: 32px; line-height: 1;}
   .bento-item:last-child > div:last-child > div:last-child { font-size: 13px; line-height: 1.2;}
 
-  /* CAPABILITIES (2 COLUNAS LADO A LADO MOBILE) */
-  .cap-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+  /* CAPABILITIES (LADO A LADO MOBILE COM ESPAÇAMENTO REVISADO) */
+  .cap-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
   .split-desktop { column-count: 1; } 
   .cap-col-label { font-size: 11px; margin-bottom: 16px; padding-bottom: 8px;}
   .cap-list li { font-size: 13px; margin-bottom: 12px; letter-spacing: 0;}
   
-  /* FORMULÁRIO MOBILE DECONTRAÍDO */
+  /* FORMULÁRIO MOBILE */
   .contact-form { gap: 12px; }
   .form-input { padding: 16px 20px; font-size: 15px; }
   .form-submit { padding: 16px; font-size: 15px; width: 100%; display: block;}
+
+  /* RODAPÉ: DUAS COLUNAS E CORREÇÃO DO PADDING */
+  .footer-wrap { padding: 56px 20px 32px; }
+  .footer-main { 
+    grid-template-columns: 1fr 1fr; 
+    gap: 40px 16px; 
+    padding-bottom: 40px;
+  }
+  .footer-col.footer-brand { grid-column: 1 / -1; }
+  .footer-bottom { flex-direction: column; gap: 24px; align-items: flex-start; }
 }
 </style>
 </head>
@@ -558,9 +569,9 @@ nav {
         <span class="en">Less friction.<br>More output.</span>
       </p>
     </div>
-    
+
     <div class="bento-grid" role="list">
-      
+
       <article class="bento-item span-8 rv" role="listitem">
         <div class="bento-icon" aria-hidden="true">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
@@ -568,7 +579,7 @@ nav {
         <h3 class="bento-title"><span class="pt">Experiências Conectadas</span><span class="en">Connected Experiences</span></h3>
         <p class="desc-text" style="max-width: 90%;"><span class="pt">Somos arquitetos de experiências conectadas. Acreditamos que a verdadeira inovação acontece quando estratégia, design e inteligência artificial falam a mesma língua. Na SkillCore, reimaginamos jornadas e construímos produtos digitais que impulsionam o seu negócio e redefinem o seu mercado.</span><span class="en">We are architects of connected experiences. We believe true innovation happens when strategy, design, and artificial intelligence speak the same language. At SkillCore, we reimagine journeys and build digital products that propel your business and redefine your market.</span></p>
       </article>
-      
+
       <article class="bento-item bento-dark span-4 rv d1" role="listitem">
         <div class="bento-icon" aria-hidden="true" style="background: rgba(255,255,255,0.1); color: #fff;">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
@@ -591,7 +602,7 @@ nav {
     </div>
 
     <div class="process-bento" role="list">
-      
+
       <article class="pb-item pb-1 rv" role="listitem">
         <div class="pb-num" aria-hidden="true">01</div>
         <h3 class="pb-title"><span class="pt">Estratégia e Visão</span><span class="en">Strategy and Vision</span></h3>
@@ -631,7 +642,7 @@ nav {
     </div>
 
     <div class="bento-grid" role="list">
-      
+
       <article class="bento-item span-8 rv has-img-side" role="listitem">
         <div class="bento-icon" aria-hidden="true">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
@@ -657,7 +668,7 @@ nav {
         </div>
         <h3 class="bento-title"><span class="pt">Comunicação Digital</span><span class="en">Digital Communication</span></h3>
         <p class="desc-text"><span class="pt">Campanhas, motion design e posicionamento estratégico. Traduzimos a complexidade do seu produto em mensagens que conectam e convertem.</span><span class="en">Campaigns, motion design, and strategic positioning. We translate the complexity of your product into messages that connect and convert.</span></p>
-        
+
         <a href="#process" class="card-link">
           <span class="pt">Ver portfólio</span><span class="en">View portfolio</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
@@ -696,7 +707,7 @@ nav {
           <span class="en">The work speaks<br>for itself.</span>
         </p>
       </div>
-      
+
       <div class="cases-nav-btns" aria-hidden="true">
         <button class="c-btn" onclick="scrollCases(-1)" aria-label="Projeto Anterior">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
@@ -708,7 +719,7 @@ nav {
     </div>
 
     <div class="cases-viewport rv d1" id="casesSlider" role="list">
-      
+
       <article class="case-card" role="listitem">
         <div class="cs-vis"><img src="assets/images/work-1.png" alt="Novo Site NovoDia" class="gradient-img"></div>
         <div class="cs-body">
@@ -750,7 +761,7 @@ nav {
           </div>
         </div>
       </article>
-      
+
       <article class="case-card" role="listitem">
         <div class="cs-vis"><img src="assets/images/work-2.png" alt="Rebranding NovoDia" class="gradient-img"></div>
         <div class="cs-body">
@@ -799,7 +810,7 @@ nav {
   <section class="sec cap-sec rv" id="capabilities">
     <h2 class="sr-only"><span class="pt">Nossos Serviços e Clientes</span><span class="en">Our Services and Clients</span></h2>
     <div class="cap-grid">
-      
+
       <div class="cap-block">
         <div class="cap-col-label"><span class="pt">Serviços</span><span class="en">Services</span></div>
         <ul class="cap-list split-desktop">
@@ -813,7 +824,7 @@ nav {
           <li>Campanhas Digitais</li>
         </ul>
       </div>
-      
+
       <div class="cap-block">
         <div class="cap-col-label"><span class="pt">Clientes Parceiros</span><span class="en">Partner Clients</span></div>
         <ul class="cap-list split-desktop">
@@ -841,23 +852,23 @@ nav {
         <span class="en">Let's talk about how our AI-Native infrastructure can accelerate your business.</span>
       </p>
     </div>
-    
+
     <form class="contact-form rv d1" onsubmit="event.preventDefault(); alert('Mensagem enviada! (Mockup)');">
       <label class="sr-only" for="name-pt">Nome</label>
       <input type="text" id="name-pt" class="form-input pt" placeholder="Seu nome" required>
       <label class="sr-only" for="name-en">Name</label>
       <input type="text" id="name-en" class="form-input en" placeholder="Your name">
-      
+
       <label class="sr-only" for="email-pt">E-mail</label>
       <input type="email" id="email-pt" class="form-input pt" placeholder="Seu e-mail profissional" required>
       <label class="sr-only" for="email-en">Email</label>
       <input type="email" id="email-en" class="form-input en" placeholder="Your work email">
-      
+
       <label class="sr-only" for="msg-pt">Mensagem</label>
       <textarea id="msg-pt" class="form-input form-textarea pt" placeholder="Como podemos ajudar?" required></textarea>
       <label class="sr-only" for="msg-en">Message</label>
       <textarea id="msg-en" class="form-input form-textarea en" placeholder="How can we help?"></textarea>
-      
+
       <button type="submit" class="form-submit">
         <span class="pt">Iniciar projeto</span>
         <span class="en">Start project</span>
@@ -869,7 +880,7 @@ nav {
 
 <div class="footer-wrap">
   <footer class="footer-main">
-    
+
     <div class="footer-col footer-brand">
       <div class="n-logo">SkillCore</div>
       <p class="footer-desc">
@@ -982,20 +993,20 @@ function handleAiChat(e) {
   e.preventDefault();
   const text = aiInput.value.trim();
   if(!text) return;
-  
+
   const userMsg = document.createElement('div');
   userMsg.className = 'msg user';
   userMsg.textContent = text;
   aiBody.appendChild(userMsg);
   aiInput.value = '';
   scrollToBottom();
-  
+
   const typingMsg = document.createElement('div');
   typingMsg.className = 'msg typing';
   typingMsg.textContent = 'Digitando...';
   aiBody.appendChild(typingMsg);
   scrollToBottom();
-  
+
   setTimeout(() => {
     typingMsg.remove();
     const botMsg = document.createElement('div');
