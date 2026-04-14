@@ -76,7 +76,7 @@
   --fs-h2: clamp(32px, 5vw, 64px);
   --fs-h3: clamp(22px, 3vw, 32px);
   --fs-desc: 18px;
-
+  
   /* Light Mode */
   --bg-main: #F5F5F7;
   --bg-card: #FFFFFF;
@@ -133,6 +133,17 @@ ul { list-style: none; }
   position: absolute; width: 1px; height: 1px; padding: 0;
   margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;
 }
+
+/* ─────────────────────────────────────
+   LOADER
+───────────────────────────────────── */
+.loader { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: #0A0A0A; color: #fff; z-index: 9999; display: flex; align-items: center; justify-content: center; transition: transform 1s cubic-bezier(0.76, 0, 0.24, 1); }
+.loader.hide { transform: translateY(-100%); }
+.loader-content { text-align: center; overflow: hidden; position: relative; width: 100%; height: 100px; }
+.loader-phrase { font-family: 'Inter', sans-serif; font-size: 24px; font-weight: 500; letter-spacing: -0.02em; color: #86868B; opacity: 0; transform: translateY(20px) translate(-50%, -50%); transition: all 0.6s var(--exp); position: absolute; top: 50%; left: 50%; width: 100%; }
+.loader-phrase.active { opacity: 1; transform: translateY(0) translate(-50%, -50%); }
+.loader-logo { font-family: 'Space Grotesk', sans-serif; font-size: 48px; font-weight: 700; color: #fff; letter-spacing: -0.04em; opacity: 0; transform: translateY(20px) translate(-50%, -50%); position: absolute; top: 50%; left: 50%; transition: all 0.6s var(--exp); }
+.loader-logo.active { opacity: 1; transform: translateY(0) translate(-50%, -50%); }
 
 /* ─────────────────────────────────────
    IMAGEM DEGRADÊ E PLACEHOLDERS
@@ -430,71 +441,56 @@ nav {
   .footer-bottom { flex-direction: column; gap: 24px; align-items: flex-start; }
 
   /* ─────────────────────────────────────
-     MÁGICA DO BENTO MOBILE (DENSIDADE APPLE EXTREMA)
+     MÁGICA DO BENTO MOBILE (UNIFORMIDADE TOTAL)
   ───────────────────────────────────── */
   .bento-grid, .process-bento { 
-    grid-template-columns: repeat(2, 1fr) !important; 
-    gap: 8px !important; 
+    display: grid !important;
+    grid-template-columns: 1fr !important; /* Coluna única sólida e uniforme */
+    gap: 16px !important; 
   }
 
-  /* BENTO: PROCESSO */
-  .process-bento .pb-item { padding: 20px; border-radius: 20px; }
-  .pb-1 { grid-column: 1 / 2; grid-row: 1; } /* Quadrado esquerdo */
-  .pb-2 { grid-column: 2 / 3; grid-row: 1; } /* Quadrado direito */
-  .pb-3 { grid-column: 1 / 3; grid-row: 2; } /* Retângulo inferior */
-  .pb-num { margin-bottom: 12px; font-size: 13px; }
-  .pb-title { font-size: 16px; margin-bottom: 8px; line-height: 1.2; }
-  .process-bento .desc-text { font-size: 12px; line-height: 1.35; margin: 0; }
-  .pb-title-huge { font-size: 24px; margin: 12px 0; }
-  .pb-arrow { display: none; } 
-
-  /* BENTO: QUEM SOMOS (Mantido Wide para o Manifesto) */
-  .sec:nth-of-type(3) .bento-grid { display: flex; flex-direction: column; }
-  .sec:nth-of-type(3) .bento-item { padding: 24px; border-radius: 20px;}
-  .sec:nth-of-type(3) .bento-title { font-size: 24px; margin-bottom: 12px;}
-  .sec:nth-of-type(3) .desc-text { font-size: 15px; line-height: 1.5;}
-
-  /* BENTO: DISCIPLINAS (Estilo Processos) */
-  .sec:nth-of-type(5) .bento-item { 
-    padding: 20px !important; 
-    border-radius: 20px !important;
-    min-height: auto; 
-    justify-content: flex-start;
+  .bento-item, .pb-item { 
+    grid-column: 1 / -1 !important; /* Força ocupação total de forma identica */
+    padding: 24px !important; 
+    border-radius: 20px !important; 
+    min-height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
   }
 
-  /* Limpeza do Padding Lateral que amassava o texto */
-  .has-img-side { padding-right: 20px !important; }
-
-  .sec:nth-of-type(5) .bento-item:nth-child(1) { grid-column: 1 / 3 !important; } /* Wide Top */
-  .sec:nth-of-type(5) .bento-item:nth-child(2) { grid-column: 1 / 2 !important; } /* Square Left */
-  .sec:nth-of-type(5) .bento-item:nth-child(3) { grid-column: 2 / 3 !important; } /* Square Right */
-  .sec:nth-of-type(5) .bento-item:nth-child(4) { grid-column: 1 / 3 !important; } /* Wide Bottom */
-
-  .sec:nth-of-type(5) .bento-icon { width: 32px; height: 32px; font-size: 16px; margin-bottom: 12px; border-radius: 8px; }
-  .sec:nth-of-type(5) .bento-title { font-size: 16px !important; margin-bottom: 8px; line-height: 1.2; }
-  .sec:nth-of-type(5) .desc-text { 
-    font-size: 12px !important; 
-    line-height: 1.35 !important; 
-    margin: 0 !important;
+  /* Tipografia Uniforme para equilibrar os cards visualmente */
+  .bento-title, .pb-title, .pb-title-huge { 
+    font-size: 20px !important; 
+    margin: 0 0 12px 0 !important; 
+    line-height: 1.2 !important; 
+  }
+  
+  .desc-text { 
+    font-size: 14px !important; 
+    line-height: 1.5 !important; 
+    margin: 0 !important; 
     display: block !important; 
-    -webkit-line-clamp: unset !important;
+    -webkit-line-clamp: unset !important; 
   }
 
-  /* Remove imagens e links no mobile para fluidez total */
-  #services .bento-img-side, 
-  #services .bento-img-wrap,
-  #services .card-link { display: none !important; } 
+  .pb-num { margin-bottom: 12px; font-size: 13px; }
+  .bento-icon { width: 36px; height: 36px; font-size: 18px; margin-bottom: 16px; border-radius: 8px; }
 
-  /* Ajuste especial para o bloco de Resultados (ROI) caber com elegância */
-  .bento-item.span-6:nth-child(4) > div:last-child { flex-direction: row; align-items: center; gap: 12px; margin-top: 16px; }
-  .bento-item.span-6:nth-child(4) > div:last-child > div:first-child { font-size: 32px; line-height: 1;}
-  .bento-item.span-6:nth-child(4) > div:last-child > div:last-child { font-size: 12px; line-height: 1.2;}
+  /* Ocultando ruídos e limpando a assimetria */
+  .pb-arrow, .bento-img-side, .bento-img-wrap, .card-link { display: none !important; } 
+  .has-img-side { padding-right: 24px !important; }
+
+  /* Ajuste do ROI (Growth) fluir simetricamente */
+  .bento-item:last-child > div:last-child { flex-direction: row; align-items: center; gap: 12px; margin-top: 24px; }
+  .bento-item:last-child > div:last-child > div:first-child { font-size: 32px; line-height: 1;}
+  .bento-item:last-child > div:last-child > div:last-child { font-size: 13px; line-height: 1.2;}
 
   /* ─────────────────────────────────────
-     CAPABILITIES (COLUNAS DINÂMICAS MOBILE)
+     CAPABILITIES (2 COLUNAS LADO A LADO MOBILE)
   ───────────────────────────────────── */
   .cap-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
-  .split-desktop { column-count: 1; } /* Empilha a lista em uma única coluna no celular */
+  .split-desktop { column-count: 1; } 
   .cap-col-label { font-size: 11px; margin-bottom: 16px; padding-bottom: 8px;}
   .cap-list li { font-size: 13px; margin-bottom: 12px; letter-spacing: 0;}
 }
@@ -582,7 +578,7 @@ nav {
         <div class="bento-icon" aria-hidden="true" style="background: rgba(255,255,255,0.1); color: #fff;">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
         </div>
-        <h3 class="bento-title" style="font-size: 32px;"><span class="pt">Operação<br>AI-Native</span><span class="en">AI-Native<br>Operation</span></h3>
+        <h3 class="bento-title"><span class="pt">Operação<br>AI-Native</span><span class="en">AI-Native<br>Operation</span></h3>
         <p class="desc-text" style="margin-top: auto;"><span class="pt">Usamos agentes de IA para o trabalho pesado e mentes criativas para a visão estratégica. O resultado é uma infraestrutura digital robusta entregue em tempo recorde.</span><span class="en">We use AI agents for the heavy lifting and creative minds for the strategic vision. The result is a robust digital infrastructure delivered in record time.</span></p>
       </article>
 
