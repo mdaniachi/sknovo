@@ -224,7 +224,7 @@ nav {
 }
 
 /* ─────────────────────────────────────
-   CANVAS VIDEO SCRUBBER (ROLAGEM NATURAL)
+   CANVAS VIDEO SCRUBBER (60% NO DESKTOP)
 ───────────────────────────────────── */
 .canvas-sec {
   position: relative;
@@ -232,13 +232,12 @@ nav {
   max-width: 1400px;
   margin: 0 auto 120px;
   z-index: 10;
-  /* Removida a "travada" de 300vh */
 }
 .canvas-wrapper {
-  width: 100%;
-  max-width: 1080px;
+  width: 60%; /* DEIXAMOS COM 60% DA LARGURA NO DESKTOP */
+  max-width: 900px;
   aspect-ratio: 16 / 9; 
-  margin: 0 auto;
+  margin: 0 auto; /* MANTÉM CENTRALIZADO */
   border-radius: 40px;
   overflow: hidden; 
   box-shadow: 0 40px 100px rgba(0,0,0,0.08);
@@ -438,9 +437,9 @@ nav {
   .hero-bottom-actions { width: 100%; display: flex; justify-content: center; }
   .btn-outline { display: inline-flex; width: auto; height: auto; padding: 14px 32px; font-size: 15px; }
 
-  /* Ajustes do Canvas no Mobile */
+  /* Ajustes do Canvas no Mobile - VOLTA PARA 100% DE LARGURA */
   .canvas-sec { padding: 0 24px; margin-bottom: 40px; }
-  .canvas-wrapper { aspect-ratio: 16 / 9; border-radius: 20px; }
+  .canvas-wrapper { width: 100%; aspect-ratio: 16 / 9; border-radius: 20px; }
   
   .cases-header-wrap { flex-direction: column; align-items: flex-start; gap: 16px; padding: 0 24px;}
   .cases-viewport { padding: 20px 24px 40px 24px; gap: 16px; }
@@ -854,4 +853,213 @@ nav {
             <span class="cs-tag"><span class="pt">Gamificação</span><span class="en">Gamification</span></span>
           </div>
           <div class="cs-metrics">
-            <div><div class="csm-v">App</div><div class="csm-l"><span class="pt
+            <div><div class="csm-v">App</div><div class="csm-l"><span class="pt">Desenvolvimento</span><span class="en">Development</span></div></div>
+            <div><div class="csm-v">Game</div><div class="csm-l"><span class="pt">Motor Lógico</span><span class="en">Logic Engine</span></div></div>
+            <div><div class="csm-v">API</div><div class="csm-l"><span class="pt">Integração</span><span class="en">Integration</span></div></div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="sec cap-sec rv" id="capabilities">
+    <h2 class="sr-only"><span class="pt">Capabilities</span><span class="en">Capabilities</span></h2>
+    <div class="cap-grid">
+
+      <div class="cap-block">
+        <div class="cap-col-label"><span class="pt">Capabilities</span><span class="en">Capabilities</span></div>
+        <ul class="cap-list split-desktop">
+          <li>Estratégia de Produto</li>
+          <li>UX/UI Design</li>
+          <li>Web & Apps</li>
+          <li>Gamificação</li>
+          <li>IA & Automação</li>
+          <li>Design Systems</li>
+          <li>Motion Design</li>
+          <li>Campanhas Digitais</li>
+        </ul>
+      </div>
+
+      <div class="cap-block">
+        <div class="cap-col-label"><span class="pt">Clientes Parceiros</span><span class="en">Partner Clients</span></div>
+        <ul class="cap-list split-desktop">
+          <li>Novo Nordisk</li>
+          <li>Santos FC</li>
+          <li>RedBull Bragantino</li>
+          <li>Grupo Pão de Açúcar</li>
+          <li>Dexco</li>
+          <li>EPharma</li>
+          <li>Nsports</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="sec cta-sec" id="contact">
+    <div class="rv cta-header">
+      <h2 class="cta-h2 h-title">
+        <span class="pt">A sua melhor ideia<br>merece existir.</span>
+        <span class="en">Your best idea<br>deserves to exist.</span>
+      </h2>
+      <p class="cta-p">
+        <span class="pt">Vamos conversar sobre como a nossa infraestrutura AI-Native pode acelerar o seu negócio.</span>
+        <span class="en">Let's talk about how our AI-Native infrastructure can accelerate your business.</span>
+      </p>
+    </div>
+
+    <form class="contact-form rv d1" onsubmit="event.preventDefault(); alert('Mensagem enviada! (Mockup)');">
+      <label class="sr-only" for="name-pt">Nome</label>
+      <input type="text" id="name-pt" class="form-input pt" placeholder="Seu nome" required>
+      <label class="sr-only" for="name-en">Name</label>
+      <input type="text" id="name-en" class="form-input en" placeholder="Your name">
+
+      <label class="sr-only" for="email-pt">E-mail</label>
+      <input type="email" id="email-pt" class="form-input pt" placeholder="Seu e-mail profissional" required>
+      <label class="sr-only" for="email-en">Email</label>
+      <input type="email" id="email-en" class="form-input en" placeholder="Your work email">
+
+      <label class="sr-only" for="msg-pt">Mensagem</label>
+      <textarea id="msg-pt" class="form-input form-textarea pt" placeholder="Como podemos ajudar?" required></textarea>
+      <label class="sr-only" for="msg-en">Message</label>
+      <textarea id="msg-en" class="form-input form-textarea en" placeholder="How can we help?"></textarea>
+
+      <button type="submit" class="form-submit">
+        <span class="pt">Iniciar projeto</span>
+        <span class="en">Start project</span>
+      </button>
+    </form>
+  </section>
+
+</main>
+
+<div class="footer-wrap">
+  <footer class="footer-main">
+
+    <div class="footer-col footer-brand">
+      <div class="n-logo">
+        <img src="assets/images/logo.svg" alt="SkillCore" class="nav-logo-img">
+      </div>
+      <p class="footer-desc">
+        <span class="pt">A primeira consultoria AI-Native focada em acelerar negócios. Unimos o julgamento de estrategistas seniores à escala infinita da IA.</span>
+        <span class="en">The first AI-Native consultancy focused on accelerating businesses. We pair senior strategist judgment with AI's infinite scale.</span>
+      </p>
+      <div class="footer-socials">
+        <a href="https://www.linkedin.com/company/skillcore/" target="_blank" aria-label="LinkedIn" rel="noopener noreferrer">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+        </a>
+        <a href="https://www.instagram.com/skillcore/" target="_blank" aria-label="Instagram" rel="noopener noreferrer">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <div class="footer-col-title"><span class="pt">Navegação</span><span class="en">Navigation</span></div>
+      <ul>
+        <li><a href="#process"><span class="pt">Método</span><span class="en">Method</span></a></li>
+        <li><a href="#services"><span class="pt">Capabilities</span><span class="en">Capabilities</span></a></li>
+        <li><a href="#work"><span class="pt">Projetos</span><span class="en">Work</span></a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <div class="footer-col-title"><span class="pt">Contato</span><span class="en">Contact</span></div>
+      <ul>
+        <li><a href="mailto:gg@skillcore.pro">gg@skillcore.pro</a></li>
+        <li><a href="#contact"><span class="pt">Iniciar Projeto</span><span class="en">Start Project</span></a></li>
+      </ul>
+    </div>
+
+  </footer>
+
+  <div class="footer-bottom">
+    <span>© 2026 SkillCore Digital. All rights reserved.</span>
+    <div class="footer-bottom-links">
+      <a href="#"><span class="pt">Privacidade</span><span class="en">Privacy Policy</span></a>
+      <a href="#"><span class="pt">Termos</span><span class="en">Terms of Service</span></a>
+    </div>
+  </div>
+</div>
+
+<script>
+// --- CORE LOGIC ---
+function toggleTheme() {
+  const html = document.documentElement;
+  const currentTheme = html.getAttribute('data-theme');
+  const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+  html.setAttribute('data-theme', newTheme);
+}
+
+function setLang(l) {
+  document.documentElement.setAttribute('data-lang', l);
+  document.documentElement.setAttribute('lang', l === 'pt' ? 'pt-BR' : 'en-US');
+  document.querySelectorAll('.lb').forEach(b => b.classList.remove('on'));
+  document.querySelector(`.lb[onclick="setLang('${l}')"]`).classList.add('on');
+}
+
+function scrollCases(direction) {
+  const slider = document.getElementById('casesSlider');
+  const card = slider.querySelector('.case-card');
+  if(!card) return;
+  const cardWidth = card.offsetWidth + 16; 
+  slider.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
+}
+
+const obs = new IntersectionObserver(es => {
+  es.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.rv, .bento-item, .pb-item, .case-card').forEach(el => obs.observe(el));
+
+// --- VIDEO SCRUBBING ENGINE NATURAL (QUALIDADE MÁXIMA E SEM TRAVAR) ---
+document.addEventListener('DOMContentLoaded', () => {
+  const canvas = document.getElementById("hero-canvas");
+  if(!canvas) return;
+  const context = canvas.getContext("2d");
+
+  const frameCount = 34; // Seus 34 frames
+  const currentFrame = index => `assets/images/hero-frames/frame-${index.toString().padStart(5, '0')}.png`;
+  
+  const images = [];
+  
+  // 1. PRELOAD SILENCIOSO
+  for (let i = 1; i <= frameCount; i++) {
+    const imgObj = new Image();
+    imgObj.src = currentFrame(i);
+    images.push(imgObj);
+  }
+
+  // 2. CARREGA O FRAME 1 E CALIBRA A RESOLUÇÃO PARA QUALIDADE MÁXIMA
+  images[0].onload = () => {
+    canvas.width = images[0].naturalWidth;
+    canvas.height = images[0].naturalHeight;
+    context.drawImage(images[0], 0, 0, canvas.width, canvas.height);
+  };
+
+  // 3. MOTOR DE ROLAGEM (LIVRE E NATURAL)
+  window.addEventListener('scroll', () => {
+    // Calcula a rolagem baseada nos primeiros 600px que o usuário descer no site
+    let scrollY = window.scrollY;
+    let fraction = scrollY / 600; // Altere esse número para deixar a animação mais rápida ou mais devagar
+    
+    if(fraction < 0) fraction = 0;
+    if(fraction > 1) fraction = 1;
+    
+    const frameIndex = Math.min(frameCount - 1, Math.floor(fraction * frameCount));
+    
+    // Só desenha se a imagem estiver carregada
+    if(images[frameIndex] && images[frameIndex].complete && images[frameIndex].naturalWidth > 0) {
+      requestAnimationFrame(() => {
+        // Limpa o frame anterior para evitar borrões
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        // Desenha o frame atual
+        context.drawImage(images[frameIndex], 0, 0, canvas.width, canvas.height);
+      });
+    }
+  });
+});
+</script>
+
+</body>
+</html>
