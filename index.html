@@ -129,7 +129,16 @@ ul { list-style: none; }
   margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;
 }
 
-.gradient-img { width: 100%; height: 100%; object-fit: cover; }
+/* RESET GLOBAL DE IMAGENS DE PORTFÓLIO */
+.cs-vis { background: #FFFFFF; overflow: hidden; position: relative; }
+.cs-vis img { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  display: block; 
+  border: none;
+  margin-top: -1px; /* CORREÇÃO PARA A LINHA PRETA: SOBREPÕE O TOPO */
+}
 
 /* ─────────────────────────────────────
    NAVEGAÇÃO
@@ -217,7 +226,7 @@ nav {
 }
 
 /* ─────────────────────────────────────
-   CANVAS VIDEO SCRUBBER (LIMPO)
+   CANVAS VIDEO SCRUBBER
 ───────────────────────────────────── */
 .canvas-sec {
   height: 150vh; 
@@ -226,7 +235,6 @@ nav {
   max-width: 1400px;
   margin: 0 auto 120px;
   z-index: 10;
-  background: transparent; /* GARANTE QUE NÃO HÁ FUNDO PRETO NA SEÇÃO */
 }
 .canvas-sticky {
   position: sticky;
@@ -244,8 +252,8 @@ nav {
   border-radius: 40px;
   overflow: hidden; 
   box-shadow: 0 40px 100px rgba(0,0,0,0.08);
-  border: none; /* REMOVIDA A BORDA QUE PODIA CRIAR A LINHA */
-  background: var(--bg-main); /* FUNDO IGUAL AO SITE */
+  border: none;
+  background: var(--bg-main); 
 }
 #hero-canvas {
   width: 100%;
@@ -333,7 +341,6 @@ nav {
 .cases-viewport::-webkit-scrollbar { display: none; }
 
 .case-card { scroll-snap-align: center; flex-shrink: 0; width: min(1080px, 85vw); background: var(--bg-card); border-radius: 40px; box-shadow: 0 24px 80px rgba(0,0,0,0.04); border: 1px solid var(--line); display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; transition: transform 0.6s var(--exp), background 0.4s ease; }
-.cs-vis { position: relative; overflow: hidden; min-height: 500px; }
 .cs-body { padding: 80px 64px; display: flex; flex-direction: column; justify-content: center; }
 
 .cs-client-name { font-size: 13px; font-weight: 600; color: var(--text-main); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; opacity: 0.6;}
@@ -820,7 +827,7 @@ nav {
       </article>
 
       <article class="case-card" role="listitem">
-        <div class="cs-vis"><img src="assets/images/work-6.png" alt="Rebranding NovoDia"></div>
+        <div class="cs-vis" style="background: #FFFFFF;"><img src="assets/images/work-6.png" alt="Rebranding NovoDia"></div>
         <div class="cs-body">
           <div class="cs-client-name">Novo Nordisk</div>
           <h3 class="cs-title"><span class="pt">Rebranding NovoDia</span><span class="en">NovoDia Rebranding</span></h3>
@@ -1008,7 +1015,7 @@ const obs = new IntersectionObserver(es => {
 }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 document.querySelectorAll('.rv, .bento-item, .pb-item, .case-card').forEach(el => obs.observe(el));
 
-// --- VIDEO SCRUBBING ENGINE BLINDADO ---
+// --- VIDEO SCRUBBING ENGINE BLINDADO (QUALIDADE MÁXIMA E STICKY LEVE) ---
 document.addEventListener('DOMContentLoaded', () => {
   const canvas = document.getElementById("hero-canvas");
   if(!canvas) return;
