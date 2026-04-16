@@ -124,19 +124,12 @@ a { text-decoration: none; color: inherit; }
 img { max-width: 100%; display: block; height: auto; }
 ul { list-style: none; }
 
-/* ─────────────────────────────────────
-   ACESSIBILIDADE
-───────────────────────────────────── */
 .sr-only {
   position: absolute; width: 1px; height: 1px; padding: 0;
   margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;
 }
 
-/* ─────────────────────────────────────
-   IMAGEM DEGRADÊ E PLACEHOLDERS
-───────────────────────────────────── */
-.gradient-img { width: 100%; height: 100%; object-fit: cover; background: linear-gradient(180deg, #5b7074 0%, #d8e0d0 100%); }
-img.gradient-img { height: 100%; max-width: none; }
+.gradient-img { width: 100%; height: 100%; object-fit: cover; }
 
 /* ─────────────────────────────────────
    NAVEGAÇÃO
@@ -224,34 +217,35 @@ nav {
 }
 
 /* ─────────────────────────────────────
-   CANVAS VIDEO SCRUBBER (STICKY LEVE)
+   CANVAS VIDEO SCRUBBER (LIMPO)
 ───────────────────────────────────── */
 .canvas-sec {
-  height: 150vh; /* Travadinha rápida e leve para dar tempo da animação passar */
+  height: 150vh; 
   position: relative;
   padding: 0 48px;
   max-width: 1400px;
   margin: 0 auto 120px;
   z-index: 10;
+  background: transparent; /* GARANTE QUE NÃO HÁ FUNDO PRETO NA SEÇÃO */
 }
 .canvas-sticky {
   position: sticky;
-  top: 15vh; /* Posição onde a imagem gruda e fica parada um pouquinho */
+  top: 15vh; 
   height: auto; 
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .canvas-wrapper {
-  width: 60%; /* LARGURA PREMIUM DE 60% NO DESKTOP MANTIDA */
+  width: 60%; 
   max-width: 900px;
   aspect-ratio: 16 / 9; 
   margin: 0 auto; 
   border-radius: 40px;
   overflow: hidden; 
   box-shadow: 0 40px 100px rgba(0,0,0,0.08);
-  border: 1px solid var(--line);
-  background: var(--bg-card);
+  border: none; /* REMOVIDA A BORDA QUE PODIA CRIAR A LINHA */
+  background: var(--bg-main); /* FUNDO IGUAL AO SITE */
 }
 #hero-canvas {
   width: 100%;
@@ -346,7 +340,6 @@ nav {
 .cs-title { font-size: var(--fs-h3); margin-bottom: 20px; color: var(--text-main); }
 .cs-desc { margin-bottom: 24px; }
 
-/* Tags de Serviço no Portfólio */
 .cs-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 40px; }
 .cs-tag { font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 6px 12px; border-radius: 100px; background: var(--bg-main); color: var(--text-muted); border: 1px solid var(--line); }
 
@@ -421,7 +414,6 @@ nav {
 }
 
 @media (max-width: 768px) {
-  /* NAVEGAÇÃO */
   nav { padding: 0 16px; height: 60px; }
   .n-links { display: none; }
   .nav-logo-img { height: 20px; }
@@ -431,14 +423,12 @@ nav {
   .theme-toggle { width: 20px; height: 20px; padding: 0; display: flex; align-items: center; justify-content: center;}
   .theme-toggle svg { width: 16px; height: 16px; }
 
-  /* FLUIDEZ MOBILE GERAL ALINHAMENTO ABSOLUTO (24px) */
   .sec { padding: 64px 24px; }
   .sec-header { margin-bottom: 40px; }
   .cases-sec { padding: 64px 0; }
   .cap-sec { padding-top: 64px; margin-top: 24px; }
   .cta-sec { padding: 80px 24px; }
   
-  /* HERO PENTE FINO E CENTRALIZADO */
   .hero { padding: 120px 24px 56px; min-height: 75vh; justify-content: center; }
   .hero-massive { font-size: clamp(32px, 10vw, 48px); margin-bottom: 16px; line-height: 1.05; }
   .hero-p { font-size: 16px; margin-bottom: 56px !important; padding: 0; }
@@ -446,9 +436,7 @@ nav {
   .hero-bottom-actions { width: 100%; display: flex; justify-content: center; }
   .btn-outline { display: inline-flex; width: auto; height: auto; padding: 14px 32px; font-size: 15px; }
 
-  /* Ajustes do Canvas no Mobile - VOLTA PARA 100% DE LARGURA */
   .canvas-sec { height: 150vh; padding: 0 24px; margin-bottom: 40px; }
-  .canvas-sticky { top: 15vh; height: auto; }
   .canvas-wrapper { width: 100%; aspect-ratio: 16 / 9; border-radius: 20px; }
   
   .cases-header-wrap { flex-direction: column; align-items: flex-start; gap: 16px; padding: 0 24px;}
@@ -462,7 +450,6 @@ nav {
   .ring-1 { width: 100px; height: 100px; }
   .ring-2 { width: 200px; height: 200px; }
 
-  /* BENTOS MOBILE (UNIFORMIDADE TOTAL) */
   .bento-grid, .process-bento { 
     display: grid !important;
     grid-template-columns: 1fr !important; 
@@ -495,22 +482,18 @@ nav {
   .pb-arrow, .bento-img-side, .bento-img-wrap, .card-link { display: none !important; } 
   .has-img-side { padding-right: 24px !important; }
 
-  /* Growth Metrics - Mobile Ajuste */
   .growth-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 16px; margin-top: 24px; padding-top: 0; }
   .gm-v { font-size: 28px; }
 
-  /* CAPABILITIES (LADO A LADO MOBILE) */
   .cap-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
   .split-desktop { column-count: 1; } 
   .cap-col-label { font-size: 11px; margin-bottom: 16px; padding-bottom: 8px;}
   .cap-list li { font-size: 13px; margin-bottom: 12px; letter-spacing: 0;}
   
-  /* FORMULÁRIO MOBILE DECONTRAÍDO */
   .contact-form { gap: 12px; }
   .form-input { padding: 16px 20px; font-size: 15px; }
   .form-submit { padding: 16px; font-size: 15px; width: 100%; display: block;}
 
-  /* RODAPÉ: DUAS COLUNAS E CORREÇÃO DO PADDING */
   .footer-wrap { padding: 56px 24px 32px; }
   .footer-main { 
     grid-template-columns: 1fr 1fr; 
@@ -668,7 +651,7 @@ nav {
         <h3 class="bento-title"><span class="pt">Engenharia de Produto</span><span class="en">Product Engineering</span></h3>
         <p class="desc-text"><span class="pt">Desenhamos e construímos plataformas, aplicativos e ecossistemas digitais focados na jornada do usuário. Arquitetura robusta, design intencional e tecnologia de ponta.</span><span class="en">We design and build platforms, applications, and digital ecosystems focused on the user journey. Robust architecture, intentional design, and cutting-edge technology.</span></p>
         <div class="bento-img-side">
-          <img src="assets/images/card-research.png" alt="Pesquisa e descoberta estratégica" class="gradient-img">
+          <img src="assets/images/card-research.png" alt="Pesquisa e descoberta estratégica">
         </div>
       </article>
 
@@ -688,7 +671,7 @@ nav {
         <p class="desc-text"><span class="pt">Campanhas, motion design e posicionamento estratégico. Traduzimos a complexidade do seu produto em mensagens que conectam e convertem.</span><span class="en">Campaigns, motion design, and strategic positioning. We translate the complexity of your product into messages that connect and convert.</span></p>
 
         <div class="bento-img-wrap" style="margin-top: 40px;">
-          <img src="assets/images/card-execution.png" alt="Execução e entrega de projetos" class="gradient-img">
+          <img src="assets/images/card-execution.png" alt="Execução e entrega de projetos">
         </div>
       </article>
 
@@ -746,7 +729,7 @@ nav {
     <div class="cases-viewport rv d1" id="casesSlider" role="list">
 
       <article class="case-card" role="listitem">
-        <div class="cs-vis"><img src="assets/images/work-1.png" alt="Campanha NovoDia" class="gradient-img"></div>
+        <div class="cs-vis"><img src="assets/images/work-1.png" alt="Campanha NovoDia"></div>
         <div class="cs-body">
           <div class="cs-client-name">Novo Nordisk</div>
           <h3 class="cs-title"><span class="pt">Campanha NovoDia</span><span class="en">NovoDia Campaign</span></h3>
@@ -764,7 +747,7 @@ nav {
       </article>
 
       <article class="case-card" role="listitem">
-        <div class="cs-vis"><img src="assets/images/work-2.png" alt="Réguas de Comunicação CRM" class="gradient-img"></div>
+        <div class="cs-vis"><img src="assets/images/work-2.png" alt="Réguas de Comunicação CRM"></div>
         <div class="cs-body">
           <div class="cs-client-name">Novo Nordisk</div>
           <h3 class="cs-title"><span class="pt">Réguas de Comunicação</span><span class="en">CRM Journeys</span></h3>
@@ -782,7 +765,7 @@ nav {
       </article>
 
       <article class="case-card" role="listitem">
-        <div class="cs-vis"><img src="assets/images/work-3.png" alt="Novo Site NovoDia" class="gradient-img"></div>
+        <div class="cs-vis"><img src="assets/images/work-3.png" alt="Novo Site NovoDia"></div>
         <div class="cs-body">
           <div class="cs-client-name">Novo Nordisk</div>
           <h3 class="cs-title">Novo Site NovoDia</h3>
@@ -800,7 +783,7 @@ nav {
       </article>
 
       <article class="case-card" role="listitem">
-        <div class="cs-vis"><img src="assets/images/work-4.png" alt="Plataforma Corporativa Play2Learn" class="gradient-img"></div>
+        <div class="cs-vis"><img src="assets/images/work-4.png" alt="Plataforma Corporativa Play2Learn"></div>
         <div class="cs-body">
           <div class="cs-client-name">Play2Learn</div>
           <h3 class="cs-title"><span class="pt">Plataforma Corporativa</span><span class="en">Corporate Platform</span></h3>
@@ -819,7 +802,7 @@ nav {
       </article>
 
       <article class="case-card" role="listitem">
-        <div class="cs-vis"><img src="assets/images/work-5.png" alt="Simulador NovoDia" class="gradient-img"></div>
+        <div class="cs-vis"><img src="assets/images/work-5.png" alt="Simulador NovoDia"></div>
         <div class="cs-body">
           <div class="cs-client-name">Novo Nordisk</div>
           <h3 class="cs-title"><span class="pt">Simulador NovoDia</span><span class="en">NovoDia Simulator</span></h3>
@@ -837,7 +820,7 @@ nav {
       </article>
 
       <article class="case-card" role="listitem">
-        <div class="cs-vis"><img src="assets/images/work-6.png" alt="Rebranding NovoDia" class="gradient-img"></div>
+        <div class="cs-vis"><img src="assets/images/work-6.png" alt="Rebranding NovoDia"></div>
         <div class="cs-body">
           <div class="cs-client-name">Novo Nordisk</div>
           <h3 class="cs-title"><span class="pt">Rebranding NovoDia</span><span class="en">NovoDia Rebranding</span></h3>
@@ -855,7 +838,7 @@ nav {
       </article>
 
       <article class="case-card" role="listitem">
-        <div class="cs-vis"><img src="assets/images/work-7.png" alt="Sócio Rei Santos FC" class="gradient-img"></div>
+        <div class="cs-vis"><img src="assets/images/work-7.png" alt="Sócio Rei Santos FC"></div>
         <div class="cs-body">
           <div class="cs-client-name">Santos FC</div>
           <h3 class="cs-title"><span class="pt">Sócio Rei</span><span class="en">Sócio Rei</span></h3>
@@ -1025,37 +1008,33 @@ const obs = new IntersectionObserver(es => {
 }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 document.querySelectorAll('.rv, .bento-item, .pb-item, .case-card').forEach(el => obs.observe(el));
 
-// --- VIDEO SCRUBBING ENGINE BLINDADO (QUALIDADE MÁXIMA E STICKY LEVE) ---
+// --- VIDEO SCRUBBING ENGINE BLINDADO ---
 document.addEventListener('DOMContentLoaded', () => {
   const canvas = document.getElementById("hero-canvas");
   if(!canvas) return;
   const context = canvas.getContext("2d");
 
-  const frameCount = 34; // Seus 34 frames
+  const frameCount = 34;
   const currentFrame = index => `assets/images/hero-frames/frame-${index.toString().padStart(5, '0')}.png`;
   
   const images = [];
   
-  // 1. PRELOAD SILENCIOSO
   for (let i = 1; i <= frameCount; i++) {
     const imgObj = new Image();
     imgObj.src = currentFrame(i);
     images.push(imgObj);
   }
 
-  // 2. CARREGA O FRAME 1 E CALIBRA A RESOLUÇÃO PARA QUALIDADE MÁXIMA
   images[0].onload = () => {
     canvas.width = images[0].naturalWidth;
     canvas.height = images[0].naturalHeight;
     context.drawImage(images[0], 0, 0, canvas.width, canvas.height);
   };
 
-  // 3. MOTOR DE ROLAGEM COM CALIBRAGEM FINA
   window.addEventListener('scroll', () => {
     const section = document.getElementById('canvas-section');
     const rect = section.getBoundingClientRect();
     
-    // O maxScroll agora está alinhado com a nova altura de 150vh
     const maxScroll = section.scrollHeight - window.innerHeight;
     let fraction = -rect.top / maxScroll;
     
@@ -1064,7 +1043,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const frameIndex = Math.min(frameCount - 1, Math.floor(fraction * frameCount));
     
-    // Só desenha se a imagem estiver carregada
     if(images[frameIndex] && images[frameIndex].complete && images[frameIndex].naturalWidth > 0) {
       requestAnimationFrame(() => {
         context.clearRect(0, 0, canvas.width, canvas.height);
