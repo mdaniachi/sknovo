@@ -1023,51 +1023,57 @@ const obs = new IntersectionObserver(es => {
 }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 document.querySelectorAll('.rv, .bento-item, .pb-item, .case-card').forEach(el => obs.observe(el));
 
-// --- VIDEO SCRUBBING ENGINE ---
+// --- VIDEO SCRUBBING ENGINE BLINDADO ---
 document.addEventListener('DOMContentLoaded', () => {
   const canvas = document.getElementById("hero-canvas");
   if(!canvas) return;
   const context = canvas.getContext("2d");
   
-  canvas.width = 1280; // ATUALIZADO PARA CASAR COM SEUS FRAMES
-  canvas.height = 720; // ATUALIZADO PARA CASAR COM SEUS FRAMES
+  canvas.width = 1280; 
+  canvas.height = 720; 
 
-  const frameCount = 34; // ATUALIZADO PARA 34 FRAMES
+  const frameCount = 34; // Seus 34 frames
   
+  // Função que puxa o nome exato (frame-00001.webp)
   const currentFrame = index => `assets/hero-frames/frame-${index.toString().padStart(5, '0')}.webp`;
   
   const images = [];
-  const fallbackImg = new Image();
   
-  // 1. CARREGA O FALLBACK (assets/images/hero-team.png já existente)
-  fallbackImg.src = 'assets/images/hero-team.png';
-  fallbackImg.onload = () => {
-    context.drawImage(fallbackImg, 0, 0, canvas.width, canvas.height);
-  };
-
-  // 2. PRELOAD DOS FRAMES DO VÍDEO
+  // 1. PRELOAD SILENCIOSO
+  // Seu conversor começou no 1 e foi até o 34.
   for (let i = 1; i <= frameCount; i++) {
     const imgObj = new Image();
     imgObj.src = currentFrame(i);
     images.push(imgObj);
   }
 
-  // 3. MOTOR DE ROLAGEM
+  // 2. CARREGA O SEU PRÓPRIO FRAME 1 COMO "CAPA" DO VÍDEO
+  // O site já abre mostrando a cena inicial, sem precisar de fallback.
+  images[0].onload = () => {
+    context.drawImage(images[0], 0, 0, canvas.width, canvas.height);
+  };
+
+  // 3. MOTOR DE ROLAGEM COM CALIBRAGEM FINA
   window.addEventListener('scroll', () => {
     const section = document.getElementById('canvas-section');
     const rect = section.getBoundingClientRect();
     
-    // O quanto o usuario já desceu dentro da seção de 300vh
+    // Calcula o espaço total de rolagem da área "sticky"
     const maxScroll = section.scrollHeight - window.innerHeight;
+    
+    // Calcula a fração exata com base na posição da tela
     let fraction = -rect.top / maxScroll;
     
+    // Garante que a matemática não saia do limite de 0% a 100%
     if(fraction < 0) fraction = 0;
     if(fraction > 1) fraction = 1;
     
+    // Transforma a porcentagem (ex: 0.5) no número do frame exato (ex: frame 17)
+    // Como seu array começa no index 0 (que é o frame-00001), usamos frameCount - 1
     const frameIndex = Math.min(frameCount - 1, Math.floor(fraction * frameCount));
     
-    // Renderiza o frame correspondente se ele já foi baixado
-    if(images[frameIndex] && images[frameIndex].complete) {
+    // Só desenha se a imagem existir no array e tiver sido baixada da internet
+    if(images[frameIndex] && images[frameIndex].complete && images[frameIndex].naturalWidth > 0) {
       requestAnimationFrame(() => {
         context.drawImage(images[frameIndex], 0, 0, canvas.width, canvas.height);
       });
