@@ -224,20 +224,29 @@ nav {
 }
 
 /* ─────────────────────────────────────
-   CANVAS VIDEO SCRUBBER (60% NO DESKTOP)
+   CANVAS VIDEO SCRUBBER (STICKY LEVE)
 ───────────────────────────────────── */
 .canvas-sec {
+  height: 150vh; /* Travadinha rápida e leve para dar tempo da animação passar */
   position: relative;
   padding: 0 48px;
   max-width: 1400px;
   margin: 0 auto 120px;
   z-index: 10;
 }
+.canvas-sticky {
+  position: sticky;
+  top: 15vh; /* Posição onde a imagem gruda e fica parada um pouquinho */
+  height: auto; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .canvas-wrapper {
-  width: 60%; /* DEIXAMOS COM 60% DA LARGURA NO DESKTOP */
+  width: 60%; /* LARGURA PREMIUM DE 60% NO DESKTOP MANTIDA */
   max-width: 900px;
   aspect-ratio: 16 / 9; 
-  margin: 0 auto; /* MANTÉM CENTRALIZADO */
+  margin: 0 auto; 
   border-radius: 40px;
   overflow: hidden; 
   box-shadow: 0 40px 100px rgba(0,0,0,0.08);
@@ -438,7 +447,8 @@ nav {
   .btn-outline { display: inline-flex; width: auto; height: auto; padding: 14px 32px; font-size: 15px; }
 
   /* Ajustes do Canvas no Mobile - VOLTA PARA 100% DE LARGURA */
-  .canvas-sec { padding: 0 24px; margin-bottom: 40px; }
+  .canvas-sec { height: 150vh; padding: 0 24px; margin-bottom: 40px; }
+  .canvas-sticky { top: 15vh; height: auto; }
   .canvas-wrapper { width: 100%; aspect-ratio: 16 / 9; border-radius: 20px; }
   
   .cases-header-wrap { flex-direction: column; align-items: flex-start; gap: 16px; padding: 0 24px;}
@@ -564,8 +574,10 @@ nav {
   </header>
 
   <section class="canvas-sec rv d2" id="canvas-section">
-    <div class="canvas-wrapper">
-      <canvas id="hero-canvas" aria-label="Animação em destaque da SkillCore" role="img"></canvas>
+    <div class="canvas-sticky">
+      <div class="canvas-wrapper">
+        <canvas id="hero-canvas" aria-label="Animação em destaque da SkillCore" role="img"></canvas>
+      </div>
     </div>
   </section>
 
@@ -1012,7 +1024,7 @@ const obs = new IntersectionObserver(es => {
 }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 document.querySelectorAll('.rv, .bento-item, .pb-item, .case-card').forEach(el => obs.observe(el));
 
-// --- VIDEO SCRUBBING ENGINE NATURAL (QUALIDADE MÁXIMA E SEM TRAVAR) ---
+// --- VIDEO SCRUBBING ENGINE BLINDADO (QUALIDADE MÁXIMA E STICKY LEVE) ---
 document.addEventListener('DOMContentLoaded', () => {
   const canvas = document.getElementById("hero-canvas");
   if(!canvas) return;
@@ -1037,11 +1049,14 @@ document.addEventListener('DOMContentLoaded', () => {
     context.drawImage(images[0], 0, 0, canvas.width, canvas.height);
   };
 
-  // 3. MOTOR DE ROLAGEM (LIVRE E NATURAL)
+  // 3. MOTOR DE ROLAGEM COM CALIBRAGEM FINA
   window.addEventListener('scroll', () => {
-    // Calcula a rolagem baseada nos primeiros 600px que o usuário descer no site
-    let scrollY = window.scrollY;
-    let fraction = scrollY / 600; // Altere esse número para deixar a animação mais rápida ou mais devagar
+    const section = document.getElementById('canvas-section');
+    const rect = section.getBoundingClientRect();
+    
+    // O maxScroll agora está alinhado com a nova altura de 150vh
+    const maxScroll = section.scrollHeight - window.innerHeight;
+    let fraction = -rect.top / maxScroll;
     
     if(fraction < 0) fraction = 0;
     if(fraction > 1) fraction = 1;
@@ -1051,9 +1066,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Só desenha se a imagem estiver carregada
     if(images[frameIndex] && images[frameIndex].complete && images[frameIndex].naturalWidth > 0) {
       requestAnimationFrame(() => {
-        // Limpa o frame anterior para evitar borrões
         context.clearRect(0, 0, canvas.width, canvas.height);
-        // Desenha o frame atual
         context.drawImage(images[frameIndex], 0, 0, canvas.width, canvas.height);
       });
     }
