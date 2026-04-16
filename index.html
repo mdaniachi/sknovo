@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>SkillCore | Consultoria Digital AI-Native</title>
-<meta name="description" content="A primeira consultoria AI-Native focada em acelerar negócios. Unimos o julgamento de estrategistas seniores à escala infinita da IA.">
+<meta name="description" content="Impulsionamos sua marca unindo criatividade estratégica e inteligência artificial. Transformamos ideias em realidade palpável.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://skillcore.pro/">
 
@@ -21,18 +21,16 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://skillcore.pro/">
 <meta property="og:title" content="SkillCore | Consultoria Digital AI-Native">
-<meta property="og:description" content="A SkillCore é a consultoria AI-Native que une o julgamento de designers seniores à escala infinita da inteligência artificial.">
-<meta property="og:image" content="https://skillcore.pro/assets/images/og-image.jpg">
+<meta property="og:description" content="Impulsionamos sua marca unindo criatividade estratégica e inteligência artificial. Transformamos ideias em realidade palpável.">
+<meta property="og:image" content="https://skillcore.pro/assets/images/miniaturawhats.png">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://skillcore.pro/">
 <meta name="twitter:title" content="SkillCore | Consultoria Digital AI-Native">
-<meta name="twitter:description" content="A SkillCore é a consultoria AI-Native que une o julgamento de designers seniores à escala infinita da inteligência artificial.">
-<meta name="twitter:image" content="https://skillcore.pro/assets/images/twitter-image.jpg">
+<meta name="twitter:description" content="Impulsionamos sua marca unindo criatividade estratégica e inteligência artificial. Transformamos ideias em realidade palpável.">
+<meta name="twitter:image" content="https://skillcore.pro/assets/images/miniaturawhats.png">
 
-<link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,7 +41,7 @@
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "SkillCore",
-  "image": "https://skillcore.pro/assets/images/og-image.jpg",
+  "image": "https://skillcore.pro/assets/images/miniaturawhats.png",
   "@id": "https://skillcore.pro/",
   "url": "https://skillcore.pro/",
   "address": {
@@ -61,7 +59,7 @@
     "https://www.linkedin.com/company/skillcore/",
     "https://www.instagram.com/skillcore/"
   ],
-  "description": "A primeira consultoria AI-Native focada em acelerar negócios. Unimos o julgamento de estrategistas seniores à escala infinita da IA.",
+  "description": "Impulsionamos sua marca unindo criatividade estratégica e inteligência artificial. Transformamos ideias em realidade palpável.",
   "priceRange": "$$$"
 }
 </script>
@@ -76,7 +74,7 @@
   --fs-h2: clamp(32px, 5vw, 64px);
   --fs-h3: clamp(22px, 3vw, 32px);
   --fs-desc: 18px;
-  
+
   /* Light Mode */
   --bg-main: #F5F5F7;
   --bg-card: #FFFFFF;
@@ -147,8 +145,10 @@ nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 200; height: 64px; display: flex; align-items: center; justify-content: space-between; padding: 0 48px;
   background: var(--bg-nav); backdrop-filter: blur(24px) saturate(180%); -webkit-backdrop-filter: blur(24px) saturate(180%); border-bottom: 1px solid var(--line); transition: background 0.4s ease, border-color 0.4s ease;
 }
-.n-logo { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: -0.04em; display: flex; align-items: center; gap: 8px; }
-.n-logo-dot { width: 6px; height: 6px; background: var(--or); border-radius: 50%; }
+.n-logo { display: flex; align-items: center; }
+.nav-logo-img { height: 24px; width: auto; display: block; transition: filter 0.4s ease; }
+[data-theme="dark"] .nav-logo-img { filter: invert(1); } /* Inverte para branco no Dark Mode se o SVG for preto */
+
 .n-links { display: flex; gap: 32px; font-size: 14px; color: var(--text-muted); font-weight: 500;}
 .n-links a:hover { color: var(--text-main); }
 .n-right { display: flex; align-items: center; gap: 24px; }
@@ -202,7 +202,7 @@ nav {
   color: var(--text-main);
 }
 
-.hero-p { max-width: 680px; margin-bottom: 48px; font-size: 20px;}
+.hero-p { max-width: 780px; margin-bottom: 48px; font-size: 20px;}
 
 .btn-outline { 
   background: transparent; 
@@ -256,9 +256,6 @@ nav {
 .pb-desc-wrap { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; margin-top: auto;}
 .pb-3 .desc-text { max-width: 400px; margin: 0; }
 
-.pb-arrow { width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; background: var(--bg-main); border-radius: 50%; flex-shrink: 0; color: var(--text-main); transition: transform 0.4s var(--exp), background 0.4s ease;}
-.pb-item:hover .pb-arrow { transform: scale(1.1) rotate(15deg); background: var(--invert-bg); color: var(--invert-text); }
-
 /* ─────────────────────────────────────
    BENTO GRID (SERVICES & ABOUT)
 ───────────────────────────────────── */
@@ -289,6 +286,12 @@ nav {
 
 .card-link { margin-top: 32px; display: inline-flex; align-items: center; gap: 8px; font-weight: 600; color: var(--or); font-size: 15px; transition: opacity 0.3s; }
 .card-link:hover { opacity: 0.8; }
+
+/* Growth Metrics Grid */
+.growth-metrics { margin-top: auto; display: flex; flex-wrap: wrap; gap: 32px; padding-top: 32px; }
+.gm-item { flex: 1; min-width: 100px; }
+.gm-v { font-family: 'Space Grotesk', sans-serif; font-size: clamp(32px, 3vw, 42px); font-weight: 700; line-height: 1; color: var(--text-main); letter-spacing: -0.04em; }
+.gm-l { font-size: 13px; color: var(--text-muted); font-weight: 500; margin-top: 6px; }
 
 /* ─────────────────────────────────────
    CASES
@@ -349,7 +352,7 @@ nav {
 ───────────────────────────────────── */
 .footer-wrap { background: #0A0A0A; padding: 80px 48px 40px; color: #86868B; border-top: 1px solid rgba(255,255,255,0.1); }
 .footer-main { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; padding-bottom: 64px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 32px; max-width: 1280px; margin-left: auto; margin-right: auto;}
-.footer-brand .n-logo { color: #fff; margin-bottom: 20px; }
+.footer-brand .n-logo { margin-bottom: 20px; }
 .footer-desc { font-size: 16px; line-height: 1.6; margin-bottom: 32px; max-width: 340px; color: #86868B;}
 .footer-socials { display: flex; gap: 12px; }
 .footer-socials a { width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2); color: #fff; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; }
@@ -361,26 +364,6 @@ nav {
 .footer-bottom { display: flex; justify-content: space-between; align-items: center; font-size: 14px; max-width: 1280px; margin: 0 auto;}
 .footer-bottom-links { display: flex; gap: 32px; }
 .footer-bottom-links a:hover { color: #fff; }
-
-/* ─────────────────────────────────────
-   AGENTE IA
-───────────────────────────────────── */
-.ai-fab { position: fixed; bottom: 32px; right: 32px; width: 64px; height: 64px; background: var(--invert-bg); color: var(--invert-text); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); cursor: pointer; z-index: 900; transition: transform 0.3s var(--exp), box-shadow 0.3s; }
-.ai-fab:hover { transform: scale(1.05); }
-.ai-window { position: fixed; bottom: 110px; right: 32px; width: 340px; height: 460px; background: var(--bg-card); border-radius: 24px; box-shadow: 0 20px 60px rgba(0,0,0,0.15); display: flex; flex-direction: column; z-index: 900; overflow: hidden; border: 1px solid var(--line); opacity: 0; transform: translateY(20px) scale(0.95); pointer-events: none; transition: all 0.4s var(--exp); }
-.ai-window.open { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
-.ai-header { padding: 16px 20px; background: var(--bg-off); border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; }
-.ai-title { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 16px; color: var(--text-main); display: flex; align-items: center; gap: 8px;}
-.ai-title::before { content: ''; display: inline-block; width: 8px; height: 8px; background: #34C759; border-radius: 50%; }
-.ai-close { background: none; border: none; font-size: 20px; color: var(--text-muted); cursor: pointer; }
-.ai-body { flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 16px; }
-.msg { padding: 12px 16px; border-radius: 16px; font-size: 14px; max-width: 85%; line-height: 1.4; }
-.msg.bot { background: var(--bg-off); color: var(--text-main); align-self: flex-start; border-bottom-left-radius: 4px; }
-.msg.user { background: var(--invert-bg); color: var(--invert-text); align-self: flex-end; border-bottom-right-radius: 4px; }
-.msg.typing { font-style: italic; color: var(--text-muted); background: transparent; padding: 4px 16px; }
-.ai-input-area { padding: 16px; border-top: 1px solid var(--line); display: flex; gap: 8px; }
-.ai-input { flex: 1; border: 1px solid var(--line); border-radius: 100px; padding: 10px 16px; font-family: 'Inter', sans-serif; font-size: 14px; outline: none; background: var(--bg-off); color: var(--text-main); }
-.ai-send { background: var(--invert-bg); color: var(--invert-text); border: none; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; }
 
 /* ─────────────────────────────────────
    REVEAL & I18N
@@ -408,8 +391,7 @@ nav {
   /* NAVEGAÇÃO */
   nav { padding: 0 16px; height: 60px; }
   .n-links { display: none; }
-  .n-logo { font-size: 18px; gap: 6px; letter-spacing: -0.02em; }
-  .n-logo-dot { width: 5px; height: 5px; }
+  .nav-logo-img { height: 20px; }
   .n-right { gap: 12px; }
   .controls-wrap { gap: 12px; flex-wrap: nowrap; }
   .lsw { font-size: 12px; gap: 6px; }
@@ -417,31 +399,30 @@ nav {
   .theme-toggle svg { width: 16px; height: 16px; }
 
   /* FLUIDEZ MOBILE GERAL */
-  .sec { padding: 64px 20px; }
+  .sec { padding: 64px 24px; }
   .sec-header { margin-bottom: 40px; }
   .cases-sec { padding: 64px 0; }
   .cap-sec { padding-top: 64px; margin-top: 24px; }
-  .cta-sec { padding: 80px 20px; }
+  .cta-sec { padding: 80px 24px; }
   
   /* HERO PENTE FINO E CENTRALIZADO */
-  .hero { padding: 120px 20px 56px; min-height: 75vh; justify-content: center; }
-  .hero-massive { font-size: clamp(32px, 10vw, 48px); margin-bottom: 20px; line-height: 1.05; }
-  .hero-p { font-size: 16px; margin-bottom: 56px !important; padding: 0 8px; }
+  .hero { padding: 120px 24px 56px; min-height: 75vh; justify-content: center; }
+  .hero-massive { font-size: clamp(32px, 10vw, 48px); margin-bottom: 16px; line-height: 1.05; }
+  .hero-p { font-size: 16px; margin-bottom: 56px !important; padding: 0; }
   
   .hero-bottom-actions { width: 100%; display: flex; justify-content: center; }
   .btn-outline { display: inline-flex; width: auto; height: auto; padding: 14px 32px; font-size: 15px; }
 
-  .showcase-sec { padding: 0 20px; margin-bottom: 40px; }
+  .showcase-sec { padding: 0 24px; margin-bottom: 40px; }
   .showcase-wrapper { aspect-ratio: 16 / 10; border-radius: 20px; }
   
-  .cases-header-wrap { flex-direction: column; align-items: flex-start; gap: 16px; padding: 0 20px;}
-  .cases-viewport { padding: 20px 20px 40px 20px; gap: 16px; }
+  .cases-header-wrap { flex-direction: column; align-items: flex-start; gap: 16px; padding: 0 24px;}
+  .cases-viewport { padding: 20px 24px 40px 24px; gap: 16px; }
   .cs-metrics { flex-wrap: nowrap; gap: 12px; margin-top: 32px; }
   .cs-body { padding: 32px 24px; }
   .cs-tags { margin-bottom: 32px; }
   .cs-vis { min-height: 250px; }
   
-  .ai-window { width: calc(100vw - 40px); right: 20px; bottom: 100px;}
   .hero-bg-shapes { width: 300px; height: 300px; }
   .ring-1 { width: 100px; height: 100px; }
   .ring-2 { width: 200px; height: 200px; }
@@ -479,9 +460,9 @@ nav {
   .pb-arrow, .bento-img-side, .bento-img-wrap, .card-link { display: none !important; } 
   .has-img-side { padding-right: 24px !important; }
 
-  .bento-item:last-child > div:last-child { flex-direction: row; align-items: center; gap: 24px; margin-top: 24px; }
-  .bento-item:last-child > div:last-child > div > div:first-child { font-size: 32px; line-height: 1;}
-  .bento-item:last-child > div:last-child > div > div:last-child { font-size: 13px; line-height: 1.2;}
+  /* Growth Metrics - Mobile Ajuste */
+  .growth-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 16px; margin-top: 24px; padding-top: 0; }
+  .gm-v { font-size: 28px; }
 
   /* CAPABILITIES (LADO A LADO MOBILE COM ESPAÇAMENTO REVISADO) */
   .cap-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
@@ -495,7 +476,7 @@ nav {
   .form-submit { padding: 16px; font-size: 15px; width: 100%; display: block;}
 
   /* RODAPÉ: DUAS COLUNAS E CORREÇÃO DO PADDING */
-  .footer-wrap { padding: 56px 20px 32px; }
+  .footer-wrap { padding: 56px 24px 32px; }
   .footer-main { 
     grid-template-columns: 1fr 1fr; 
     gap: 40px 16px; 
@@ -510,12 +491,11 @@ nav {
 
 <nav>
   <a href="#" class="n-logo" aria-label="SkillCore Início">
-    <div class="n-logo-dot" aria-hidden="true"></div>
-    SkillCore
+    <img src="assets/images/logo.svg" alt="SkillCore" class="nav-logo-img">
   </a>
   <ul class="n-links">
     <li><a href="#process"><span class="pt">Método</span><span class="en">Method</span></a></li>
-    <li><a href="#services"><span class="pt">Serviços</span><span class="en">Services</span></a></li>
+    <li><a href="#services"><span class="pt">Capabilities</span><span class="en">Capabilities</span></a></li>
     <li><a href="#work"><span class="pt">Projetos</span><span class="en">Work</span></a></li>
   </ul>
   <div class="n-right">
@@ -547,8 +527,8 @@ nav {
         <span class="en">Pull up a chair.<br>Let's design<br>Your tomorrow.</span>
       </h1>
       <p class="hero-p desc-text rv d2">
-        <span class="pt">Desenhamos experiências conectadas combinando o julgamento crítico de especialistas à escala de execução da inteligência artificial. Somos a agência AI-Native parceira na evolução digital da sua marca.</span>
-        <span class="en">We design connected experiences by combining the critical judgment of experts with the execution scale of artificial intelligence. We are the AI-Native agency partnering in your brand's digital evolution.</span>
+        <span class="pt">Impulsionamos a evolução da sua marca criando jornadas digitais que unem criatividade estratégica à hiper-eficiência da inteligência artificial. Uma agência AI-Native focada em performance, crescimento e impacto real.</span>
+        <span class="en">We propel your brand's evolution by creating digital journeys that unite strategic creativity with the hyper-efficiency of artificial intelligence. An AI-Native agency focused on performance, growth, and real impact.</span>
       </p>
       <div class="hero-bottom-actions rv d2">
         <a href="#work" class="btn-outline">
@@ -609,26 +589,23 @@ nav {
 
       <article class="pb-item pb-1 rv" role="listitem">
         <div class="pb-num" aria-hidden="true">01</div>
-        <h3 class="pb-title"><span class="pt">Estratégia e Visão</span><span class="en">Strategy and Vision</span></h3>
-        <p class="desc-text"><span class="pt">Antes de qualquer linha de código, entendemos o seu negócio. Mapeamos oportunidades e desenhamos a jornada ideal para o seu usuário.</span><span class="en">Before any line of code, we understand your business. We map opportunities and design the ideal journey for your user.</span></p>
+        <h3 class="pb-title"><span class="pt">Decodificar</span><span class="en">Decode</span></h3>
+        <p class="desc-text"><span class="pt">Não começamos com respostas prontas. Mapeamos as reais necessidades da sua marca e do seu usuário para desenhar projetos com propósito claro.</span><span class="en">We don't start with ready-made answers. We map the real needs of your brand and your user to design projects with a clear purpose.</span></p>
       </article>
 
       <article class="pb-item pb-2 rv d1" role="listitem">
         <div class="pb-num" aria-hidden="true">02</div>
-        <h3 class="pb-title"><span class="pt">Engenharia Nativa</span><span class="en">Native Engineering</span></h3>
-        <p class="desc-text" style="opacity: 0.7;"><span class="pt">Arquitetura de ponta e desenvolvimento focado. Construímos a base tecnológica do seu produto com prioridade absoluta em performance e segurança.</span><span class="en">Cutting edge architecture and focused development. We build the technological foundation of your product prioritizing performance and security.</span></p>
+        <h3 class="pb-title"><span class="pt">Materializar</span><span class="en">Materialize</span></h3>
+        <p class="desc-text" style="opacity: 0.7;"><span class="pt">A intersecção perfeita entre comunicação, produto e tecnologia. Construímos soluções completas operando com a máxima eficiência do mercado.</span><span class="en">The perfect intersection of communication, product, and technology. We build complete solutions operating with maximum market efficiency.</span></p>
       </article>
 
       <article class="pb-item pb-3 rv d2" role="listitem">
         <div>
           <div class="pb-num" aria-hidden="true">03</div>
-          <h3 class="pb-title-huge h-title"><span class="pt">Escala<br>Inteligente</span><span class="en">Smart<br>Scale</span></h3>
+          <h3 class="pb-title-huge h-title"><span class="pt">Impulsionar</span><span class="en">Propel</span></h3>
         </div>
         <div class="pb-desc-wrap">
-          <p class="desc-text"><span class="pt">O lançamento é o primeiro passo. Implementamos automações e IA para que a sua operação cresça de forma contínua e sem gargalos.</span><span class="en">Launching is the first step. We implement automation and AI so your operation grows continuously without bottlenecks.</span></p>
-          <div class="pb-arrow" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
-          </div>
+          <p class="desc-text"><span class="pt">O projeto nasce para crescer. Implementamos ciclos de otimização contínua para que a sua operação expanda com inteligência e alta performance.</span><span class="en">The project is born to grow. We implement continuous optimization cycles so your operation expands with intelligence and high performance.</span></p>
         </div>
       </article>
 
@@ -637,8 +614,8 @@ nav {
 
   <section class="sec" id="services">
     <div class="sec-header rv">
-      <h2 class="sec-label sr-only"><span class="pt">Disciplinas</span><span class="en">Disciplines</span></h2>
-      <div class="sec-label" aria-hidden="true"><span class="pt">Disciplinas</span><span class="en">Disciplines</span></div>
+      <h2 class="sec-label sr-only"><span class="pt">Capabilities</span><span class="en">Capabilities</span></h2>
+      <div class="sec-label" aria-hidden="true"><span class="pt">Capabilities</span><span class="en">Capabilities</span></div>
       <p class="sec-h2 h-title">
         <span class="pt">Tudo o que você precisa.<br>E nada do que não precisa.</span>
         <span class="en">Everything you need.<br>Nothing you don't.</span>
@@ -659,7 +636,7 @@ nav {
       </article>
 
       <article class="bento-item bento-dark span-4 rv d1" role="listitem">
-        <div class="bento-icon" aria-hidden="true" style="margin-bottom: auto; background: rgba(255,255,255,0.1); color: #fff;">
+        <div class="bento-icon" aria-hidden="true" style="background: rgba(255,255,255,0.1); color: #fff;">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
         </div>
         <h3 class="bento-title"><span class="pt">IA & Automação</span><span class="en">AI & Automation</span></h3>
@@ -684,20 +661,23 @@ nav {
         </div>
         <h3 class="bento-title"><span class="pt">Growth & Resultados</span><span class="en">Growth & Results</span></h3>
         <p class="desc-text"><span class="pt">O lançamento é apenas o começo. Monitoramos dados de uso, otimizamos conversões e evoluímos o seu produto para garantir tração contínua.</span><span class="en">Launching is just the beginning. We monitor usage data, optimize conversions, and evolve your product to ensure continuous traction.</span></p>
-        <div style="margin-top: auto; display: flex; gap: 32px;">
-          <div>
-            <div style="font-family: 'Space Grotesk', sans-serif; font-size: 48px; font-weight: 700; line-height: 1; color: var(--text-main); letter-spacing:-0.04em;" aria-hidden="true">ROI</div>
-            <div style="font-size: 13px; color: var(--text-muted); font-weight: 500; margin-top: 4px;">
-              <span class="pt">Performance</span>
-              <span class="en">Performance</span>
-            </div>
+        
+        <div class="growth-metrics">
+          <div class="gm-item">
+            <div class="gm-v" aria-hidden="true">ROI</div>
+            <div class="gm-l"><span class="pt">Performance</span><span class="en">Performance</span></div>
           </div>
-          <div>
-            <div style="font-family: 'Space Grotesk', sans-serif; font-size: 48px; font-weight: 700; line-height: 1; color: var(--text-main); letter-spacing:-0.04em;" aria-hidden="true">CRM</div>
-            <div style="font-size: 13px; color: var(--text-muted); font-weight: 500; margin-top: 4px;">
-              <span class="pt">Retenção LTV</span>
-              <span class="en">LTV Retention</span>
-            </div>
+          <div class="gm-item">
+            <div class="gm-v" aria-hidden="true">CRM</div>
+            <div class="gm-l"><span class="pt">Retenção</span><span class="en">Retention</span></div>
+          </div>
+          <div class="gm-item">
+            <div class="gm-v" aria-hidden="true">CRO</div>
+            <div class="gm-l"><span class="pt">Conversão</span><span class="en">Conversion</span></div>
+          </div>
+          <div class="gm-item">
+            <div class="gm-v" aria-hidden="true">LTV</div>
+            <div class="gm-l"><span class="pt">Valor Real</span><span class="en">Lifetime Value</span></div>
           </div>
         </div>
       </article>
@@ -859,11 +839,11 @@ nav {
   </section>
 
   <section class="sec cap-sec rv" id="capabilities">
-    <h2 class="sr-only"><span class="pt">Nossos Serviços e Clientes</span><span class="en">Our Services and Clients</span></h2>
+    <h2 class="sr-only"><span class="pt">Capabilities</span><span class="en">Capabilities</span></h2>
     <div class="cap-grid">
 
       <div class="cap-block">
-        <div class="cap-col-label"><span class="pt">Serviços</span><span class="en">Services</span></div>
+        <div class="cap-col-label"><span class="pt">Capabilities</span><span class="en">Capabilities</span></div>
         <ul class="cap-list split-desktop">
           <li>Estratégia de Produto</li>
           <li>UX/UI Design</li>
@@ -877,7 +857,7 @@ nav {
       </div>
 
       <div class="cap-block">
-        <div class="cap-col-label"><span class="pt">Clientes</span><span class="en">Partner Clients</span></div>
+        <div class="cap-col-label"><span class="pt">Clientes Parceiros</span><span class="en">Partner Clients</span></div>
         <ul class="cap-list split-desktop">
           <li>Novo Nordisk</li>
           <li>Santos FC</li>
@@ -886,7 +866,6 @@ nav {
           <li>Dexco</li>
           <li>EPharma</li>
           <li>Nsports</li>
-          <li>Drogavet</li>
         </ul>
       </div>
 
@@ -934,7 +913,9 @@ nav {
   <footer class="footer-main">
 
     <div class="footer-col footer-brand">
-      <div class="n-logo">SkillCore</div>
+      <div class="n-logo">
+        <img src="assets/images/logo.svg" alt="SkillCore" class="nav-logo-img">
+      </div>
       <p class="footer-desc">
         <span class="pt">A primeira consultoria AI-Native focada em acelerar negócios. Unimos o julgamento de estrategistas seniores à escala infinita da IA.</span>
         <span class="en">The first AI-Native consultancy focused on accelerating businesses. We pair senior strategist judgment with AI's infinite scale.</span>
@@ -953,7 +934,7 @@ nav {
       <div class="footer-col-title"><span class="pt">Navegação</span><span class="en">Navigation</span></div>
       <ul>
         <li><a href="#process"><span class="pt">Método</span><span class="en">Method</span></a></li>
-        <li><a href="#services"><span class="pt">Serviços</span><span class="en">Services</span></a></li>
+        <li><a href="#services"><span class="pt">Capabilities</span><span class="en">Capabilities</span></a></li>
         <li><a href="#work"><span class="pt">Projetos</span><span class="en">Work</span></a></li>
       </ul>
     </div>
@@ -975,28 +956,6 @@ nav {
       <a href="#"><span class="pt">Termos</span><span class="en">Terms of Service</span></a>
     </div>
   </div>
-</div>
-
-<div class="ai-fab" onclick="toggleChat()" aria-label="Falar com Assistente de Inteligência Artificial" role="button" tabindex="0">
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-</div>
-
-<div class="ai-window" id="aiWindow" role="dialog" aria-label="Janela de Chat da SkillCore">
-  <div class="ai-header">
-    <div class="ai-title">SkillCore Assistant</div>
-    <button class="ai-close" onclick="toggleChat()" aria-label="Fechar Chat">✕</button>
-  </div>
-  <div class="ai-body" id="aiBody" aria-live="polite">
-    <div class="msg bot pt">Olá! Sou o agente virtual da SkillCore. Como posso te ajudar a escalar seu negócio hoje?</div>
-    <div class="msg bot en">Hello! I'm the SkillCore virtual agent. How can I help you scale your business today?</div>
-  </div>
-  <form class="ai-input-area" onsubmit="handleAiChat(event)">
-    <label class="sr-only" for="aiInput">Digite sua mensagem para a inteligência artificial</label>
-    <input type="text" class="ai-input" id="aiInput" placeholder="Escreva uma mensagem..." autocomplete="off">
-    <button type="submit" class="ai-send" aria-label="Enviar Mensagem">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-    </button>
-  </form>
 </div>
 
 <script>
@@ -1028,50 +987,6 @@ const obs = new IntersectionObserver(es => {
   es.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
 }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 document.querySelectorAll('.rv, .bento-item, .pb-item, .case-card').forEach(el => obs.observe(el));
-
-// AI Chat Interaction
-const aiWindow = document.getElementById('aiWindow');
-const aiBody = document.getElementById('aiBody');
-const aiInput = document.getElementById('aiInput');
-
-function toggleChat() {
-  aiWindow.classList.toggle('open');
-  if(aiWindow.classList.contains('open')) {
-    setTimeout(() => aiInput.focus(), 300);
-  }
-}
-
-function handleAiChat(e) {
-  e.preventDefault();
-  const text = aiInput.value.trim();
-  if(!text) return;
-
-  const userMsg = document.createElement('div');
-  userMsg.className = 'msg user';
-  userMsg.textContent = text;
-  aiBody.appendChild(userMsg);
-  aiInput.value = '';
-  scrollToBottom();
-
-  const typingMsg = document.createElement('div');
-  typingMsg.className = 'msg typing';
-  typingMsg.textContent = 'Digitando...';
-  aiBody.appendChild(typingMsg);
-  scrollToBottom();
-
-  setTimeout(() => {
-    typingMsg.remove();
-    const botMsg = document.createElement('div');
-    botMsg.className = 'msg bot';
-    botMsg.textContent = "Excelente! Entendi sua necessidade. Nossa equipe especialista em engenharia de produto pode marcar um papo rápido para mapear isso. Gostaria de receber um e-mail com horários?";
-    aiBody.appendChild(botMsg);
-    scrollToBottom();
-  }, 1500);
-}
-
-function scrollToBottom() {
-  aiBody.scrollTop = aiBody.scrollHeight;
-}
 </script>
 
 </body>
