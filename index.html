@@ -30,7 +30,7 @@
 <meta name="twitter:description" content="Impulsionamos sua marca unindo criatividade estratégica e inteligência artificial. Transformamos ideias em realidade palpável.">
 <meta name="twitter:image" content="https://skillcore.pro/assets/images/miniaturawhats.png">
 
-<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.png">
+<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -147,7 +147,7 @@ nav {
 }
 .n-logo { display: flex; align-items: center; }
 .nav-logo-img { height: 24px; width: auto; display: block; transition: filter 0.4s ease; }
-[data-theme="dark"] .nav-logo-img { filter: invert(1); } /* Inverte para branco no Dark Mode se o SVG for preto */
+[data-theme="dark"] .nav-logo-img { filter: invert(1); }
 
 .n-links { display: flex; gap: 32px; font-size: 14px; color: var(--text-muted); font-weight: 500;}
 .n-links a:hover { color: var(--text-main); }
@@ -223,9 +223,41 @@ nav {
   color: var(--bg-main); 
 }
 
-/* SHOWCASE IMAGE */
-.showcase-sec { padding: 0 48px; max-width: 1400px; margin: 0 auto 120px; position: relative; z-index: 10;}
-.showcase-wrapper { width: 100%; aspect-ratio: 21 / 9; border-radius: 40px; overflow: hidden; box-shadow: 0 40px 100px rgba(0,0,0,0.08); border: 1px solid var(--line); background: var(--bg-card);}
+/* ─────────────────────────────────────
+   CANVAS VIDEO SCRUBBER (APPLE STYLE)
+───────────────────────────────────── */
+.canvas-sec {
+  height: 300vh; 
+  position: relative;
+  padding: 0 48px;
+  max-width: 1400px;
+  margin: 0 auto 120px;
+  z-index: 10;
+}
+.canvas-sticky {
+  position: sticky;
+  top: 10vh; 
+  height: 80vh; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.canvas-wrapper {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 21 / 9; 
+  border-radius: 40px;
+  overflow: hidden; 
+  box-shadow: 0 40px 100px rgba(0,0,0,0.08);
+  border: 1px solid var(--line);
+  background: var(--bg-card);
+}
+#hero-canvas {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  display: block;
+}
 
 /* ─────────────────────────────────────
    SECTION SHARED
@@ -323,7 +355,7 @@ nav {
 .csm-l { font-size: 13px; color: var(--text-muted); font-weight: 500; line-height: 1.3; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
 /* ─────────────────────────────────────
-   CAPABILITIES E CLIENTES (COLUNAS DINÂMICAS)
+   CAPABILITIES E CLIENTES
 ───────────────────────────────────── */
 .cap-sec { border-top: 1px solid var(--line); padding-top: 120px; margin-top: 40px;}
 .cap-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
@@ -398,7 +430,7 @@ nav {
   .theme-toggle { width: 20px; height: 20px; padding: 0; display: flex; align-items: center; justify-content: center;}
   .theme-toggle svg { width: 16px; height: 16px; }
 
-  /* FLUIDEZ MOBILE GERAL */
+  /* FLUIDEZ MOBILE GERAL ALINHAMENTO ABSOLUTO (24px) */
   .sec { padding: 64px 24px; }
   .sec-header { margin-bottom: 40px; }
   .cases-sec { padding: 64px 0; }
@@ -413,8 +445,10 @@ nav {
   .hero-bottom-actions { width: 100%; display: flex; justify-content: center; }
   .btn-outline { display: inline-flex; width: auto; height: auto; padding: 14px 32px; font-size: 15px; }
 
-  .showcase-sec { padding: 0 24px; margin-bottom: 40px; }
-  .showcase-wrapper { aspect-ratio: 16 / 10; border-radius: 20px; }
+  /* Ajustes do Canvas no Mobile */
+  .canvas-sec { height: 200vh; padding: 0 24px; margin-bottom: 40px; }
+  .canvas-sticky { top: 15vh; height: 50vh; }
+  .canvas-wrapper { aspect-ratio: 16 / 10; border-radius: 20px; }
   
   .cases-header-wrap { flex-direction: column; align-items: flex-start; gap: 16px; padding: 0 24px;}
   .cases-viewport { padding: 20px 24px 40px 24px; gap: 16px; }
@@ -464,7 +498,7 @@ nav {
   .growth-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 16px; margin-top: 24px; padding-top: 0; }
   .gm-v { font-size: 28px; }
 
-  /* CAPABILITIES (LADO A LADO MOBILE COM ESPAÇAMENTO REVISADO) */
+  /* CAPABILITIES (LADO A LADO MOBILE) */
   .cap-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
   .split-desktop { column-count: 1; } 
   .cap-col-label { font-size: 11px; margin-bottom: 16px; padding-bottom: 8px;}
@@ -491,7 +525,7 @@ nav {
 
 <nav>
   <a href="#" class="n-logo" aria-label="SkillCore Início">
-    <img src="assets/images/logo.png" alt="SkillCore" class="nav-logo-img">
+    <img src="assets/images/logo.svg" alt="SkillCore" class="nav-logo-img">
   </a>
   <ul class="n-links">
     <li><a href="#process"><span class="pt">Método</span><span class="en">Method</span></a></li>
@@ -538,9 +572,11 @@ nav {
     </div>
   </header>
 
-  <section class="showcase-sec rv d2">
-    <div class="showcase-wrapper">
-      <img src="assets/images/hero-team.png" alt="Equipe SkillCore colaborando em projeto" class="gradient-img">
+  <section class="canvas-sec rv d2" id="canvas-section">
+    <div class="canvas-sticky">
+      <div class="canvas-wrapper">
+        <canvas id="hero-canvas" aria-label="Animação em destaque da SkillCore" role="img"></canvas>
+      </div>
     </div>
   </section>
 
@@ -565,7 +601,7 @@ nav {
       </article>
 
       <article class="bento-item bento-dark span-4 rv d1" role="listitem">
-        <div class="bento-icon" aria-hidden="true" style="margin-bottom: auto; background: rgba(255,255,255,0.1); color: #fff;">
+        <div class="bento-icon" aria-hidden="true" style="margin-bottom: 16px; background: rgba(255,255,255,0.1); color: #fff;">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
         </div>
         <h3 class="bento-title" style="font-size: 32px;"><span class="pt">Operação<br>AI-Native</span><span class="en">AI-Native<br>Operation</span></h3>
@@ -640,7 +676,7 @@ nav {
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
         </div>
         <h3 class="bento-title"><span class="pt">IA & Automação</span><span class="en">AI & Automation</span></h3>
-        <p class="desc-text"><span class="pt">Agentes inteligentes e fluxos automatizados integrados ao seu negócio. Escalamos a sua operação eliminando o trabalho braçal.</span><span class="en">Intelligent agents and automated workflows integrated into your business. We scale your operation by eliminating manual work.</span></p>
+        <p class="desc-text" style="margin-top: auto;"><span class="pt">Agentes inteligentes e fluxos automatizados integrados ao seu negócio. Escalamos a sua operação eliminando o trabalho braçal.</span><span class="en">Intelligent agents and automated workflows integrated into your business. We scale your operation by eliminating manual work.</span></p>
       </article>
 
       <article class="bento-item span-6 rv d1" role="listitem">
@@ -674,6 +710,10 @@ nav {
           <div class="gm-item">
             <div class="gm-v" aria-hidden="true">CRO</div>
             <div class="gm-l"><span class="pt">Conversão</span><span class="en">Conversion</span></div>
+          </div>
+          <div class="gm-item">
+            <div class="gm-v" aria-hidden="true">LTV</div>
+            <div class="gm-l"><span class="pt">Valor Real</span><span class="en">Lifetime Value</span></div>
           </div>
         </div>
       </article>
@@ -853,7 +893,7 @@ nav {
       </div>
 
       <div class="cap-block">
-        <div class="cap-col-label"><span class="pt">Clientes</span><span class="en">Partner Clients</span></div>
+        <div class="cap-col-label"><span class="pt">Clientes Parceiros</span><span class="en">Partner Clients</span></div>
         <ul class="cap-list split-desktop">
           <li>Novo Nordisk</li>
           <li>Santos FC</li>
@@ -862,14 +902,13 @@ nav {
           <li>Dexco</li>
           <li>EPharma</li>
           <li>Nsports</li>
-          <li>Drogavet</li>
         </ul>
       </div>
 
     </div>
   </section>
 
-  <section class="cta-sec" id="contact">
+  <section class="sec cta-sec" id="contact">
     <div class="rv cta-header">
       <h2 class="cta-h2 h-title">
         <span class="pt">A sua melhor ideia<br>merece existir.</span>
@@ -956,6 +995,7 @@ nav {
 </div>
 
 <script>
+// --- CORE LOGIC ---
 function toggleTheme() {
   const html = document.documentElement;
   const currentTheme = html.getAttribute('data-theme');
@@ -970,7 +1010,6 @@ function setLang(l) {
   document.querySelector(`.lb[onclick="setLang('${l}')"]`).classList.add('on');
 }
 
-// Logic for Cases Slider
 function scrollCases(direction) {
   const slider = document.getElementById('casesSlider');
   const card = slider.querySelector('.case-card');
@@ -979,11 +1018,62 @@ function scrollCases(direction) {
   slider.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
 }
 
-// Intersection Observer for scroll animations
 const obs = new IntersectionObserver(es => {
   es.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
 }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 document.querySelectorAll('.rv, .bento-item, .pb-item, .case-card').forEach(el => obs.observe(el));
+
+// --- VIDEO SCRUBBING ENGINE ---
+document.addEventListener('DOMContentLoaded', () => {
+  const canvas = document.getElementById("hero-canvas");
+  if(!canvas) return;
+  const context = canvas.getContext("2d");
+  
+  canvas.width = 1280; // ATUALIZADO PARA CASAR COM SEUS FRAMES
+  canvas.height = 720; // ATUALIZADO PARA CASAR COM SEUS FRAMES
+
+  const frameCount = 34; // ATUALIZADO PARA 34 FRAMES
+  
+  const currentFrame = index => `assets/hero-frames/frame-${index.toString().padStart(5, '0')}.webp`;
+  
+  const images = [];
+  const fallbackImg = new Image();
+  
+  // 1. CARREGA O FALLBACK (assets/images/hero-team.png já existente)
+  fallbackImg.src = 'assets/images/hero-team.png';
+  fallbackImg.onload = () => {
+    context.drawImage(fallbackImg, 0, 0, canvas.width, canvas.height);
+  };
+
+  // 2. PRELOAD DOS FRAMES DO VÍDEO
+  for (let i = 1; i <= frameCount; i++) {
+    const imgObj = new Image();
+    imgObj.src = currentFrame(i);
+    images.push(imgObj);
+  }
+
+  // 3. MOTOR DE ROLAGEM
+  window.addEventListener('scroll', () => {
+    const section = document.getElementById('canvas-section');
+    const rect = section.getBoundingClientRect();
+    
+    // O quanto o usuario já desceu dentro da seção de 300vh
+    const maxScroll = section.scrollHeight - window.innerHeight;
+    let fraction = -rect.top / maxScroll;
+    
+    if(fraction < 0) fraction = 0;
+    if(fraction > 1) fraction = 1;
+    
+    const frameIndex = Math.min(frameCount - 1, Math.floor(fraction * frameCount));
+    
+    // Renderiza o frame correspondente se ele já foi baixado
+    if(images[frameIndex] && images[frameIndex].complete) {
+      requestAnimationFrame(() => {
+        context.drawImage(images[frameIndex], 0, 0, canvas.width, canvas.height);
+      });
+    }
+  });
+});
 </script>
 
 </body>
