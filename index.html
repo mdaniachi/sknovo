@@ -76,7 +76,7 @@
   --fs-h2: clamp(32px, 5vw, 64px);
   --fs-h3: clamp(22px, 3vw, 32px);
   --fs-desc: 18px;
-
+  
   /* Light Mode */
   --bg-main: #F5F5F7;
   --bg-card: #FFFFFF;
@@ -256,8 +256,8 @@ nav {
 .pb-desc-wrap { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; margin-top: auto;}
 .pb-3 .desc-text { max-width: 400px; margin: 0; }
 
-.pb-arrow { width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; background: var(--bg-main); border-radius: 50%; flex-shrink: 0; color: var(--text-main); transition: background 0.4s ease;}
-.pb-item:hover .pb-arrow { background: var(--invert-bg); color: var(--invert-text); }
+.pb-arrow { width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; background: var(--bg-main); border-radius: 50%; flex-shrink: 0; color: var(--text-main); transition: transform 0.4s var(--exp), background 0.4s ease;}
+.pb-item:hover .pb-arrow { transform: scale(1.1) rotate(15deg); background: var(--invert-bg); color: var(--invert-text); }
 
 /* ─────────────────────────────────────
    BENTO GRID (SERVICES & ABOUT)
@@ -307,9 +307,12 @@ nav {
 .cs-body { padding: 80px 64px; display: flex; flex-direction: column; justify-content: center; }
 
 .cs-client-name { font-size: 13px; font-weight: 600; color: var(--text-main); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; opacity: 0.6;}
-.cs-sector { font-size: 14px; font-weight: 500; color: var(--or); margin-bottom: 24px; }
 .cs-title { font-size: var(--fs-h3); margin-bottom: 20px; color: var(--text-main); }
-.cs-desc { margin-bottom: 48px; }
+.cs-desc { margin-bottom: 24px; }
+
+/* Tags de Serviço no Portfólio */
+.cs-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 40px; }
+.cs-tag { font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 6px 12px; border-radius: 100px; background: var(--bg-main); color: var(--text-muted); border: 1px solid var(--line); }
 
 .cs-metrics { display: flex; flex-wrap: nowrap; gap: 24px; align-items: flex-start; width: 100%; }
 .cs-metrics > div { flex: 1; min-width: 0; }
@@ -420,21 +423,13 @@ nav {
   .cap-sec { padding-top: 64px; margin-top: 24px; }
   .cta-sec { padding: 80px 20px; }
   
-  /* HERO PENTE FINO E CENTRALIZADO */
+  /* HERO PENTE FINO */
   .hero { padding: 120px 20px 56px; min-height: 75vh; justify-content: center; }
-  .hero-massive { font-size: clamp(32px, 10vw, 48px); margin-bottom: 20px; line-height: 1.05; }
-  
-  /* Garantindo o respiro no mobile independentemente de outras classes */
-  .hero-p { font-size: 16px; margin-bottom: 56px !important; padding: 0 8px; }
+  .hero-massive { font-size: clamp(32px, 10vw, 48px); margin-bottom: 16px; line-height: 1.05; }
+  .hero-p { font-size: 16px; margin-bottom: 48px !important; padding: 0 8px; }
   
   .hero-bottom-actions { width: 100%; display: flex; justify-content: center; }
-  .btn-outline { 
-    display: inline-flex; 
-    width: auto; 
-    height: auto; 
-    padding: 14px 32px; 
-    font-size: 15px; 
-  }
+  .btn-outline { display: inline-flex; width: auto; height: auto; padding: 14px 32px; font-size: 15px; }
 
   .showcase-sec { padding: 0 20px; margin-bottom: 40px; }
   .showcase-wrapper { aspect-ratio: 16 / 10; border-radius: 20px; }
@@ -443,13 +438,14 @@ nav {
   .cases-viewport { padding: 20px 20px 40px 20px; gap: 16px; }
   .cs-metrics { flex-wrap: nowrap; gap: 12px; margin-top: 32px; }
   .cs-body { padding: 32px 24px; }
+  .cs-tags { margin-bottom: 32px; }
   .cs-vis { min-height: 250px; }
   
   .ai-window { width: calc(100vw - 40px); right: 20px; bottom: 100px;}
   .hero-bg-shapes { width: 300px; height: 300px; }
   .ring-1 { width: 100px; height: 100px; }
   .ring-2 { width: 200px; height: 200px; }
-  
+
   /* BENTOS MOBILE (UNIFORMIDADE TOTAL) */
   .bento-grid, .process-bento { 
     display: grid !important;
@@ -469,7 +465,6 @@ nav {
 
   .bento-title, .pb-title, .pb-title-huge { font-size: 20px !important; margin: 0 0 12px 0 !important; line-height: 1.2 !important; }
   
-  /* Restringindo a alteração do margin: 0 apenas para os textos dentro dos bentos */
   .bento-item .desc-text, .pb-item .desc-text { 
     font-size: 14px !important; 
     line-height: 1.5 !important; 
@@ -551,7 +546,7 @@ nav {
         <span class="pt">Senta aqui.<br>Vamos desenhar<br>O seu amanhã.</span>
         <span class="en">Pull up a chair.<br>Let's design<br>Your tomorrow.</span>
       </h1>
-      <p class="hero-p rv d2">
+      <p class="hero-p desc-text rv d2">
         <span class="pt">Desenhamos experiências conectadas combinando o julgamento crítico de especialistas à escala de execução da inteligência artificial. Somos a agência AI-Native parceira na evolução digital da sua marca.</span>
         <span class="en">We design connected experiences by combining the critical judgment of experts with the execution scale of artificial intelligence. We are the AI-Native agency partnering in your brand's digital evolution.</span>
       </p>
@@ -739,6 +734,10 @@ nav {
           <div class="cs-client-name">Novo Nordisk</div>
           <h3 class="cs-title"><span class="pt">Campanha NovoDia</span><span class="en">NovoDia Campaign</span></h3>
           <p class="cs-desc desc-text"><span class="pt">A campanha de lançamento do NovoDia reposicionou o programa como um verdadeiro parceiro. Narrativas reais que amplificam o cuidado contínuo, empático e acessível.</span><span class="en">The NovoDia launch campaign repositioned the program as a true partner. Real narratives that amplify continuous, empathetic, and accessible care.</span></p>
+          <div class="cs-tags" aria-hidden="true">
+            <span class="cs-tag"><span class="pt">Campanha</span><span class="en">Campaign</span></span>
+            <span class="cs-tag"><span class="pt">Estratégia</span><span class="en">Strategy</span></span>
+          </div>
           <div class="cs-metrics">
             <div><div class="csm-v">+40mi</div><div class="csm-l"><span class="pt">Views</span><span class="en">Views</span></div></div>
             <div><div class="csm-v">+60%</div><div class="csm-l"><span class="pt">Engajamento</span><span class="en">Engagement</span></div></div>
@@ -753,6 +752,10 @@ nav {
           <div class="cs-client-name">Novo Nordisk</div>
           <h3 class="cs-title"><span class="pt">Réguas de Comunicação</span><span class="en">CRM Journeys</span></h3>
           <p class="cs-desc desc-text"><span class="pt">Estratégia de CRM empática para tratamentos de alta complexidade. Estruturamos jornadas de comunicação que conectam informação, acolhimento e incentivo à adesão.</span><span class="en">Empathetic CRM strategy for highly complex treatments. We structured communication journeys that connect information, welcoming, and adherence incentives.</span></p>
+          <div class="cs-tags" aria-hidden="true">
+            <span class="cs-tag"><span class="pt">CRM</span><span class="en">CRM</span></span>
+            <span class="cs-tag"><span class="pt">IA & Automação</span><span class="en">AI & Automation</span></span>
+          </div>
           <div class="cs-metrics">
             <div><div class="csm-v">6</div><div class="csm-l"><span class="pt">Tratamentos</span><span class="en">Treatments</span></div></div>
             <div><div class="csm-v">Omni</div><div class="csm-l"><span class="pt">Distribuição</span><span class="en">Distribution</span></div></div>
@@ -767,6 +770,10 @@ nav {
           <div class="cs-client-name">Novo Nordisk</div>
           <h3 class="cs-title">Novo Site NovoDia</h3>
           <p class="cs-desc desc-text"><span class="pt">Reimaginamos o principal canal de suporte ao paciente. Uma experiência fluida e empática que unifica toda a jornada de saúde.</span><span class="en">We reimagined the main patient support channel. A fluid and empathetic experience that unifies the entire health journey.</span></p>
+          <div class="cs-tags" aria-hidden="true">
+            <span class="cs-tag"><span class="pt">Web & Apps</span><span class="en">Web & Apps</span></span>
+            <span class="cs-tag"><span class="pt">UX/UI Design</span><span class="en">UX/UI Design</span></span>
+          </div>
           <div class="cs-metrics">
             <div><div class="csm-v">UX</div><div class="csm-l"><span class="pt">Pesquisa Global</span><span class="en">Global Research</span></div></div>
             <div><div class="csm-v">UI</div><div class="csm-l"><span class="pt">Design System</span><span class="en">Design System</span></div></div>
@@ -781,6 +788,11 @@ nav {
           <div class="cs-client-name">Play2Learn</div>
           <h3 class="cs-title"><span class="pt">Plataforma Corporativa</span><span class="en">Corporate Platform</span></h3>
           <p class="cs-desc desc-text"><span class="pt">Transformamos o aprendizado corporativo. Uma plataforma própria que une design editorial, tecnologia nativa e dinâmicas de jogo.</span><span class="en">We transformed corporate learning. A proprietary platform combining editorial design, native tech, and game dynamics.</span></p>
+          <div class="cs-tags" aria-hidden="true">
+            <span class="cs-tag"><span class="pt">Produto</span><span class="en">Product</span></span>
+            <span class="cs-tag"><span class="pt">Gamificação</span><span class="en">Gamification</span></span>
+            <span class="cs-tag"><span class="pt">IA</span><span class="en">AI</span></span>
+          </div>
           <div class="cs-metrics">
             <div><div class="csm-v">SaaS</div><div class="csm-l"><span class="pt">Produto Próprio</span><span class="en">Proprietary Product</span></div></div>
             <div><div class="csm-v">IA</div><div class="csm-l"><span class="pt">Agentes Integrados</span><span class="en">Integrated Agents</span></div></div>
@@ -795,6 +807,10 @@ nav {
           <div class="cs-client-name">Novo Nordisk</div>
           <h3 class="cs-title"><span class="pt">Simulador NovoDia</span><span class="en">NovoDia Simulator</span></h3>
           <p class="cs-desc desc-text"><span class="pt">Traduzimos dados clínicos complexos em visualizações claras. Um simulador interativo que reforça o valor do tratamento médico.</span><span class="en">We translated complex clinical data into clear visualizations. An interactive simulator that reinforces the value of medical treatment.</span></p>
+          <div class="cs-tags" aria-hidden="true">
+            <span class="cs-tag"><span class="pt">Produto</span><span class="en">Product</span></span>
+            <span class="cs-tag"><span class="pt">Web & Apps</span><span class="en">Web & Apps</span></span>
+          </div>
           <div class="cs-metrics">
             <div><div class="csm-v">1.06k</div><div class="csm-l"><span class="pt">Visitas</span><span class="en">Visits</span></div></div>
             <div><div class="csm-v">5.2%</div><div class="csm-l"><span class="pt">CTR Médio</span><span class="en">Avg. CTR</span></div></div>
@@ -809,6 +825,10 @@ nav {
           <div class="cs-client-name">Santos FC</div>
           <h3 class="cs-title"><span class="pt">Sócio Rei</span><span class="en">Sócio Rei</span></h3>
           <p class="cs-desc desc-text"><span class="pt">Muito além do campo. Uma plataforma gamificada que recompensa o engajamento real e fortalece a lealdade do torcedor.</span><span class="en">Far beyond the pitch. A gamified platform that rewards real engagement and strengthens fan loyalty.</span></p>
+          <div class="cs-tags" aria-hidden="true">
+            <span class="cs-tag"><span class="pt">Apps</span><span class="en">Apps</span></span>
+            <span class="cs-tag"><span class="pt">Gamificação</span><span class="en">Gamification</span></span>
+          </div>
           <div class="cs-metrics">
             <div><div class="csm-v">App</div><div class="csm-l"><span class="pt">Desenvolvimento</span><span class="en">Development</span></div></div>
             <div><div class="csm-v">Game</div><div class="csm-l"><span class="pt">Motor Lógico</span><span class="en">Logic Engine</span></div></div>
