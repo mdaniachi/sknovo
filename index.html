@@ -1024,7 +1024,7 @@ const obs = new IntersectionObserver(es => {
 }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 document.querySelectorAll('.rv, .bento-item, .pb-item, .case-card').forEach(el => obs.observe(el));
 
-// --- VIDEO SCRUBBING ENGINE BLINDADO ---
+// --- VIDEO SCRUBBING ENGINE BLINDADO (VERSÃO PNG) ---
 document.addEventListener('DOMContentLoaded', () => {
   const canvas = document.getElementById("hero-canvas");
   if(!canvas) return;
@@ -1035,8 +1035,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const frameCount = 34; // Seus 34 frames
   
-  // Função que puxa o nome exato na rota certa
-  const currentFrame = index => `assets/images/hero-frames/frame-${index.toString().padStart(5, '0')}.webp`;
+  // *** ALTERADO AQUI: MUDAMOS A EXTENSÃO PARA .png ***
+  const currentFrame = index => `assets/images/hero-frames/frame-${index.toString().padStart(5, '0')}.png`;
   
   const images = [];
   
