@@ -1024,18 +1024,13 @@ const obs = new IntersectionObserver(es => {
 }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 document.querySelectorAll('.rv, .bento-item, .pb-item, .case-card').forEach(el => obs.observe(el));
 
-// --- VIDEO SCRUBBING ENGINE BLINDADO (VERSÃO PNG) ---
+// --- VIDEO SCRUBBING ENGINE BLINDADO (QUALIDADE MÁXIMA RETINA) ---
 document.addEventListener('DOMContentLoaded', () => {
   const canvas = document.getElementById("hero-canvas");
   if(!canvas) return;
   const context = canvas.getContext("2d");
-  
-  canvas.width = 1280; 
-  canvas.height = 720; 
 
   const frameCount = 34; // Seus 34 frames
-  
-  // *** ALTERADO AQUI: MUDAMOS A EXTENSÃO PARA .png ***
   const currentFrame = index => `assets/images/hero-frames/frame-${index.toString().padStart(5, '0')}.png`;
   
   const images = [];
@@ -1047,32 +1042,33 @@ document.addEventListener('DOMContentLoaded', () => {
     images.push(imgObj);
   }
 
-  // 2. CARREGA O SEU PRÓPRIO FRAME 1 COMO "CAPA" DO VÍDEO
+  // 2. CARREGA O FRAME 1 E CALIBRA A RESOLUÇÃO PARA QUALIDADE MÁXIMA
   images[0].onload = () => {
+    // O Pulo do Gato: O canvas agora vai ter a resolução EXATA da sua imagem original
+    canvas.width = images[0].naturalWidth;
+    canvas.height = images[0].naturalHeight;
     context.drawImage(images[0], 0, 0, canvas.width, canvas.height);
   };
 
-  // 3. MOTOR DE ROLAGEM COM CALIBRAGEM FINA
+  // 3. MOTOR DE ROLAGEM
   window.addEventListener('scroll', () => {
     const section = document.getElementById('canvas-section');
     const rect = section.getBoundingClientRect();
     
-    // Calcula o espaço total de rolagem da área "sticky"
     const maxScroll = section.scrollHeight - window.innerHeight;
-    
-    // Calcula a fração exata com base na posição da tela
     let fraction = -rect.top / maxScroll;
     
-    // Garante que a matemática não saia do limite de 0% a 100%
     if(fraction < 0) fraction = 0;
     if(fraction > 1) fraction = 1;
     
-    // Transforma a porcentagem no número do frame exato
     const frameIndex = Math.min(frameCount - 1, Math.floor(fraction * frameCount));
     
-    // Só desenha se a imagem existir no array e tiver sido baixada
+    // Só desenha se a imagem estiver carregada
     if(images[frameIndex] && images[frameIndex].complete && images[frameIndex].naturalWidth > 0) {
       requestAnimationFrame(() => {
+        // Limpa o frame anterior para evitar borrões
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        // Desenha o frame atual
         context.drawImage(images[frameIndex], 0, 0, canvas.width, canvas.height);
       });
     }
