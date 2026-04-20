@@ -912,26 +912,35 @@ nav {
       </p>
     </div>
 
-    <form class="contact-form rv d1" onsubmit="event.preventDefault(); alert('Mensagem enviada! (Mockup)');">
-      <label class="sr-only" for="name-pt">Nome</label>
-      <input type="text" id="name-pt" class="form-input pt" placeholder="Seu nome" required>
-      <label class="sr-only" for="name-en">Name</label>
-      <input type="text" id="name-en" class="form-input en" placeholder="Your name">
+    <form class="contact-form rv d1" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="1739af38-23a6-4229-8a64-e79a3bc2875d">
+      <input type="hidden" name="subject" value="Novo contato via SkillCore.pro">
+      <input type="hidden" name="from_name" value="SkillCore Website">
+      <input type="hidden" name="redirect" value="">
+      <input type="checkbox" name="botcheck" class="sr-only" style="display:none">
 
-      <label class="sr-only" for="email-pt">E-mail</label>
-      <input type="email" id="email-pt" class="form-input pt" placeholder="Seu e-mail profissional" required>
-      <label class="sr-only" for="email-en">Email</label>
-      <input type="email" id="email-en" class="form-input en" placeholder="Your work email">
+      <label class="sr-only" for="contact-name">Nome</label>
+      <input type="text" id="contact-name" name="name" class="form-input" placeholder="Seu nome" required>
 
-      <label class="sr-only" for="msg-pt">Mensagem</label>
-      <textarea id="msg-pt" class="form-input form-textarea pt" placeholder="Como podemos ajudar?" required></textarea>
-      <label class="sr-only" for="msg-en">Message</label>
-      <textarea id="msg-en" class="form-input form-textarea en" placeholder="How can we help?"></textarea>
+      <label class="sr-only" for="contact-email">E-mail</label>
+      <input type="email" id="contact-email" name="email" class="form-input" placeholder="Seu e-mail profissional" required>
 
-      <button type="submit" class="form-submit">
+      <label class="sr-only" for="contact-msg">Mensagem</label>
+      <textarea id="contact-msg" name="message" class="form-input form-textarea" placeholder="Como podemos ajudar?" required></textarea>
+
+      <button type="submit" class="form-submit" id="contactSubmit">
         <span class="pt">Iniciar projeto</span>
         <span class="en">Start project</span>
       </button>
+
+      <p id="formSuccess" style="display:none; text-align:center; color:#4ade80; font-size:16px; margin-top:8px;">
+        <span class="pt">Mensagem enviada com sucesso! Entraremos em contato em breve.</span>
+        <span class="en">Message sent successfully! We'll get back to you soon.</span>
+      </p>
+      <p id="formError" style="display:none; text-align:center; color:#f87171; font-size:16px; margin-top:8px;">
+        <span class="pt">Erro ao enviar. Tente novamente ou envie para customer@skillcore.pro</span>
+        <span class="en">Error sending. Please try again or email customer@skillcore.pro</span>
+      </p>
     </form>
   </section>
 
@@ -1057,6 +1066,41 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   });
+});
+
+// Contact Form - Web3Forms
+const contactForm = document.getElementById('contactForm');
+const contactSubmit = document.getElementById('contactSubmit');
+const formSuccess = document.getElementById('formSuccess');
+const formError = document.getElementById('formError');
+
+contactForm.addEventListener('submit', async function(e) {
+  e.preventDefault();
+  contactSubmit.disabled = true;
+  contactSubmit.textContent = 'Enviando...';
+  formSuccess.style.display = 'none';
+  formError.style.display = 'none';
+
+  try {
+    const formData = new FormData(contactForm);
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData
+    });
+    const data = await res.json();
+
+    if (data.success) {
+      formSuccess.style.display = 'block';
+      contactForm.reset();
+    } else {
+      formError.style.display = 'block';
+    }
+  } catch (err) {
+    formError.style.display = 'block';
+  }
+
+  contactSubmit.disabled = false;
+  contactSubmit.innerHTML = '<span class="pt">Iniciar projeto</span><span class="en">Start project</span>';
 });
 </script>
 
