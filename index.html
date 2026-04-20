@@ -310,10 +310,12 @@ nav {
 [data-theme="dark"] .bento-icon { background: rgba(255, 255, 255, 0.1); }
 .bento-title { font-size: var(--fs-h3); margin-bottom: 12px; color: var(--text-main); line-height: 1.1;}
 
-.has-img-side { padding-right: 48%; }
+.has-img-side { padding-right: 52%; }
 
-.bento-img-wrap { margin-top: auto; border-radius: 16px; overflow: hidden; margin-bottom: -20px; margin-left: -20px; margin-right: -20px; height: 260px;}
-.bento-img-side { position: absolute; top: 0; right: 0; bottom: 0; width: 45%; }
+.bento-img-wrap { margin-top: auto; border-radius: 16px; overflow: hidden; margin-bottom: -48px; margin-left: -48px; margin-right: -48px;}
+.bento-img-wrap img { width: 100%; height: auto; display: block; }
+.bento-img-side { position: absolute; top: 0; right: 0; bottom: 0; width: 50%; overflow: hidden; }
+.bento-img-side img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 .bento-dark { background: var(--invert-bg); color: var(--invert-text); justify-content: center; border-color: transparent;}
 .bento-dark .bento-title { color: var(--invert-text); } 
@@ -413,7 +415,8 @@ nav {
 ───────────────────────────────────── */
 @media (max-width: 1024px) {
   .has-img-side { padding-right: 48px; }
-  .bento-img-side { position: relative; width: 100%; height: 240px; margin-top: 32px; }
+  .bento-img-side { position: relative; width: 100%; height: auto; margin-top: 24px; margin-left: -48px; margin-right: -48px; margin-bottom: -48px; width: calc(100% + 96px); border-radius: 0 0 32px 32px; }
+  .bento-img-side img { height: auto; object-fit: contain; }
   .pb-1, .pb-2, .pb-3 { grid-column: 1 / -1; grid-row: auto; }
   .case-card { grid-template-columns: 1fr; width: 85vw; }
   .cap-grid { gap: 40px; }
@@ -677,7 +680,7 @@ nav {
         <h3 class="bento-title"><span class="pt">Comunicação Digital</span><span class="en">Digital Communication</span></h3>
         <p class="desc-text"><span class="pt">Campanhas, motion design e posicionamento estratégico. Traduzimos a complexidade do seu produto em mensagens que conectam e convertem.</span><span class="en">Campaigns, motion design, and strategic positioning. We translate the complexity of your product into messages that connect and convert.</span></p>
 
-        <div class="bento-img-wrap" style="margin-top: 40px;">
+        <div class="bento-img-wrap" style="margin-top: 24px;">
           <img src="assets/images/card-execution.png" alt="Execução e entrega de projetos">
         </div>
       </article>
