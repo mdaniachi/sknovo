@@ -2,14 +2,14 @@
 
 > **Para executores:** REQUISITO SUB-HABILIDADE: Use `superpowers:executing-plans` para implementar este plano passo a passo.
 
-**Objetivo:** Criar um novo projeto no Google Cloud Platform (`Skillcore-Site`), configurar um container Docker com Nginx para servir o site estático no Google Cloud Run, mapear o domínio `skillcore.io` e configurar um pipeline de CI/CD via GitHub Actions para deploy automático a cada commit na branch `main`.
+**Objetivo:** Criar um novo projeto no Google Cloud Platform (`Skillcore-Site`), configurar um container Docker com Nginx para servir o site estático no Google Cloud Run, mapear o domínio `skillcore.com.br` e configurar um pipeline de CI/CD via GitHub Actions para deploy automático a cada commit na branch `main`.
 
 **Arquitetura:** 
 - **Servidor Web:** Docker contendo servidor leve Nginx (Alpine) configurado para expor a porta 8080 (padrão do Cloud Run).
 - **Hospedagem:** Google Cloud Run (Serverless, auto-scaling de zero a N).
 - **Registro de Imagens:** Google Artifact Registry.
 - **CI/CD:** GitHub Actions autenticado via Service Account Key com permissões mínimas necessárias.
-- **Domínio:** Mapeamento de domínio customizado para `skillcore.io`.
+- **Domínio:** Mapeamento de domínio customizado para `skillcore.com.br`.
 
 **Tech Stack:**
 - Google Cloud SDK (CLI)
@@ -215,7 +215,7 @@
 
 ---
 
-### Tarefa 6: Primeira Execução e Mapeamento do Domínio `skillcore.io`
+### Tarefa 6: Primeira Execução e Mapeamento do Domínio `skillcore.com.br`
 
 **Arquivos:** N/A (Operações CLI do gcloud)
 
@@ -224,10 +224,10 @@
   Fazer o deploy inicial diretamente para criar o serviço Cloud Run:
   Execute: `gcloud run deploy skillcore-site --source . --region=southamerica-east1 --allow-unauthenticated`
 
-- [ ] **Passo 2: Mapear o domínio `skillcore.io` para o Cloud Run**
+- [ ] **Passo 2: Mapear o domínio `skillcore.com.br` para o Cloud Run**
   Configurar o mapeamento do domínio customizado no Cloud Run na região `southamerica-east1`.
-  Execute: `gcloud beta run domain-mappings create --service=skillcore-site --domain=skillcore.io --region=southamerica-east1`
+  Execute: `gcloud beta run domain-mappings create --service=skillcore-site --domain=skillcore.com.br --region=southamerica-east1`
 
 - [ ] **Passo 3: Exibir registros DNS necessários**
   A execução do mapeamento de domínio irá gerar registros DNS (como registros A, AAAA e TXT para verificação do domínio). Exibiremos esses registros para o usuário configurar em seu provedor de DNS (Cloudflare, GoDaddy, etc.).
-  Execute: `gcloud beta run domain-mappings describe --domain=skillcore.io --region=southamerica-east1`
+  Execute: `gcloud beta run domain-mappings describe --domain=skillcore.com.br --region=southamerica-east1`
