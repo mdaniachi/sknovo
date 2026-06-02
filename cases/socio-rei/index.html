@@ -96,19 +96,6 @@ nav {
 .crumb a:hover { color: var(--or); }
 .crumb-sep { opacity: 0.4; }
 
-/* CLIENT LOGO PLATE */
-.client-logo-plate {
-  display: inline-flex; align-items: center; justify-content: center;
-  padding: 20px 32px; background: var(--bg-card); border: 1px solid var(--line);
-  border-radius: 16px; min-height: 80px; min-width: 200px;
-  margin-bottom: 32px;
-}
-.client-logo-plate img { max-height: 40px; width: auto; display: block; }
-.client-logo-name {
-  font-family: 'Space Grotesk', sans-serif; font-weight: 700;
-  font-size: 22px; letter-spacing: -0.03em; color: var(--text-main);
-}
-
 /* HERO */
 .case-hero {
   max-width: 1200px; margin: 0 auto;
@@ -144,13 +131,65 @@ nav {
   letter-spacing: -0.02em; color: var(--text-main);
 }
 
-/* HERO IMAGE (showcase) */
+/* HERO IMAGE — usado em TODOS os cases */
 .hero-image-wrap {
   width: 100%; aspect-ratio: 16 / 9;
-  border-radius: 32px; overflow: hidden; background: #FFF;
+  border-radius: 32px; overflow: hidden;
+  position: relative;
+  background: #FFF;
   box-shadow: 0 40px 100px rgba(0,0,0,0.08); border: 1px solid var(--line);
 }
-.hero-image-wrap img { width: 100%; height: 100%; object-fit: cover; }
+.hero-image-wrap img.hero-photo {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+  position: relative; z-index: 1;
+}
+
+/* Placeholder visual elegante (para cases sem foto disponível) */
+.hero-image-wrap.no-photo {
+  background:
+    radial-gradient(circle at 80% 110%, rgba(255,90,31,0.18) 0%, transparent 50%),
+    radial-gradient(circle at 20% -20%, rgba(255,255,255,0.04) 0%, transparent 50%),
+    linear-gradient(135deg, #1A1A1D 0%, #0A0A0A 100%);
+}
+.hero-image-wrap.no-photo::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);
+  background-size: 28px 28px;
+  pointer-events: none; z-index: 1;
+}
+.hero-image-wrap.no-photo .no-photo-mark {
+  position: absolute; bottom: 32px; right: 32px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.32em; text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  z-index: 2;
+}
+
+/* CLIENT LOGO OVERLAY — fica sobre a foto, canto superior esquerdo */
+.client-logo-overlay {
+  position: absolute;
+  top: 32px; left: 32px;
+  background: #fff;
+  padding: 14px 20px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  min-height: 52px;
+  z-index: 3;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+.client-logo-overlay img { max-height: 24px; max-width: 140px; width: auto; display: block; }
+.client-logo-overlay-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+  white-space: nowrap;
+}
 
 /* SECTIONS */
 .case-section { max-width: 1200px; margin: 0 auto; padding: 96px 48px; }
@@ -363,6 +402,8 @@ nav {
   .footer-grid { grid-template-columns: 1fr; gap: 48px; }
   .footer-bottom { flex-direction: column; gap: 16px; }
   .approach-item { grid-template-columns: 1fr; }
+  .client-logo-overlay { top: 20px; left: 20px; padding: 10px 16px; min-height: 44px; }
+  .client-logo-overlay img { max-height: 20px; }
 }
 
 [data-lang="pt"] .en { display: none; }
@@ -406,13 +447,6 @@ nav {
 
 
 <header class="case-hero">
-  
-<div class="client-logo-plate" aria-label="Santos FC">
-  <!-- Quando a logo estiver disponível em assets/images/clients/santos-fc.svg, descomente abaixo e remova o span fallback: -->
-  <!-- <img src="../../assets/images/clients/santos-fc.svg" alt="Santos FC"> -->
-  <span class="client-logo-name">Santos FC</span>
-</div>
-
   <div class="case-client">Santos FC</div>
   <h1 class="case-title">
     <span class="pt">Muito além<br>do campo.</span>
@@ -442,9 +476,16 @@ nav {
     </div>
   </div>
 
-  <div class="hero-image-wrap">
-    <img src="../../assets/images/work-7.png" alt="Santos FC — Muito além<br>do campo.">
+  
+<div class="hero-image-wrap">
+  <div class="client-logo-overlay" aria-label="Santos FC">
+    <!-- Quando a logo estiver disponível em assets/images/clients/santos-fc.svg, descomente a img abaixo e remova o span fallback: -->
+    <!-- <img src="../../assets/images/clients/santos-fc.svg" alt="Santos FC"> -->
+    <span class="client-logo-overlay-name">Santos FC</span>
   </div>
+  <img src="../../assets/images/work-7.png" alt="Santos FC — Muito além do campo." class="hero-photo">
+</div>
+
 </header>
 
 <section class="case-section">
