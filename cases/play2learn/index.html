@@ -124,6 +124,19 @@ nav {
 .crumb a:hover { color: var(--or); }
 .crumb-sep { opacity: 0.4; }
 
+/* CLIENT LOGO PLATE */
+.client-logo-plate {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 20px 32px; background: var(--bg-card); border: 1px solid var(--line);
+  border-radius: 16px; min-height: 80px; min-width: 200px;
+  margin-bottom: 32px;
+}
+.client-logo-plate img { max-height: 40px; width: auto; display: block; }
+.client-logo-name {
+  font-family: 'Space Grotesk', sans-serif; font-weight: 700;
+  font-size: 22px; letter-spacing: -0.03em; color: var(--text-main);
+}
+
 /* ─────────────────────────────────────
    CASE HERO
 ───────────────────────────────────── */
@@ -538,6 +551,11 @@ nav {
 
 <!-- HERO -->
 <header class="case-hero">
+  <div class="client-logo-plate" aria-label="Play2Learn">
+    <!-- Quando a logo estiver disponível em assets/images/clients/play2learn.svg, descomente abaixo e remova o span fallback: -->
+    <!-- <img src="../../assets/images/clients/play2learn.svg" alt="Play2Learn"> -->
+    <span class="client-logo-name">Play2Learn</span>
+  </div>
   <div class="case-client">Play2Learn</div>
   <h1 class="case-title">
     <span class="pt">Aprendizado corporativo<br>que parece um jogo.</span>
