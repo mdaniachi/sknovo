@@ -342,7 +342,8 @@ nav {
 .cases-viewport { display: flex; gap: 40px; padding: 20px 50vw 80px 48px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; }
 .cases-viewport::-webkit-scrollbar { display: none; }
 
-.case-card { scroll-snap-align: center; flex-shrink: 0; width: min(1080px, 85vw); background: var(--bg-card); border-radius: 40px; box-shadow: 0 24px 80px rgba(0,0,0,0.04); border: 1px solid var(--line); display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; transition: transform 0.6s var(--exp), background 0.4s ease; }
+.case-card { scroll-snap-align: center; flex-shrink: 0; width: min(1080px, 85vw); background: var(--bg-card); border-radius: 40px; box-shadow: 0 24px 80px rgba(0,0,0,0.04); border: 1px solid var(--line); display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; transition: transform 0.6s var(--exp), background 0.4s ease, box-shadow 0.4s ease; cursor: pointer; text-decoration: none; color: inherit; }
+.case-card:hover { transform: translateY(-6px); box-shadow: 0 32px 100px rgba(0,0,0,0.08); }
 .cs-body { padding: 80px 64px; display: flex; flex-direction: column; justify-content: center; }
 
 .cs-client-name { font-size: 13px; font-weight: 600; color: var(--text-main); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; opacity: 0.6;}
@@ -524,7 +525,7 @@ nav {
   <ul class="n-links">
     <li><a href="#process"><span class="pt">Método</span><span class="en">Method</span></a></li>
     <li><a href="#services"><span class="pt">Capabilities</span><span class="en">Capabilities</span></a></li>
-    <li><a href="#work"><span class="pt">Projetos</span><span class="en">Work</span></a></li>
+    <li><a href="cases/"><span class="pt">Projetos</span><span class="en">Work</span></a></li>
   </ul>
   <div class="n-right">
     <div class="controls-wrap">
@@ -738,7 +739,7 @@ nav {
 
     <div class="cases-viewport rv d1" id="casesSlider" role="list">
 
-      <article class="case-card" role="listitem">
+      <a href="cases/campanha-novodia/" class="case-card" role="listitem" aria-label="Ver case completo">
         <div class="cs-vis"><img src="assets/images/work-1.png" alt="Campanha NovoDia"></div>
         <div class="cs-body">
           <div class="cs-client-name">Novo Nordisk</div>
@@ -754,9 +755,9 @@ nav {
             <div><div class="csm-v">+400k</div><div class="csm-l"><span class="pt">Usuários</span><span class="en">Users</span></div></div>
           </div>
         </div>
-      </article>
+      </a>
 
-      <article class="case-card" role="listitem">
+      <a href="cases/novodia-crm/" class="case-card" role="listitem" aria-label="Ver case completo">
         <div class="cs-vis"><img src="assets/images/work-2.png" alt="Réguas de Comunicação CRM"></div>
         <div class="cs-body">
           <div class="cs-client-name">Novo Nordisk</div>
@@ -772,9 +773,9 @@ nav {
             <div><div class="csm-v">Hiper</div><div class="csm-l"><span class="pt">Personalização</span><span class="en">Personalization</span></div></div>
           </div>
         </div>
-      </article>
+      </a>
 
-      <article class="case-card" role="listitem">
+      <a href="cases/site-novodia/" class="case-card" role="listitem" aria-label="Ver case completo">
         <div class="cs-vis"><img src="assets/images/work-3.png" alt="Novo Site NovoDia"></div>
         <div class="cs-body">
           <div class="cs-client-name">Novo Nordisk</div>
@@ -790,9 +791,9 @@ nav {
             <div><div class="csm-v">100%</div><div class="csm-l"><span class="pt">Acessibilidade</span><span class="en">Accessibility</span></div></div>
           </div>
         </div>
-      </article>
+      </a>
 
-      <article class="case-card" role="listitem">
+      <a href="cases/play2learn/" class="case-card" role="listitem" aria-label="Ver case completo">
         <div class="cs-vis"><img src="assets/images/work-4.png" alt="Plataforma Corporativa Play2Learn"></div>
         <div class="cs-body">
           <div class="cs-client-name">Play2Learn</div>
@@ -809,9 +810,9 @@ nav {
             <div><div class="csm-v">AWS</div><div class="csm-l"><span class="pt">Arquitetura</span><span class="en">Architecture</span></div></div>
           </div>
         </div>
-      </article>
+      </a>
 
-      <article class="case-card" role="listitem">
+      <a href="cases/simulador-novodia/" class="case-card" role="listitem" aria-label="Ver case completo">
         <div class="cs-vis"><img src="assets/images/work-5.png" alt="Simulador NovoDia"></div>
         <div class="cs-body">
           <div class="cs-client-name">Novo Nordisk</div>
@@ -827,9 +828,9 @@ nav {
             <div><div class="csm-v">Real</div><div class="csm-l"><span class="pt">Dados ao Vivo</span><span class="en">Live Data</span></div></div>
           </div>
         </div>
-      </article>
+      </a>
 
-      <article class="case-card" role="listitem">
+      <a href="cases/rebranding-novodia/" class="case-card" role="listitem" aria-label="Ver case completo">
         <div class="cs-vis" style="background: #FFFFFF;"><img src="assets/images/work-6.png" alt="Rebranding NovoDia"></div>
         <div class="cs-body">
           <div class="cs-client-name">Novo Nordisk</div>
@@ -845,9 +846,9 @@ nav {
             <div><div class="csm-v">100%</div><div class="csm-l"><span class="pt">Consistência</span><span class="en">Consistency</span></div></div>
           </div>
         </div>
-      </article>
+      </a>
 
-      <article class="case-card" role="listitem">
+      <a href="cases/socio-rei/" class="case-card" role="listitem" aria-label="Ver case completo">
         <div class="cs-vis"><img src="assets/images/work-7.png" alt="Sócio Rei Santos FC"></div>
         <div class="cs-body">
           <div class="cs-client-name">Santos FC</div>
@@ -863,8 +864,15 @@ nav {
             <div><div class="csm-v">API</div><div class="csm-l"><span class="pt">Integração</span><span class="en">Integration</span></div></div>
           </div>
         </div>
-      </article>
+      </a>
 
+    </div>
+
+    <div style="display:flex; justify-content:center; padding: 24px 48px 0;">
+      <a href="cases/" class="cs-all-link" style="display:inline-flex; align-items:center; gap:8px; font-size:14px; font-weight:600; color: var(--text-main); padding: 12px 24px; border: 1px solid var(--line); border-radius: 999px; transition: background 0.3s var(--exp), border-color 0.3s var(--exp);">
+        <span class="pt">Ver todos os cases</span><span class="en">View all cases</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
     </div>
   </section>
 
@@ -975,7 +983,7 @@ nav {
       <ul>
         <li><a href="#process"><span class="pt">Método</span><span class="en">Method</span></a></li>
         <li><a href="#services"><span class="pt">Capabilities</span><span class="en">Capabilities</span></a></li>
-        <li><a href="#work"><span class="pt">Projetos</span><span class="en">Work</span></a></li>
+        <li><a href="cases/"><span class="pt">Projetos</span><span class="en">Work</span></a></li>
       </ul>
     </div>
 

@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-lang="pt" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Projetos | SkillCore</title>
+<meta name="description" content="Cases selecionados da SkillCore — Novo Nordisk, Play2Learn, Santos FC. Produtos digitais, campanhas, comunicação e branding em saúde, esporte e EdTech.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://skillcore.pro/cases/">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://skillcore.pro/cases/">
+<meta property="og:title" content="Projetos | SkillCore">
+<meta property="og:description" content="Cases selecionados — Novo Nordisk, Play2Learn, Santos FC.">
+
+<link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --or: #FF5A1F;
+  --exp: cubic-bezier(0.16, 1, 0.3, 1);
+  --bg-main: #F5F5F7;
+  --bg-card: #FFFFFF;
+  --bg-nav: rgba(245, 245, 247, 0.7);
+  --text-main: #1D1D1F;
+  --text-muted: #86868B;
+  --line: rgba(0,0,0,0.06);
+  --invert-bg: #0A0A0A;
+  --invert-text: #FFFFFF;
+}
+[data-theme="dark"] {
+  --bg-main: #0A0A0A;
+  --bg-card: #161618;
+  --bg-nav: rgba(10, 10, 10, 0.7);
+  --text-main: #F5F5F7;
+  --text-muted: #A1A1A6;
+  --line: rgba(255,255,255,0.1);
+  --invert-bg: #FFFFFF;
+  --invert-text: #0A0A0A;
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  letter-spacing: -0.015em;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+h1, h2, h3, h4, .h-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; height: auto; }
+ul { list-style: none; }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200; height: 64px;
+  display: flex; align-items: center; justify-content: space-between; padding: 0 48px;
+  background: var(--bg-nav); backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-bottom: 1px solid var(--line);
+}
+.n-logo { display: flex; align-items: center; }
+.nav-logo-img { height: 24px; width: auto; display: block; transition: filter 0.4s ease; }
+[data-theme="dark"] .nav-logo-img { filter: invert(1); }
+.n-links { display: flex; gap: 32px; font-size: 14px; color: var(--text-muted); font-weight: 500; }
+.n-links a:hover, .n-links a.active { color: var(--text-main); }
+.n-right { display: flex; align-items: center; gap: 24px; }
+.controls-wrap { display: flex; align-items: center; gap: 16px; }
+.lsw { display: flex; gap: 8px; font-size: 13px; font-weight: 500; color: var(--text-muted); }
+.lb { background: none; border: none; color: inherit; cursor: pointer; font-family: inherit; font-size: inherit; transition: color 0.2s; padding: 0; }
+.lb.on, .lb:hover { color: var(--text-main); font-weight: 600; }
+.theme-toggle { background: none; border: none; cursor: pointer; color: var(--text-muted); display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; }
+.theme-toggle:hover { color: var(--text-main); }
+[data-theme="light"] .icon-moon { display: none; }
+[data-theme="dark"] .icon-sun { display: none; }
+
+/* HERO */
+.cases-hero {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 160px 48px 80px;
+}
+.cases-eyebrow {
+  font-size: 11px;
+  color: var(--or);
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+.cases-title {
+  font-size: clamp(48px, 7vw, 96px);
+  line-height: 1.0;
+  letter-spacing: -0.045em;
+  color: var(--text-main);
+  margin-bottom: 32px;
+  max-width: 1100px;
+}
+.cases-subtitle {
+  font-size: clamp(20px, 2vw, 26px);
+  color: var(--text-muted);
+  max-width: 720px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* FILTER (visual only — single grid for now) */
+.cases-filter {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 48px 48px;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  font-size: 13px;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 24px;
+}
+.cases-filter strong {
+  font-weight: 600;
+  color: var(--text-main);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 11px;
+}
+.cases-count {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+}
+
+/* GRID */
+.cases-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 64px 48px 120px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+.case-tile {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  overflow: hidden;
+  transition: transform 0.5s var(--exp), box-shadow 0.5s var(--exp);
+  cursor: pointer;
+}
+.case-tile:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 32px 80px rgba(0,0,0,0.08);
+}
+.case-tile.featured { grid-column: 1 / -1; }
+.case-tile .tile-image {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #FFF;
+}
+.case-tile.featured .tile-image { aspect-ratio: 21 / 9; }
+
+.tile-image img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+  transition: transform 0.6s var(--exp);
+}
+.case-tile:hover .tile-image img { transform: scale(1.03); }
+
+.tile-image.no-photo {
+  background:
+    radial-gradient(circle at 80% 110%, rgba(255,90,31,0.18) 0%, transparent 50%),
+    radial-gradient(circle at 20% -20%, rgba(255,255,255,0.04) 0%, transparent 50%),
+    linear-gradient(135deg, #1A1A1D 0%, #0A0A0A 100%);
+}
+.tile-image.no-photo::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);
+  background-size: 28px 28px;
+}
+.client-overlay {
+  position: absolute;
+  top: 20px; left: 20px;
+  background: #fff;
+  padding: 10px 16px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  z-index: 2;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+.client-overlay img { max-height: 20px; max-width: 110px; width: auto; display: block; }
+.client-overlay-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+  white-space: nowrap;
+}
+
+.tile-body {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+.tile-meta {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.tile-meta-year {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text-main);
+  text-transform: none;
+}
+.tile-meta-sep { opacity: 0.4; }
+.tile-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(24px, 2.5vw, 32px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--text-main);
+}
+.case-tile.featured .tile-title { font-size: clamp(28px, 3vw, 40px); }
+.tile-desc {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+.tile-cta {
+  margin-top: auto;
+  padding-top: 24px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--or);
+  letter-spacing: 0.04em;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* CTA */
+.cases-cta {
+  background: var(--invert-bg);
+  color: var(--invert-text);
+  padding: 120px 48px;
+  text-align: center;
+}
+.cases-cta-inner { max-width: 900px; margin: 0 auto; }
+.cases-cta h2 {
+  font-size: clamp(36px, 5vw, 64px);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--invert-text);
+  margin-bottom: 24px;
+}
+.cases-cta p {
+  font-size: 18px;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 40px;
+}
+.cta-btn {
+  display: inline-flex; align-items: center; gap: 12px;
+  background: var(--or); color: #fff;
+  padding: 18px 36px; border-radius: 999px;
+  font-weight: 600; font-size: 16px;
+  transition: transform 0.3s var(--exp), box-shadow 0.3s var(--exp);
+}
+.cta-btn:hover { transform: translateY(-2px); box-shadow: 0 16px 40px rgba(255, 90, 31, 0.3); }
+
+/* FOOTER */
+.footer-wrap { background: #0A0A0A; padding: 80px 48px 40px; color: #86868B; border-top: 1px solid rgba(255,255,255,0.1); }
+.footer-inner { max-width: 1400px; margin: 0 auto; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 64px; padding-bottom: 64px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.footer-brand-text { font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; color: #fff; letter-spacing: -0.04em; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+.footer-brand-dot { width: 6px; height: 6px; background: var(--or); border-radius: 50%; }
+.footer-desc { font-size: 15px; line-height: 1.6; max-width: 360px; }
+.footer-col h4 { font-family: 'Inter', sans-serif; font-size: 11px; color: #fff; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 20px; }
+.footer-col ul { display: flex; flex-direction: column; gap: 12px; }
+.footer-col a { font-size: 14px; transition: color 0.2s; }
+.footer-col a:hover { color: #fff; }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; font-size: 13px; }
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .cases-grid { grid-template-columns: 1fr; }
+  .case-tile.featured .tile-image { aspect-ratio: 16 / 9; }
+  .case-tile.featured .tile-title { font-size: clamp(24px, 2.5vw, 32px); }
+}
+@media (max-width: 768px) {
+  nav { padding: 0 24px; }
+  .n-links { display: none; }
+  .cases-hero, .cases-filter, .cases-grid, .cases-cta { padding-left: 24px; padding-right: 24px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 48px; }
+  .footer-bottom { flex-direction: column; gap: 16px; }
+  .client-overlay { top: 16px; left: 16px; padding: 8px 14px; }
+  .client-overlay img { max-height: 16px; }
+}
+
+[data-lang="pt"] .en { display: none; }
+[data-lang="en"] .pt { display: none; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="../" class="n-logo" aria-label="SkillCore Início">
+    <img src="../assets/images/logo.svg" alt="SkillCore" class="nav-logo-img">
+  </a>
+  <ul class="n-links">
+    <li><a href="../#process"><span class="pt">Método</span><span class="en">Method</span></a></li>
+    <li><a href="../#services"><span class="pt">Capabilities</span><span class="en">Capabilities</span></a></li>
+    <li><a href="./" class="active"><span class="pt">Projetos</span><span class="en">Work</span></a></li>
+  </ul>
+  <div class="n-right">
+    <div class="controls-wrap">
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Alternar tema escuro e claro">
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </button>
+      <div class="lsw">
+        <button class="lb on" onclick="setLang('pt')">PT</button>
+        <span aria-hidden="true">/</span>
+        <button class="lb" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="cases-hero">
+  <div class="cases-eyebrow"><span class="pt">Projetos</span><span class="en">Work</span></div>
+  <h1 class="cases-title">
+    <span class="pt">O trabalho<br>fala por si.</span>
+    <span class="en">The work<br>speaks for itself.</span>
+  </h1>
+  <p class="cases-subtitle">
+    <span class="pt">Cases selecionados de produto, comunicação, IA e branding — em saúde, esporte e EdTech. Cada projeto carrega o mesmo método: imersão, decisão humana e execução em ritmo de IA.</span>
+    <span class="en">Selected cases across product, communication, AI, and branding — in health, sports, and EdTech. Each project follows the same method: immersion, human judgment, and execution at AI speed.</span>
+  </p>
+</header>
+
+<!-- FILTER BAR -->
+<div class="cases-filter">
+  <strong><span class="pt">Todos os projetos</span><span class="en">All projects</span></strong>
+  <span class="tile-meta-sep">/</span>
+  <span><span class="cases-count">07</span> <span class="pt">cases</span><span class="en">cases</span></span>
+  <span class="tile-meta-sep">/</span>
+  <span><span class="pt">3 clientes · 2024–2025</span><span class="en">3 clients · 2024–2025</span></span>
+</div>
+
+<!-- GRID -->
+<section class="cases-grid">
+
+  <!-- Featured: Play2Learn -->
+  <a href="play2learn/" class="case-tile featured">
+    <div class="tile-image">
+      <div class="client-overlay" aria-label="Play2Learn">
+        <!-- <img src="../assets/images/clients/play2learn.svg" alt="Play2Learn"> -->
+        <span class="client-overlay-name">Play2Learn</span>
+      </div>
+      <img src="../assets/images/work-4.png" alt="Play2Learn — Plataforma de Aprendizado">
+    </div>
+    <div class="tile-body">
+      <div class="tile-meta">
+        <span><span class="pt">Produto · Engenharia</span><span class="en">Product · Engineering</span></span>
+        <span class="tile-meta-sep">·</span>
+        <span class="tile-meta-year">2024</span>
+      </div>
+      <h2 class="tile-title"><span class="pt">Aprendizado corporativo que parece um jogo.</span><span class="en">Corporate learning that feels like a game.</span></h2>
+      <p class="tile-desc"><span class="pt">Concebemos, projetamos e desenvolvemos a plataforma Play2Learn da estratégia ao produto — tecnologia, design e gamificação em um único ecossistema.</span><span class="en">We conceived, designed, and built Play2Learn from strategy to product — technology, design, and gamification in a single ecosystem.</span></p>
+      <span class="tile-cta"><span class="pt">Ver case</span><span class="en">View case</span> →</span>
+    </div>
+  </a>
+
+  <!-- Sócio Rei -->
+  <a href="socio-rei/" class="case-tile">
+    <div class="tile-image">
+      <div class="client-overlay" aria-label="Santos FC">
+        <!-- <img src="../assets/images/clients/santos-fc.svg" alt="Santos FC"> -->
+        <span class="client-overlay-name">Santos FC</span>
+      </div>
+      <img src="../assets/images/work-7.png" alt="Santos FC — Sócio Rei">
+    </div>
+    <div class="tile-body">
+      <div class="tile-meta">
+        <span><span class="pt">Produto · Gamificação</span><span class="en">Product · Gamification</span></span>
+        <span class="tile-meta-sep">·</span>
+        <span class="tile-meta-year">2024</span>
+      </div>
+      <h2 class="tile-title"><span class="pt">Muito além do campo.</span><span class="en">Far beyond the pitch.</span></h2>
+      <p class="tile-desc"><span class="pt">A plataforma de sócio-torcedor do Santos FC. Gamificamos cada ponto de contato — presença, compra, participação.</span><span class="en">Santos FC's membership platform. We gamified every touchpoint — presence, purchase, participation.</span></p>
+      <span class="tile-cta"><span class="pt">Ver case</span><span class="en">View case</span> →</span>
+    </div>
+  </a>
+
+  <!-- Campanha NovoDia -->
+  <a href="campanha-novodia/" class="case-tile">
+    <div class="tile-image no-photo">
+      <div class="client-overlay" aria-label="Novo Nordisk">
+        <!-- <img src="../assets/images/clients/novo-nordisk.svg" alt="Novo Nordisk"> -->
+        <span class="client-overlay-name">Novo Nordisk</span>
+      </div>
+    </div>
+    <div class="tile-body">
+      <div class="tile-meta">
+        <span><span class="pt">Campanha · Mídia</span><span class="en">Campaign · Media</span></span>
+        <span class="tile-meta-sep">·</span>
+        <span class="tile-meta-year">2025</span>
+      </div>
+      <h2 class="tile-title"><span class="pt">Com você, em cada passo.</span><span class="en">With you, every step.</span></h2>
+      <p class="tile-desc"><span class="pt">Campanha de lançamento do NovoDia — três meses de narrativas reais, influenciadores e mídia paga reposicionando o programa como parceiro de jornada.</span><span class="en">The NovoDia launch campaign — three months of real narratives, influencers, and paid media repositioning the program as a journey partner.</span></p>
+      <span class="tile-cta"><span class="pt">Ver case</span><span class="en">View case</span> →</span>
+    </div>
+  </a>
+
+  <!-- Réguas CRM -->
+  <a href="novodia-crm/" class="case-tile">
+    <div class="tile-image no-photo">
+      <div class="client-overlay" aria-label="Novo Nordisk">
+        <!-- <img src="../assets/images/clients/novo-nordisk.svg" alt="Novo Nordisk"> -->
+        <span class="client-overlay-name">Novo Nordisk</span>
+      </div>
+    </div>
+    <div class="tile-body">
+      <div class="tile-meta">
+        <span><span class="pt">CRM · Conteúdo</span><span class="en">CRM · Content</span></span>
+        <span class="tile-meta-sep">·</span>
+        <span class="tile-meta-year">2025</span>
+      </div>
+      <h2 class="tile-title"><span class="pt">Conversa de amigo, cuidado de programa.</span><span class="en">A friendly chat, a program of care.</span></h2>
+      <p class="tile-desc"><span class="pt">Seis réguas de comunicação para os pacientes do NovoDia — uma para cada medicamento, com tom amigável e linguagem empática.</span><span class="en">Six communication journeys for NovoDia patients — one per medication, with a friendly tone and empathetic language.</span></p>
+      <span class="tile-cta"><span class="pt">Ver case</span><span class="en">View case</span> →</span>
+    </div>
+  </a>
+
+  <!-- Site NovoDia -->
+  <a href="site-novodia/" class="case-tile">
+    <div class="tile-image no-photo">
+      <div class="client-overlay" aria-label="Novo Nordisk">
+        <!-- <img src="../assets/images/clients/novo-nordisk.svg" alt="Novo Nordisk"> -->
+        <span class="client-overlay-name">Novo Nordisk</span>
+      </div>
+    </div>
+    <div class="tile-body">
+      <div class="tile-meta">
+        <span><span class="pt">UX · UI · Web</span><span class="en">UX · UI · Web</span></span>
+        <span class="tile-meta-sep">·</span>
+        <span class="tile-meta-year">2025</span>
+      </div>
+      <h2 class="tile-title"><span class="pt">Cuidado que se navega.</span><span class="en">Care that's easy to navigate.</span></h2>
+      <p class="tile-desc"><span class="pt">Redesenhamos o site do programa NovoDia — da pesquisa à entrega final, cada decisão buscou tornar a jornada de cuidado mais humana e eficiente.</span><span class="en">We redesigned the NovoDia website — from research to final delivery, every decision aimed to make the care journey more human and efficient.</span></p>
+      <span class="tile-cta"><span class="pt">Ver case</span><span class="en">View case</span> →</span>
+    </div>
+  </a>
+
+  <!-- Simulador -->
+  <a href="simulador-novodia/" class="case-tile">
+    <div class="tile-image no-photo">
+      <div class="client-overlay" aria-label="Novo Nordisk">
+        <!-- <img src="../assets/images/clients/novo-nordisk.svg" alt="Novo Nordisk"> -->
+        <span class="client-overlay-name">Novo Nordisk</span>
+      </div>
+    </div>
+    <div class="tile-body">
+      <div class="tile-meta">
+        <span><span class="pt">Produto · Data Viz</span><span class="en">Product · Data Viz</span></span>
+        <span class="tile-meta-sep">·</span>
+        <span class="tile-meta-year">2025</span>
+      </div>
+      <h2 class="tile-title"><span class="pt">52 semanas em uma experiência só.</span><span class="en">52 weeks in a single experience.</span></h2>
+      <p class="tile-desc"><span class="pt">Três simuladores interativos para Wegovy® e Ozempic® que tornam tangíveis os benefícios clínicos do tratamento ao longo de 52 semanas.</span><span class="en">Three interactive simulators for Wegovy® and Ozempic® that make the clinical benefits of treatment tangible across 52 weeks.</span></p>
+      <span class="tile-cta"><span class="pt">Ver case</span><span class="en">View case</span> →</span>
+    </div>
+  </a>
+
+  <!-- Rebranding -->
+  <a href="rebranding-novodia/" class="case-tile">
+    <div class="tile-image no-photo">
+      <div class="client-overlay" aria-label="Novo Nordisk">
+        <!-- <img src="../assets/images/clients/novo-nordisk.svg" alt="Novo Nordisk"> -->
+        <span class="client-overlay-name">Novo Nordisk</span>
+      </div>
+    </div>
+    <div class="tile-body">
+      <div class="tile-meta">
+        <span><span class="pt">Branding · Design System</span><span class="en">Branding · Design System</span></span>
+        <span class="tile-meta-sep">·</span>
+        <span class="tile-meta-year">2025</span>
+      </div>
+      <h2 class="tile-title"><span class="pt">Ciência precisa. Marca que abraça.</span><span class="en">Scientific precision. A brand that holds you.</span></h2>
+      <p class="tile-desc"><span class="pt">Em parceria com a Flavor Studio, atuamos consultivamente na construção do novo posicionamento e do design system modular do NovoDia.</span><span class="en">In partnership with Flavor Studio, we played a consultative role in NovoDia's new positioning and modular design system.</span></p>
+      <span class="tile-cta"><span class="pt">Ver case</span><span class="en">View case</span> →</span>
+    </div>
+  </a>
+
+</section>
+
+<!-- CTA -->
+<section class="cases-cta">
+  <div class="cases-cta-inner">
+    <h2><span class="pt">Vamos construir o próximo?</span><span class="en">Let's build the next one?</span></h2>
+    <p><span class="pt">Conversamos sobre projetos de produto, comunicação, IA e branding em setores que exigem precisão.</span><span class="en">We discuss product, communication, AI, and branding projects in industries that demand precision.</span></p>
+    <a href="../#contact" class="cta-btn">
+      <span class="pt">Iniciar projeto</span><span class="en">Start a project</span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div class="footer-wrap">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-text">
+          <span class="footer-brand-dot"></span>
+          SkillCore
+        </div>
+        <p class="footer-desc">
+          <span class="pt">Consultoria digital AI-Native. Estratégia humana, escala da IA. Construímos produtos que crescem.</span>
+          <span class="en">AI-Native digital consultancy. Human strategy, AI scale. We build products that grow.</span>
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>SkillCore</h4>
+        <ul>
+          <li><a href="../#process"><span class="pt">Método</span><span class="en">Method</span></a></li>
+          <li><a href="../#services"><span class="pt">Serviços</span><span class="en">Services</span></a></li>
+          <li><a href="./"><span class="pt">Projetos</span><span class="en">Work</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="mailto:customer@skillcore.pro">customer@skillcore.pro</a></li>
+          <li><a href="https://www.linkedin.com/company/skillcore/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://www.instagram.com/skillcore/" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 SkillCore · Curitiba, PR · Brasil</span>
+      <span><span class="pt">Feito em Curitiba</span><span class="en">Made in Curitiba</span></span>
+    </div>
+  </div>
+</div>
+
+<script>
+function toggleTheme() {
+  const html = document.documentElement;
+  const cur = html.getAttribute('data-theme');
+  html.setAttribute('data-theme', cur === 'light' ? 'dark' : 'light');
+}
+function setLang(l) {
+  document.documentElement.setAttribute('data-lang', l);
+  document.documentElement.setAttribute('lang', l === 'pt' ? 'pt-BR' : 'en-US');
+  document.querySelectorAll('.lb').forEach(b => b.classList.remove('on'));
+  document.querySelector(`.lb[onclick="setLang('${l}')"]`).classList.add('on');
+}
+</script>
+
+</body>
+</html>
