@@ -118,32 +118,60 @@ nav {
   line-height: 1.5;
 }
 
-/* FILTER (visual only — single grid for now) */
+/* FILTER PILLS */
 .cases-filter {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 48px 48px;
+  padding: 0 48px 24px;
   display: flex;
-  gap: 24px;
+  flex-wrap: wrap;
+  gap: 10px;
   align-items: center;
-  font-size: 13px;
-  color: var(--text-muted);
-  letter-spacing: 0.04em;
   border-bottom: 1px solid var(--line);
-  padding-bottom: 24px;
+  padding-bottom: 32px;
 }
-.cases-filter strong {
+.filter-label {
+  font-size: 11px;
   font-weight: 600;
-  color: var(--text-main);
+  color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.16em;
-  font-size: 11px;
+  margin-right: 8px;
 }
-.cases-count {
+.filter-pill {
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 10px 20px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: -0.005em;
+  cursor: pointer;
+  transition: background 0.25s var(--exp), color 0.25s var(--exp), border-color 0.25s var(--exp);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.filter-pill:hover { color: var(--text-main); border-color: var(--text-muted); }
+.filter-pill.active {
+  background: var(--invert-bg);
+  color: var(--invert-text);
+  border-color: var(--invert-bg);
+}
+.filter-pill-count {
   font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
   font-weight: 700;
-  color: var(--text-main);
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
+  opacity: 0.5;
+}
+.filter-pill.active .filter-pill-count { opacity: 0.7; }
+
+/* Case tile hide/show with smooth transition */
+.case-tile.is-hidden {
+  display: none;
 }
 
 /* GRID */
@@ -372,20 +400,40 @@ nav {
   </p>
 </header>
 
-<!-- FILTER BAR -->
-<div class="cases-filter">
-  <strong><span class="pt">Todos os projetos</span><span class="en">All projects</span></strong>
-  <span class="tile-meta-sep">/</span>
-  <span><span class="cases-count">07</span> <span class="pt">cases</span><span class="en">cases</span></span>
-  <span class="tile-meta-sep">/</span>
-  <span><span class="pt">3 clientes · 2024–2025</span><span class="en">3 clients · 2024–2025</span></span>
+<!-- FILTER PILLS -->
+<div class="cases-filter" role="tablist" aria-label="Filtrar por categoria">
+  <span class="filter-label"><span class="pt">Filtrar</span><span class="en">Filter</span></span>
+  <button class="filter-pill active" data-filter="all" role="tab" aria-selected="true">
+    <span class="pt">Todos</span><span class="en">All</span>
+    <span class="filter-pill-count">7</span>
+  </button>
+  <button class="filter-pill" data-filter="produto" role="tab" aria-selected="false">
+    <span class="pt">Produto</span><span class="en">Product</span>
+    <span class="filter-pill-count">3</span>
+  </button>
+  <button class="filter-pill" data-filter="comunicacao" role="tab" aria-selected="false">
+    <span class="pt">Comunicação</span><span class="en">Communication</span>
+    <span class="filter-pill-count">2</span>
+  </button>
+  <button class="filter-pill" data-filter="ux-ui" role="tab" aria-selected="false">
+    UX/UI
+    <span class="filter-pill-count">1</span>
+  </button>
+  <button class="filter-pill" data-filter="branding" role="tab" aria-selected="false">
+    Branding
+    <span class="filter-pill-count">1</span>
+  </button>
+  <button class="filter-pill" data-filter="gamificacao" role="tab" aria-selected="false">
+    <span class="pt">Gamificação</span><span class="en">Gamification</span>
+    <span class="filter-pill-count">2</span>
+  </button>
 </div>
 
 <!-- GRID -->
 <section class="cases-grid">
 
   <!-- Featured: Play2Learn -->
-  <a href="play2learn/" class="case-tile featured">
+  <a href="play2learn/" class="case-tile featured" data-tags="produto gamificacao">
     <div class="tile-image">
       <div class="client-overlay" aria-label="Play2Learn">
         <!-- <img src="../assets/images/clients/play2learn.svg" alt="Play2Learn"> -->
@@ -406,7 +454,7 @@ nav {
   </a>
 
   <!-- Sócio Rei -->
-  <a href="socio-rei/" class="case-tile">
+  <a href="socio-rei/" class="case-tile" data-tags="produto gamificacao">
     <div class="tile-image">
       <div class="client-overlay" aria-label="Santos FC">
         <!-- <img src="../assets/images/clients/santos-fc.svg" alt="Santos FC"> -->
@@ -427,7 +475,7 @@ nav {
   </a>
 
   <!-- Campanha NovoDia -->
-  <a href="campanha-novodia/" class="case-tile">
+  <a href="campanha-novodia/" class="case-tile" data-tags="comunicacao">
     <div class="tile-image">
       <div class="client-overlay" aria-label="Novo Nordisk">
         <!-- <img src="../assets/images/clients/novo-nordisk.svg" alt="Novo Nordisk"> -->
@@ -448,7 +496,7 @@ nav {
   </a>
 
   <!-- Réguas CRM -->
-  <a href="novodia-crm/" class="case-tile">
+  <a href="novodia-crm/" class="case-tile" data-tags="comunicacao">
     <div class="tile-image">
       <div class="client-overlay" aria-label="Novo Nordisk">
         <!-- <img src="../assets/images/clients/novo-nordisk.svg" alt="Novo Nordisk"> -->
@@ -469,7 +517,7 @@ nav {
   </a>
 
   <!-- Site NovoDia -->
-  <a href="site-novodia/" class="case-tile">
+  <a href="site-novodia/" class="case-tile" data-tags="ux-ui produto">
     <div class="tile-image">
       <div class="client-overlay" aria-label="Novo Nordisk">
         <!-- <img src="../assets/images/clients/novo-nordisk.svg" alt="Novo Nordisk"> -->
@@ -490,7 +538,7 @@ nav {
   </a>
 
   <!-- Simulador -->
-  <a href="simulador-novodia/" class="case-tile">
+  <a href="simulador-novodia/" class="case-tile" data-tags="produto">
     <div class="tile-image">
       <div class="client-overlay" aria-label="Novo Nordisk">
         <!-- <img src="../assets/images/clients/novo-nordisk.svg" alt="Novo Nordisk"> -->
@@ -511,7 +559,7 @@ nav {
   </a>
 
   <!-- Rebranding -->
-  <a href="rebranding-novodia/" class="case-tile">
+  <a href="rebranding-novodia/" class="case-tile" data-tags="branding">
     <div class="tile-image">
       <div class="client-overlay" aria-label="Novo Nordisk">
         <!-- <img src="../assets/images/clients/novo-nordisk.svg" alt="Novo Nordisk"> -->
@@ -595,6 +643,33 @@ function setLang(l) {
   document.querySelectorAll('.lb').forEach(b => b.classList.remove('on'));
   document.querySelector(`.lb[onclick="setLang('${l}')"]`).classList.add('on');
 }
+
+// ─── FILTRO POR TAGS ─────────────────────────────────
+(function() {
+  const pills = document.querySelectorAll('.filter-pill');
+  const tiles = document.querySelectorAll('.case-tile');
+
+  pills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      const filter = pill.dataset.filter;
+
+      // Atualiza estado visual dos pills
+      pills.forEach(p => {
+        p.classList.remove('active');
+        p.setAttribute('aria-selected', 'false');
+      });
+      pill.classList.add('active');
+      pill.setAttribute('aria-selected', 'true');
+
+      // Aplica filtro nos tiles
+      tiles.forEach(tile => {
+        const tags = (tile.dataset.tags || '').split(' ');
+        const shouldShow = filter === 'all' || tags.includes(filter);
+        tile.classList.toggle('is-hidden', !shouldShow);
+      });
+    });
+  });
+})();
 </script>
 
 </body>
