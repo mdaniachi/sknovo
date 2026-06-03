@@ -407,6 +407,54 @@ nav {
 
 [data-lang="pt"] .en { display: none; }
 [data-lang="en"] .pt { display: none; }
+
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }
+/* INLINE CONTACT FORM (dentro do case-cta) */
+.case-contact-form {
+  margin: 48px auto 0;
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  text-align: left;
+}
+.case-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.case-form-input {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px;
+  padding: 16px 20px;
+  font-family: inherit;
+  font-size: 15px;
+  color: #fff;
+  width: 100%;
+  transition: border-color 0.25s var(--exp), background 0.25s var(--exp);
+}
+.case-form-input::placeholder { color: rgba(255,255,255,0.4); }
+.case-form-input:focus {
+  outline: none;
+  border-color: var(--or);
+  background: rgba(255,255,255,0.09);
+}
+.case-form-textarea { resize: vertical; min-height: 120px; font-family: inherit; }
+.case-form-submit {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 10px; background: var(--or); color: #fff; border: none;
+  padding: 18px 36px; border-radius: 999px;
+  font-family: inherit; font-weight: 600; font-size: 15px;
+  cursor: pointer; align-self: flex-start; margin-top: 8px;
+  transition: transform 0.3s var(--exp), box-shadow 0.3s var(--exp);
+}
+.case-form-submit:hover { transform: translateY(-2px); box-shadow: 0 16px 40px rgba(255, 90, 31, 0.3); }
+.case-form-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+.case-form-status { margin-top: 8px; font-size: 14px; text-align: center; }
+.case-form-success { color: #4ade80; }
+.case-form-error { color: #f87171; }
+@media (max-width: 640px) {
+  .case-form-row { grid-template-columns: 1fr; }
+  .case-form-submit { align-self: stretch; }
+}
+
 </style>
 </head>
 <body>
@@ -567,10 +615,30 @@ nav {
   <div class="case-cta-inner">
     <h2><span class="pt">Precisa de uma marca preparada para escalar?</span><span class="en">Need a brand ready to scale?</span></h2>
     <p><span class="pt">Construímos e sustentamos sistemas de design para marcas que precisam crescer sem perder coerência.</span><span class="en">We build and sustain design systems for brands that need to grow without losing coherence.</span></p>
-    <a href="../../#contact" class="cta-btn">
-      <span class="pt">Falar com a SkillCore</span><span class="en">Get in touch</span>
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-    </a>
+        <form class="case-contact-form" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="1739af38-23a6-4229-8a64-e79a3bc2875d">
+      <input type="hidden" name="subject" value="Novo contato via case: rebranding-novodia">
+      <input type="hidden" name="from_name" value="SkillCore Website">
+      <input type="checkbox" name="botcheck" class="sr-only" style="display:none">
+      <div class="case-form-row">
+        <label class="sr-only" for="cf-name-rebranding-novodia">Nome</label>
+        <input type="text" id="cf-name-rebranding-novodia" name="name" class="case-form-input" placeholder="Seu nome" required>
+        <label class="sr-only" for="cf-email-rebranding-novodia">Email</label>
+        <input type="email" id="cf-email-rebranding-novodia" name="email" class="case-form-input" placeholder="Seu e-mail" required>
+      </div>
+      <label class="sr-only" for="cf-msg-rebranding-novodia">Mensagem</label>
+      <textarea id="cf-msg-rebranding-novodia" name="message" class="case-form-input case-form-textarea" placeholder="Conta o que tem em mente" required></textarea>
+      <button type="submit" class="case-form-submit">
+        <span class="pt">Enviar mensagem</span><span class="en">Send message</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </button>
+      <p class="case-form-status case-form-success" hidden>
+        <span class="pt">Mensagem enviada! Em breve entramos em contato.</span><span class="en">Message sent! We'll be in touch soon.</span>
+      </p>
+      <p class="case-form-status case-form-error" hidden>
+        <span class="pt">Erro ao enviar. Tente novamente ou escreva para customer@skillcore.pro</span><span class="en">Error sending. Try again or email customer@skillcore.pro</span>
+      </p>
+    </form>
   </div>
 </section>
 
@@ -641,6 +709,29 @@ function setLang(l) {
   document.querySelectorAll('.lb').forEach(b => b.classList.remove('on'));
   document.querySelector(`.lb[onclick="setLang('${l}')"]`).classList.add('on');
 }
+
+// Inline contact form (case pages) — Web3Forms
+document.querySelectorAll('.case-contact-form').forEach(form => {
+  const submitBtn = form.querySelector('.case-form-submit');
+  const success = form.querySelector('.case-form-success');
+  const error = form.querySelector('.case-form-error');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    submitBtn.disabled = true;
+    success.hidden = true; error.hidden = true;
+    const original = submitBtn.innerHTML;
+    submitBtn.textContent = 'Enviando...';
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(form) });
+      const data = await res.json();
+      if (data.success) { success.hidden = false; form.reset(); }
+      else error.hidden = false;
+    } catch (err) { error.hidden = false; }
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = original;
+  });
+});
+
 </script>
 
 
