@@ -153,7 +153,13 @@ section.sk-block {
 }
 .stat .n .u { color: var(--or); }
 .stat .l { font-size: 14px; color: var(--text-muted); margin-top: 16px; line-height: 1.5; }
-@media (max-width: 760px) { .stats { grid-template-columns: 1fr; } }
+@media (max-width: 760px) {
+  .stats { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .stat { padding: 22px 18px; }
+  .stat .n { font-size: 38px; }
+  .stat .l { font-size: 12px; margin-top: 10px; line-height: 1.4; }
+  .stat:nth-child(3):last-child { grid-column: 1 / -1; }
+}
 
 /* METHOD */
 .method { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -174,7 +180,13 @@ section.sk-block {
   margin: 20px 0 12px; color: var(--text-main);
 }
 .mcard p { color: var(--text-muted); font-size: 15px; line-height: 1.55; }
-@media (max-width: 760px) { .method { grid-template-columns: 1fr; } }
+@media (max-width: 760px) {
+  .method { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .mcard { padding: 22px 18px; }
+  .mcard h3 { font-size: 19px; margin: 16px 0 8px; }
+  .mcard p { font-size: 13px; line-height: 1.45; }
+  .mcard:nth-child(3):last-child { grid-column: 1 / -1; }
+}
 
 /* GRID2 (objetivos) */
 .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
@@ -196,7 +208,14 @@ section.sk-block {
   margin-bottom: 10px; color: var(--text-main);
 }
 .ocard p { color: var(--text-muted); font-size: 15px; line-height: 1.55; }
-@media (max-width: 760px) { .grid2 { grid-template-columns: 1fr; } }
+@media (max-width: 760px) {
+  .grid2 { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .ocard { padding: 22px 18px; }
+  .ocard .ic { width: 40px; height: 40px; margin-bottom: 14px; }
+  .ocard .ic svg { width: 18px; height: 18px; }
+  .ocard h3 { font-size: 17px; margin-bottom: 8px; }
+  .ocard p { font-size: 13px; line-height: 1.45; }
+}
 
 /* COMPS (escopo) */
 .comps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
@@ -224,8 +243,7 @@ section.sk-block {
   transition: width .3s var(--exp);
 }
 .comp:hover::after { width: 100%; }
-@media (max-width: 900px) { .comps { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 520px) { .comps { grid-template-columns: 1fr; } }
+@media (max-width: 900px) { .comps { grid-template-columns: 1fr 1fr; gap: 10px; } }
 
 /* TIMELINE */
 .timeline { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
